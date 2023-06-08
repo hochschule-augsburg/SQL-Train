@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Rajbir Singh, Niklas Sirch, Jan Swiridow, Duc Minh Vu, Mike Wegele
+#
+# SPDX-License-Identifier: CC0-1.0
+
+aiohttp==3.8.4
+Django==4.2.1
+django_ace==1.15.4
+django-click==2.3.0
+django-csp==3.7
+django-modeltranslation==0.18.9
+django-ninja==0.21.0
+django_admin_rangefilter==0.10.0
+gunicorn==20.1.0
+freezegun==1.2.2
+psycopg==3.1.8
+psycopg-binary==3.1.8
+# psycopg-c==3.1.8
+psycopg-pool==3.1.7
+PyLTI1p3==2.0.0
+PyYAML==6.0
+uvicorn[standard]==0.21.1
+pymemcache==4.0.0
+python-dotenv==1.0.0
+pytz==2023.3
+sphinx==5.3.0
+myst_parser==1.0.0
+sphinxcontrib_mermaid==0.8.1
+pydata-sphinx-theme==0.13.3
+sphinx-autodoc2==0.4.2
+sphinx-favicon==1.0.1
+sphinx-tippy==0.4.1
+sphinx-book-theme==1.0.1

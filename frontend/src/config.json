@@ -1,0 +1,17 @@
+{
+    "THEME_COLORS": {
+        "PRIMARY": "#F98113",
+        "SECONDARY": "#333333",
+        "NEUTRAL": "#FFFFFF",
+        "DARK": "#181818",
+        "BACKGROUND_LIGHT": "#c9c7c7",
+        "BACKGROUND_DARK": "#5B5959",
+        "HOVER_BACKGROUND_LIGHT": "#E5E5E5",
+        "HOVER_BACKGROUND_DARK": "#080707",
+        "DROPDOWNSELECTEDLIGHT": "#DDDDDD",
+        "DROPDOWNSELECTEDDARK": "#444444"
+    },
+    "FEEDBACK": {
+        "SHOW": true
+    }
+}

@@ -1,0 +1,17 @@
+/*
+ * SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Rajbir Singh, Niklas Sirch, Jan Swiridow, Duc Minh Vu, Mike WegelE
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+/* chrome and chromium based */
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}

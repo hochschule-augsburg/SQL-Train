@@ -1,0 +1,5 @@
+# SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Rajbir Singh, Niklas Sirch, Jan Swiridow, Duc Minh Vu, Mike Wegele
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# empty npmignore to ensure all required files (e.g., in the dist folder) are published by npm

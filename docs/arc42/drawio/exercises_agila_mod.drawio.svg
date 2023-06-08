@@ -1,0 +1,851 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1134px" height="742px" viewBox="-0.5 -0.5 1134 742" content="&lt;mxfile&gt;&lt;diagram name=&quot;gab&quot; id=&quot;CJFVxmqOxPit7bjjy-G5&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <ellipse cx="488.63" cy="164.49" rx="50.625" ry="30" fill-opacity="0.3" fill="rgb(255, 255, 255)" stroke="#00ff00" stroke-opacity="0.3" stroke-width="11" pointer-events="all"/>
+        <ellipse cx="758.01" cy="705.38" rx="50.625" ry="30" fill-opacity="0.3" fill="rgb(255, 255, 255)" stroke="#00ff00" stroke-opacity="0.3" stroke-width="11" pointer-events="all"/>
+        <ellipse cx="285.13" cy="95.63" rx="148.375" ry="90.625" fill-opacity="0.3" fill="rgb(255, 255, 255)" stroke="#00ff00" stroke-opacity="0.3" stroke-width="11" pointer-events="all"/>
+        <ellipse cx="809.75" cy="151.99" rx="165" ry="101.00000000000001" fill-opacity="0.3" fill="rgb(255, 255, 255)" stroke="#00ff00" stroke-opacity="0.3" stroke-width="11" pointer-events="all"/>
+        <ellipse cx="815" cy="521.01" rx="225" ry="140.625" fill-opacity="0.3" fill="rgb(255, 255, 255)" stroke="#00ff00" stroke-opacity="0.3" stroke-width="11" pointer-events="all"/>
+        <rect x="687" y="509.38" width="80" height="40" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="1.2" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="726.5" y="533.38">
+                Topic
+            </text>
+        </g>
+        <rect x="817" y="605.38" width="80" height="40" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="1.2" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="856.5" y="629.38">
+                Short
+            </text>
+        </g>
+        <path d="M 789.75 565.38 L 804.75 580.38 L 789.75 595.38 L 774.75 580.38 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 746.35 549.38 L 775.5 579.5" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 805.5 579.5 L 827.11 605.38" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <rect x="1006" y="610.38" width="100" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="1055.5" y="629.38">
+                CharField(10)
+            </text>
+        </g>
+        <path d="M 1006 625.38 L 899.24 625.38" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke"/>
+        <path d="M 905.12 621.88 L 898.12 625.38 L 905.12 628.88" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 420.5 461.63 L 458 479.13 L 420.5 496.63 L 383 479.13 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="420" y="483.13">
+                ExerDiff
+            </text>
+        </g>
+        <path d="M 420.5 497 L 472.8 572.01" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="446.24" y="531.16">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="446.24" y="543.16">
+                Difficulty
+            </text>
+        </g>
+        <path d="M 334.79 403.63 L 420.5 462" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="392.68" y="430.43">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="392.68" y="442.43">
+                Exer
+            </text>
+        </g>
+        <rect x="1052.5" y="509.13" width="80" height="37.5" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="1.13" stroke-dasharray="4.21875 4.21875" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="1092" y="531.88">
+                Script
+            </text>
+        </g>
+        <path d="M 302.75 363.63 L 340.25 381.13 L 302.75 398.63 L 265.25 381.13 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="302.25" y="385.13">
+                Exercise
+            </text>
+        </g>
+        <path d="M 235.28 275 L 283.17 370.38" fill="none" stroke="#d6b656" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="254.34" y="319.17">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="254.34" y="331.17">
+                ExerciseNum
+            </text>
+        </g>
+        <path d="M 340.5 382 L 687 515.4" fill="none" stroke="#d6b656" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="513.15" y="445.72">
+                1:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="513.15" y="457.72">
+                Topic
+            </text>
+        </g>
+        <rect x="259" y="358.63" width="85.5" height="45" fill="none" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <path d="M 165.5 462.01 L 203 479.51 L 165.5 497.01 L 128 479.51 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="165" y="483.51">
+                ExerciseTitle
+            </text>
+        </g>
+        <path d="M 263.84 403.63 L 165.5 462" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="214.4" y="430.23">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="214.4" y="442.23">
+                Exercise
+            </text>
+        </g>
+        <path d="M 128 479.5 L 96.38 486.79" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="129.88" y="480.12">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="129.88" y="492.12">
+                Title
+            </text>
+        </g>
+        <rect x="-0.37" y="474.38" width="96.75" height="35" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="1.05" stroke-dasharray="3.6749999999999994 3.6749999999999994" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="47.51" y="495.88">
+                I18n(CharField(50))
+            </text>
+        </g>
+        <rect x="18" y="530.38" width="80" height="35" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="1.05" stroke-dasharray="3.6749999999999994 3.6749999999999994" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="57.5" y="551.88">
+                I18n(TextField)
+            </text>
+        </g>
+        <path d="M 296.5 91.76 L 334 109.26 L 296.5 126.76 L 259 109.26 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="296" y="113.26">
+                Solution
+            </text>
+        </g>
+        <path d="M 295.5 127 L 301.32 358.63" fill="none" stroke="#d6b656" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="312.89" y="233.21">
+                1:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="312.89" y="245.21">
+                ExTopic
+            </text>
+        </g>
+        <path d="M 190 509.13 L 227.5 526.63 L 190 544.13 L 152.5 526.63 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="189.5" y="530.63">
+                ExerciseQs
+            </text>
+        </g>
+        <path d="M 190.5 509.5 L 284.47 403.63" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="236.97" y="454.4">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="236.97" y="466.4">
+                ExTopic
+            </text>
+        </g>
+        <path d="M 98 539.09 L 153 527" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="124.86" y="530.44">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="124.86" y="542.44">
+                Question
+            </text>
+        </g>
+        <rect x="1038" y="164.24" width="80.5" height="40" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="1.2" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="1077.75" y="188.24">
+                User
+            </text>
+        </g>
+        <path d="M 818.96 169.49 L 856.46 186.99 L 818.96 204.49 L 781.46 186.99 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="818.46" y="190.99">
+                UserExer
+            </text>
+        </g>
+        <path d="M 855.5 187 L 1038 184.67" fill="none" stroke="#d6b656" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="947.99" y="183.07">
+                1:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="947.99" y="195.07">
+                User
+            </text>
+        </g>
+        <path d="M 344.5 363.8 L 780.5 187" fill="none" stroke="#d6b656" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <rect x="772.25" y="164.24" width="85.5" height="45.5" fill="none" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <path d="M 915.5 92 L 953 109.5 L 915.5 127 L 878 109.5 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="915" y="113.5">
+                UserExerCorr
+            </text>
+        </g>
+        <path d="M 915.5 127 L 844.51 164.24" fill="none" stroke="#b85450" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="880.08" y="142.83">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="880.08" y="154.83">
+                UserExCorr
+            </text>
+        </g>
+        <path d="M 1048.5 82.06 L 953 109.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="1000.44" y="93.12">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="1000.44" y="105.12">
+                Correct
+            </text>
+        </g>
+        <rect x="1048.5" y="57" width="70" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="1083" y="76">
+                Boolean
+            </text>
+        </g>
+        <path d="M 685.5 134.49 L 723 151.99 L 685.5 169.49 L 648 151.99 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="685" y="155.99">
+                UserExerBSave
+            </text>
+        </g>
+        <rect x="568" y="47" width="80" height="40" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="1.2" stroke-dasharray="4.800000000000001 4.800000000000001" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="607.5" y="71">
+                TextField
+            </text>
+        </g>
+        <path d="M 723 152 L 772.25 175.44" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="747.83" y="161.07">
+                0:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="747.83" y="173.07">
+                UserExTop
+            </text>
+        </g>
+        <path d="M 630.96 87 L 685.5 134.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="657.36" y="107.24">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="657.36" y="119.24">
+                Buffer Save
+            </text>
+        </g>
+        <path d="M 846.75 425.38 L 884.25 442.88 L 846.75 460.38 L 809.25 442.88 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="846.25" y="446.88">
+                TopicDatamodel
+            </text>
+        </g>
+        <rect x="806" y="329.38" width="81.5" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="846.25" y="341.88">
+                Datamodel
+            </text>
+            <text x="846.25" y="354.88">
+                Representation
+            </text>
+        </g>
+        <path d="M 848 424.5 L 846.75 359.38" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="847.38" y="389.26">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="847.38" y="401.26">
+                Datamodel Representation
+            </text>
+        </g>
+        <path d="M 1052.5 528.88 L 928 532" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="990.02" y="527.7">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="990.02" y="539.7">
+                Script
+            </text>
+        </g>
+        <rect x="192.75" y="245" width="70" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="227.25" y="264">
+                Integer
+            </text>
+        </g>
+        <rect x="433.5" y="27" width="76" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="471" y="46">
+                I18n(TextField)
+            </text>
+        </g>
+        <rect x="38" y="87" width="70" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="72.5" y="106">
+                TextField
+            </text>
+        </g>
+        <path d="M 333 39.5 L 433.5 41.46" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="382.99" y="37.72">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="382.99" y="49.72">
+                Description
+            </text>
+        </g>
+        <path d="M 153 104.5 L 108 102.6" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="130.52" y="100.8">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="130.52" y="112.8">
+                SQL
+            </text>
+        </g>
+        <rect x="253.75" y="86.51" width="85.5" height="45.5" fill="none" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <rect x="264" y="622.01" width="70" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="298.5" y="641.01">
+                Boolean
+            </text>
+        </g>
+        <path d="M 296.5 523.26 L 332.75 538.26 L 296.5 553.26 L 260.25 538.26 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="296" y="542.26">
+                ExerciseType
+            </text>
+        </g>
+        <path d="M 300.77 403.63 L 295.5 524.5" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="298.16" y="460.82">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="298.16" y="472.82">
+                ExTopic
+            </text>
+        </g>
+        <path d="M 298.36 622.01 L 295.5 554.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="296.88" y="584.29">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="296.88" y="596.29">
+                is_select
+            </text>
+        </g>
+        <rect x="60.5" y="252.99" width="70" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="95" y="271.99">
+                Float
+            </text>
+        </g>
+        <path d="M 183.25 323.63 L 229.75 341.13 L 183.25 358.63 L 136.75 341.13 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="182.75" y="345.13">
+                ExercisePoi
+            </text>
+        </g>
+        <path d="M 260.78 358.63 L 230.5 342" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="254.94" y="344.46">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="254.94" y="356.46">
+                ExTopic
+            </text>
+        </g>
+        <path d="M 183 324.5 L 113.5 282.99" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="148.66" y="301.24">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="148.66" y="313.24">
+                Points
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="148.66" y="301.24">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="148.66" y="313.24">
+                Points
+            </text>
+        </g>
+        <rect x="358.5" y="607.01" width="70" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="393" y="626.01">
+                TextField
+            </text>
+        </g>
+        <path d="M 345.5 480.76 L 383 498.26 L 345.5 515.76 L 308 498.26 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="345" y="502.26">
+                ExerciseEvalS
+            </text>
+        </g>
+        <path d="M 386.64 607.01 L 345.5 517" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="365.86" y="558.79">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="365.86" y="570.79">
+                Eval_Statement
+            </text>
+        </g>
+        <path d="M 311.51 403.63 L 345.5 482" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="328.42" y="439.87">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="328.42" y="451.87">
+                ExTopic
+            </text>
+        </g>
+        <path d="M 761.63 509.38 L 848 459.5" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="804.93" y="481.62">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="804.93" y="493.62">
+                Topic
+            </text>
+        </g>
+        <path d="M 890.75 514.38 L 928.25 531.88 L 890.75 549.38 L 853.25 531.88 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="890.25" y="535.88">
+                TopicScript
+            </text>
+        </g>
+        <path d="M 767 530.21 L 853 532" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="809.49" y="528.35">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="809.49" y="540.35">
+                Topic
+            </text>
+        </g>
+        <path d="M 657.5 565.38 L 695 582.88 L 657.5 600.38 L 620 582.88 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="657" y="586.88">
+                TopicTitle
+            </text>
+        </g>
+        <path d="M 687.71 549.38 L 658 564.5" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="672.11" y="554.57">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="672.11" y="566.57">
+                Topic
+            </text>
+        </g>
+        <path d="M 658 599.5 L 648.1 685.38" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="669.63" y="638.97">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="669.63" y="650.97">
+                Title
+            </text>
+        </g>
+        <rect x="598" y="685.38" width="97" height="35" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="1.05" stroke-dasharray="3.6749999999999994 3.6749999999999994" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="646" y="706.88">
+                I18n(CharField(50))
+            </text>
+        </g>
+        <rect x="447" y="572.01" width="68.5" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <path d="M 510.7 572.01 L 510.7 602.01" fill="none" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-miterlimit="10" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="478.01" y="591.01">
+                Difficulty
+            </text>
+        </g>
+        <rect x="447" y="631.63" width="70" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="481.5" y="650.63">
+                Integer
+            </text>
+        </g>
+        <path d="M 481.81 631.63 L 481.47 604.25" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke"/>
+        <path d="M 485.04 610.08 L 481.45 603.13 L 478.04 610.17" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 685.5 435 L 723 452.5 L 685.5 470 L 648 452.5 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="685" y="456.5">
+                TopicVisible
+            </text>
+        </g>
+        <path d="M 685.5 434.5 L 632.47 394.38" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="676.08" y="412.14">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="676.08" y="424.14">
+                visible
+            </text>
+        </g>
+        <rect x="568" y="359.38" width="97" height="35" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="1.05" stroke-dasharray="3.6749999999999994 3.6749999999999994" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="616" y="380.88">
+                Boolean
+            </text>
+        </g>
+        <path d="M 685.5 469.5 L 716.2 509.38" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="700.75" y="486.56">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="700.75" y="498.56">
+                Topic
+            </text>
+        </g>
+        <path d="M 447 96.11 L 333 109.5" fill="none" stroke="#d6b656" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="385.39" y="100.07">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="385.39" y="112.07">
+                snumber
+            </text>
+        </g>
+        <rect x="447" y="77" width="70" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="481.5" y="96">
+                Integer
+            </text>
+        </g>
+        <path d="M 296.5 22 L 334 39.5 L 296.5 57 L 259 39.5 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="296" y="43.5">
+                SolDesc
+            </text>
+        </g>
+        <path d="M 296.06 86.51 L 295.5 57" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="295.78" y="68.76">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="295.78" y="80.76">
+                Solution
+            </text>
+        </g>
+        <path d="M 190 86.51 L 227.5 104.01 L 190 121.51 L 152.5 104.01 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="189.5" y="108.01">
+                SolSQL
+            </text>
+        </g>
+        <path d="M 253.75 106.29 L 228 104.5" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="241.28" y="102.67">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="241.28" y="114.67">
+                Solution
+            </text>
+        </g>
+        <path d="M 809.75 77 L 847.25 94.5 L 809.75 112 L 772.25 94.5 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="809.25" y="98.5">
+                UserExerCorr
+            </text>
+        </g>
+        <path d="M 809.95 35 L 810.5 77" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="810.21" y="52.25">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="810.21" y="64.25">
+                Favourite
+            </text>
+        </g>
+        <rect x="774.75" y="5" width="70" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="809.25" y="24">
+                Boolean
+            </text>
+        </g>
+        <path d="M 810.5 112 L 813.71 164.24" fill="none" stroke="#b85450" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="812.03" y="134.2">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="812.03" y="146.2">
+                UserExFav
+            </text>
+        </g>
+        <path d="M 258 305 Q 258 325 253 325 Q 248 325 248 320 Q 248 315 179 315 Q 110 315 110 448.5 Q 110 582 289 582 Q 468 582 468 428.5 Q 468 275 378 275 Q 288 275 288 285 Q 288 295 273 295 Q 258 295 258 300 Q 258 305 248 305" fill="none" stroke="#00ff00" stroke-opacity="0.3" stroke-width="10" stroke-miterlimit="10" pointer-events="stroke"/>
+        <rect x="18" y="373.63" width="70" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="52.5" y="392.63">
+                TextField(JSON)
+            </text>
+        </g>
+        <path d="M 166.75 380.38 L 203 395.38 L 166.75 410.38 L 130.5 395.38 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="166.25" y="399.38">
+                ExerMandList
+            </text>
+        </g>
+        <path d="M 259 386.92 L 203 394.5" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="231.75" y="387.86">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="231.75" y="399.86">
+                ExTopic
+            </text>
+        </g>
+        <path d="M 88 391.28 L 130.5 394.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="110.44" y="390.23">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="110.44" y="402.23">
+                mand_list
+            </text>
+        </g>
+        <rect x="13" y="418.63" width="70" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="47.5" y="437.63">
+                TextField(JSON)
+            </text>
+        </g>
+        <path d="M 154 418.63 L 190.25 433.63 L 154 448.63 L 117.75 433.63 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="153.5" y="437.63">
+                ExerDenyList
+            </text>
+        </g>
+        <path d="M 259 401.64 L 190.5 434.5" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="225.19" y="415.11">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="225.19" y="427.11">
+                ExTopic
+            </text>
+        </g>
+        <path d="M 83 434.07 L 118 434.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="100.5" y="431.53">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="100.5" y="443.53">
+                deny_list
+            </text>
+        </g>
+        <path d="M 434.25 222.99 L 470.5 237.99 L 434.25 252.99 L 398 237.99 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="433.75" y="241.99">
+                ExerETags
+            </text>
+        </g>
+        <path d="M 325.06 358.63 L 435.5 252" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="380.81" y="302.05">
+                1:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="380.81" y="314.05">
+                ExTopic
+            </text>
+        </g>
+        <path d="M 475.5 176.25 L 435.5 222" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="455.76" y="196.08">
+                1:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="455.76" y="208.08">
+                etag
+            </text>
+        </g>
+        <rect x="453.62" y="146.25" width="70" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" pointer-events="all"/>
+        <path d="M 455.72 146.25 L 455.72 176.25" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 521.52 146.25 L 521.52 176.25" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="488.12" y="165.25">
+                ETag
+            </text>
+        </g>
+        <path d="M 749.75 607.01 L 787.25 624.51 L 749.75 642.01 L 712.25 624.51 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="749.25" y="628.51">
+                TopicTTag
+            </text>
+        </g>
+        <path d="M 733.06 549.38 L 750.5 607" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="741.75" y="575.34">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="741.75" y="587.34">
+                Topic
+            </text>
+        </g>
+        <path d="M 750.5 642 L 756.47 690.38" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="770.06" y="664.06">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="770.06" y="676.06">
+                TTag
+            </text>
+        </g>
+        <rect x="723" y="690.38" width="70" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" pointer-events="all"/>
+        <path d="M 725.1 690.38 L 725.1 720.38" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 790.9 690.38 L 790.9 720.38" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="757.5" y="709.38">
+                TTag
+            </text>
+        </g>
+        <rect x="168" y="600.38" width="70" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="202.5" y="619.38">
+                Boolean
+            </text>
+        </g>
+        <path d="M 254.25 478.26 L 290.5 493.26 L 254.25 508.26 L 218 493.26 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="253.75" y="497.26">
+                ExerOrder
+            </text>
+        </g>
+        <path d="M 291.17 403.63 L 255.5 479.5" fill="none" stroke="#b85450" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="273.09" y="439.34">
+                1:1
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="273.09" y="451.34">
+                ExTopic
+            </text>
+        </g>
+        <path d="M 210.44 600.38 L 255.5 509.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="232.65" y="552.83">
+                0:*
+            </text>
+        </g>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="7.5px">
+            <text x="232.65" y="564.83">
+                order_by
+            </text>
+        </g>
+        <rect x="856.46" y="690.38" width="102" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="906.96" y="709.38">
+                CharField(10)
+            </text>
+        </g>
+        <path d="M 856.46 705.38 L 795.24 705.38" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke"/>
+        <path d="M 801.12 701.88 L 794.12 705.38 L 801.12 708.88" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="490" y="215" width="100" height="30" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-width="0.9" stroke-dasharray="2.6999999999999997 2.6999999999999997" pointer-events="all"/>
+        <g fill="#000000" font-family="Arial,Helvetica" text-anchor="middle" font-size="11px">
+            <text x="539.5" y="234">
+                CharField(10)
+            </text>
+        </g>
+        <path d="M 490 230 L 488.97 178.49" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke"/>
+        <path d="M 492.58 184.3 L 488.94 177.37 L 485.58 184.44" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+    </g>
+</svg>

@@ -1,0 +1,26 @@
+<!--
+SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Rajbir Singh, Niklas Sirch, Jan Swiridow, Duc Minh Vu, Mike Wegele
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQL-Train</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'ltiapi/favicon-32.png' %}"
+    />
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+  </head>
+  <body>
+    <div id="app"></div>
+  <script type="module" src="{% static 'index.js' %}"></script>
+  </body>
+</html>

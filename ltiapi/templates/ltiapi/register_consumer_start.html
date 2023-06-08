@@ -1,0 +1,31 @@
+<!--
+SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Rajbir Singh, Niklas Sirch, Jan Swiridow, Duc Minh Vu, Mike Wegele
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<!-- This file was copied and altered from its original location
+at <https://github.com/Hyperchalk/Hyperchalk/>.-->
+
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ block.super }} - Register LTI Consumer{% endblock title %}
+
+{% block body %}
+{% if link.registered_consumer_id is None %}
+  <p>{% blocktrans with consumer=link.consumer_name trimmed %}
+    This one off link was issued for a registration by “{{consumer}}”. Once the
+    registration process is started, it cannot be reused. Do you want to continue?
+  {% endblocktrans %}</p>
+  <form action="{{request.url}}" method="post">
+    {% csrf_token %}
+    <button type="submit">{% trans "Start The Registration" %}</button>
+  </form>
+{% else %}
+  <p>{% blocktrans trimmed %}
+    The registration link has already been used. Please ask
+    the admin of the LTI app for a new registration link.
+  {% endblocktrans %}</p>
+{% endif %}
+{% endblock body %}

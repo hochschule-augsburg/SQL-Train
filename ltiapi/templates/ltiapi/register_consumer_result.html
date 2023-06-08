@@ -1,0 +1,31 @@
+<!--
+SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Rajbir Singh, Niklas Sirch, Jan Swiridow, Duc Minh Vu, Mike Wegele
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<!-- This file was copied and altered from its original location
+at <https://github.com/Hyperchalk/Hyperchalk/>.-->
+
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ block.super }} - Register LTI Consumer{% endblock title %}
+
+{% block body %}
+{% if registration_success %}
+<p>{% blocktrans trimmed %}
+  The application registration succeeded.
+{% endblocktrans %}</p>
+<p><button type="button" id="close">{% trans "Close registration" %}</button></p>
+{% else %}
+<p>{% blocktrans trimmed %}
+  There was an error while registering you application: {{error}}
+{% endblocktrans %}</p>
+{% endif %}
+
+<script>
+  document.getElementById("close").onclick = () =>
+    (window.opener || window.parent).postMessage({subject:'org.imsglobal.lti.close'}, '*');
+</script>
+{% endblock body %}

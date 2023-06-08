@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "watch",
+			"path": "frontend",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "npm: watch - frontend",
+			"detail": "node esbuild.js --watch"
+		}
+	]
+}

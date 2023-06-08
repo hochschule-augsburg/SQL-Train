@@ -1,0 +1,54 @@
+{
+  "nonce": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "iat": 1000000000,
+  "exp": 1000000000,
+  "iss": "https://moodle.example.com",
+  "aud": "aaaaaaaaaaaaaaa",
+  "https://purl.imsglobal.org/spec/lti/claim/deployment_id": "42",
+  "https://purl.imsglobal.org/spec/lti/claim/target_link_uri": "https://sql-training.example.com/lti/launch",
+  "sub": "55555",
+  "https://purl.imsglobal.org/spec/lti/claim/lis": {
+    "person_sourcedid": "7777777",
+    "course_section_sourcedid": ""
+  },
+  "https://purl.imsglobal.org/spec/lti/claim/roles": [
+    "http://purl.imsglobal.org/vocab/lis/v2/membership#Learner"
+  ],
+  "https://purl.imsglobal.org/spec/lti/claim/context": {
+    "id": "4444",
+    "label": "example",
+    "title": "Example Course (Testprof)",
+    "type": ["CourseSection"]
+  },
+  "https://purl.imsglobal.org/spec/lti/claim/resource_link": {
+    "title": "Ex-Tool",
+    "description": "",
+    "id": "22"
+  },
+  "https://purl.imsglobal.org/spec/lti-bo/claim/basicoutcome": {
+    "lis_result_sourcedid": "{\"data\":{\"instanceid\":\"2222\",\"userid\":\"55555\",\"typeid\":\"42\",\"launchid\":1000000000},\"hash\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}",
+    "lis_outcome_service_url": "https://moodle.example.com/mod/lti/service.php"
+  },
+  "given_name": "Give",
+  "family_name": "Fam",
+  "name": "Give Fam",
+  "https://purl.imsglobal.org/spec/lti/claim/ext": {
+    "user_username": "givfam",
+    "lms": "moodle"
+  },
+  "email": "givfam@example.com",
+  "https://purl.imsglobal.org/spec/lti/claim/launch_presentation": {
+    "locale": "de",
+    "document_target": "window",
+    "return_url": "https://moodle.example.com/mod/lti/return.php?course=4444&launch_container=4&instanceid=22&sesskey=aaaaaaaaaa"
+  },
+  "https://purl.imsglobal.org/spec/lti/claim/tool_platform": {
+    "product_family_code": "moodle",
+    "version": "10000000000",
+    "guid": "moodle.example.com",
+    "name": "Moodle",
+    "description": "Moodle of example"
+  },
+  "https://purl.imsglobal.org/spec/lti/claim/version": "1.3.0",
+  "https://purl.imsglobal.org/spec/lti/claim/message_type": "LtiResourceLinkRequest"
+}

@@ -1,0 +1,182 @@
+{
+    "general": {
+        "language": {
+            "english": "Englisch",
+            "german": "Deutsch",
+            "select": "Sprache Auswählen"
+        },
+        "theme": {
+            "auto": "Automatisch",
+            "light": "Hell",
+            "dark": "Dunkel"
+        },
+        "fallback": {
+            "unknown": "Unbekannt"
+        },
+        "error": {
+            "exercise": "Die Aufgabe konnte nicht geladen werden.",
+            "userdata": "Die Benutzerdaten konnten nicht geladen werden.",
+            "user_exercise": "Die Benutzerdaten zur Aufgabe konnten nicht geladen werden.",
+            "topic": "Das Thema konnte nicht geladen werden.",
+            "favourite": "Die Favoritenliste konnte nicht geladen werden.",
+            "user_db": "Fehler beim Ausführen der Abfrage auf der Studentendatenbank. {{message}}",
+            "unknown": "Unbekannter Fehler. Inhalt konnte nicht geladen werden.",
+            "noQuery": "Keine Query im Editor!"
+        },
+        "feedback": {
+            "positive": {
+                "neutral": "Antwort ist richtig.",
+                "0": "Daten-Donuts warten auf dich! Du hast es geschafft, SQL-Superstar!",
+                "1": "SQL-Ninja, du bist unaufhaltsam! Zeit zum Feiern.",
+                "2": "Du hast deine SQL-Fähigkeiten gestärkt! Du rockst!",
+                "3": "Siegertanz im SQL-Stil. Du hast ein Level aufgestiegen!",
+                "4": "SQL-Eroberer, du bist nicht zu stoppen! Nächstes Ziel: Weltherrschaft!",
+                "5": "SQL-Train verneigt sich vor dir, mächtiger Krieger! Mach eine Pause und genieße deinen Ruhm.",
+                "6": "Du hast es geschafft! Deine SQL-Fähigkeiten sind scharf wie nie zuvor.",
+                "7": "Heilige Makrele! SQL-Sieg schmeckt süß. Genieße es!",
+                "8": "Woohoo! Deine SQL-Fähigkeiten sind heiß wie Feuer!",
+                "9": "Du bist eine Datenzähmungs-Kraft, SQL-Sensation!",
+                "10": "Fantastische Arbeit, SQL-Zauberer! Du hast uns alle verzaubert.",
+                "11": "Bravo, Maestro! Deine SQL-Leistung war außergewöhnlich.",
+                "12": "SQL-Einhorn-Alarm! Makellose Abfragen erreicht.",
+                "13": "Daten-Dominator in Aktion! Boss-Status erreicht.",
+                "14": "Applauswürdig, SQL-Virtuose! Du hast neue Höhen erreicht.",
+                "15": "Zeit für Eiscreme! SQL-Erfolg freigeschaltet.",
+                "16": "Herzlichen Glückwunsch, SQL-Rockstar! Mach weiter so!",
+                "17": "Heißes Messer durch Butter, SQL-Meister!",
+                "18": "Kurz und knackig: SQL-Superstar-Status erreicht!",
+                "19": "SQL-Train-Triumph! Du bist unaufhaltsam."
+            },
+            "negative": {
+                "neutral": "Antwort ist falsch!",
+                "0": "SQL-Fiasko! Deine Anweisung ist auf Nimmerwiedersehen verschwunden.",
+                "1": "Syntaxfehler: Dein SQL hat eine falsche Abzweigung genommen.",
+                "2": "Abfrage außer Kontrolle! Hol sie bitte zurück.",
+                "3": "Hoppla! Dein SQL hat sich in einem Netz aus Verwirrung verfangen.",
+                "4": "Daten-Chaos! Dein SQL ist wild geworden und hat sich davongemacht.",
+                "5": "Alarmstufe Rot! Deine SQL-Anweisung ist abgetaucht und hat uns im Datenchaos zurückgelassen.",
+                "6": "Syntaxkatastrophe! Dein SQL hat einen falschen Pfad eingeschlagen.",
+                "7": "Abfrage-Kollaps! Dein SQL hat sich verirrt und ein verworrenes Durcheinander geschaffen.",
+                "8": "Hoppla! Dein SQL ist in ein Wirrwarr der Verwirrung gestolpert und hat den Rückweg vergessen.",
+                "9": "Daten-Dilemma! Dein SQL hat sich in einer Endlosschleife falscher Ergebnisse verfangen.",
+                "10": "Systemüberlastung! Deine SQL-Abfrage ist außer Kontrolle geraten und hat einen digitalen Aufruhr verursacht.",
+                "11": "Abfrage-Meltdown! Dein SQL hat sich verirrt und ein verworrenes Durcheinander geschaffen.",
+                "12": "Abfrage-Krise! Dein SQL hat einen falschen Weg eingeschlagen und uns ratlos zurückgelassen.",
+                "13": "Code-Katastrophe! Dein SQL ist auf eine Abenteuerreise gegangen und hat sich in falschen Ergebnissen verheddert.",
+                "14": "Desaster! Dein SQL hat Urlaub gemacht und eine Spur falscher Antworten hinterlassen.",
+                "15": "Warnung! Deine SQL-Anweisung hat sich gegen die Logik gestellt und Chaos in der Datenbank verursacht.",
+                "16": "Ups! Deine SQL-Abfrage ist über ihre eigene Syntax gestolpert und hat ein Durcheinander verursacht.",
+                "17": "Abfrage-Malfunction! Dein SQL hat sich in einem Labyrinth aus falscher Ausgabe verirrt.",
+                "18": "Fehler-Ausbruch! Deine SQL-Anweisung ist wie ein Vulkan ausgebrochen und hat falsche Ergebnisse gespuckt.",
+                "19": "Problembeladenes SQL! Deine Abfrage hat beschlossen, ein Eigenleben zu führen und Verwirrung zu stiften."
+            }
+        },
+        "cookies": {
+            "plural": "Cookies",
+            "privacy": "Datenschutzerklärung",
+            "disclaimer": "Durch die Nutzung dieser Website akzeptieren Sie automatisch, dass wir Cookies verwenden.",
+            "rejectDisclaimer": "Alle Cookies sind funktional!",
+            "accept": "Akzeptieren",
+            "reject": "Ablehnen",
+            "betaInfo": "Bitte beachten Sie, dass Sie auf die Beta-Version von SQL-Training zugreifen, die vor ihrer offiziellen Veröffentlichung getestet wird. Der einzige Zweck dieser BETA-Version besteht darin, Tests durchzuführen und Feedback zu erhalten."
+        }
+    },
+    "topic": {
+        "numberSolved": "{{number}} Aufgaben gelöst"
+    },
+    "exercise": {
+        "exercise_one": "Aufgabe",
+        "exercise_other": "Aufgaben",
+        "solution_one": "Lösung",
+        "solution_other": "Lösungen",
+        "dataModel": "Datenmodell",
+        "dataModelInfo": "Das ist das Datenmodell",
+        "showDataModel": "Datenmodell anzeigen",
+        "checkAnswer": "Antwort prüfen (alt+c)",
+        "solution": "Lösung (alt+s)",
+        "executeQuery": "Abfrage ausführen (alt+x)",
+        "resetDB": "DB zurücksetzen (alt+y)",
+        "clear": "Editor löschen (alt+a)",
+        "checkAnswerMac": "Antwort prüfen (ctrl+c)",
+        "solutionMac": "Lösung (ctrl+s)",
+        "executeQueryMac": "Abfrage ausführen (ctrl+x)",
+        "resetDBMac": "DB zurücksetzen (ctrl+y)",
+        "clearMac": "Editor löschen (ctrl+a)",
+        "next": "Nächste Aufgabe",
+        "prev": "Vorherige Aufgabe",
+        "queryTableTitle": "Abfrage",
+        "solutionTableTitle": "Musterlösung"
+    },
+    "FOTypes": {
+        "0": "Übungstitel",
+        "1": "Thementitel",
+        "2": "Themenschlagwort",
+        "3": "Übungsschlagwort",
+        "4": "Schwierigkeit",
+        "5": "Thema"
+    },
+    "difficulty": {
+        "1": "Leicht",
+        "2": "Mittel",
+        "3": "Schwer"
+    },
+    "feedback": {
+        "general": "Allgemein",
+        "positive": "Positiv",
+        "negative": "Negativ",
+        "ui": "UI",
+        "ux": "UX",
+        "improvements": "Verbesserungsvorschläge",
+        "submit": "Abgeben",
+        "info": "Es werden keine persönlichen Daten gespeichert.",
+        "rating": "Die Sterne nicht vergessen.",
+        "toomuch": "Zu viele Bewertungen.",
+        "thx": "Vielen Dank!"
+    },
+    "marked": {
+        "title": "Markierte Aufgaben"
+    },
+    "stats": {
+        "wrong": "Falsch",
+        "correct": "Richtig",
+        "untouched": "Unbearbeitet",
+        "touched": "Angefangen",
+        "nocourse": "Fehler: Kein Kurs",
+        "student_one": "{{count}} Student/in",
+        "student_other": "{{count}} Studierende"
+    },
+    "footer": {
+        "imprint": "Impressum",
+        "privacy": "Datenschutz",
+        "cookies": "Cookies",
+        "credits": "Credits"
+    },
+    "help": {
+        "help": "Hilfe",
+        "intro": "Hier findet ihr Unterstützung für das Moodle-Tool \nSql-Train.\n\nUnser Tool besteht aus drei Seiten:\n01. Die Themenübersicht\n02. Die Aufgabenübersicht\n03. Die Aufgabenseite",
+        "navigationBarTitle": "Navigationsleiste",
+        "navigationBarText": "Jede Seite hat eine Navigationsleiste, die mit vielen Funktionen ausgestattet ist:",
+        "topicPageTitle": "Themenübersicht",
+        "topicPageText": "In der Themenübersicht sind alle Themen aufgelistet, die es gibt, und man kann sich das passende Thema entsprechend seiner Kompetenz auswählen. \nAußerdem werden auf der Seite Informationen über den Lernfortschritt angezeigt.",
+        "exercisesPageTitle": "Aufgabenübersicht",
+        "exercisesPageText": "In der Aufgabenübersicht werden alle Aufgaben eines Themas gelistet. Aufgaben, die schon gelöst wurden, werden grün markiert. Falsch gelöste werden rot markiert.",
+        "editorPageTitle": "Aufgabenseite",
+        "editorPageText1": "In der Aufgabenseite werden die einzelnen Aufgaben bearbeitet. Sowohl die Lösung als auch beliebige SQL Befehle können links in das Eingabefenster eingegeben und ausgeführt werden. Die Ergebnisse werden rechts im Ausgabefenster angezeigt. \nIn bestimmten Fällen, wie z. B. bei \"Antwort prüfen\", teilt sich das Ausgabefeld in zwei Fenster, damit die Tabellen besser miteinander verglichen werden können.",
+        "editorPageText2": "Wichtig: \nUm die Korrektheit bei der Überprüfung der Abfragen zu gewährleisten, wird bei jedem Klick auf \"Antwort prüfen\" oder \"Lösung anzeigen\" die Datenbank zunächst zurückgesetzt, bevor die Abfrage des Nutzers überprüft wird. Auf diese Weise wird sichergestellt, dass die Abfrage auch an dem Datenmodell ausgeführt wird, deren Zustand genau für diese Aufgabenstellung vorgesehen ist. So könnte man auch die Aufgaben in beliebiger Reihenfolge bearbeiten. \nWenn Sie Übungen bearbeiten, arbeiten Sie indirekt auf der Datenbank Ihrer Universität/Hochschule. Daher könnten Sie in Ihrer SQL Shell auf die Datenmodelle von SQL-Train zugreifen. Mit \\dn finden Sie die installierten Schemata in psql."
+    },
+    "tour": {
+        "exercise": {
+            "question": "",
+            "points": "",
+            "editor": "",
+            "execute": "",
+            "check": "",
+            "solution": "",
+            "datamodel": "",
+            "clear": "",
+            "reset": "",
+            "next": "",
+            "table": ""
+        }
+    }
+}

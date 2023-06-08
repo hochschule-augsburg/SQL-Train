@@ -1,0 +1,36 @@
+# SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Rajbir Singh, Niklas Sirch, Jan Swiridow, Duc Minh Vu, Mike Wegele
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+- model: ltiapi.course
+  pk: 1
+  fields:
+    course_id: 4444
+    lms: moodle.example.com
+    label: example
+    title: Example Course (Testprof)
+    type: '[''CourseSection'']'
+    locale: en
+    document_target: window
+    # return_url: https://moodle.example.com/mod/lti/return.php?course=4444&launch_container=4&instanceid=22&sesskey=aaaaaaaaaa
+    tool_title: Ex-Tool
+    tool_description: ''
+    tool_id: 22
+- model: ltiapi.ltiuser
+  fields:
+    password: pbkdf2_sha256$600000$4OQPYoMfBAQn83LOQFYSUF$yB/26fNpQ8WPJioDdiNAtkIhfmXsCB6T3b5drxXA7nM=
+    # password: 123
+    last_login: 2023-05-18 08:59:34.557478+00:00
+    is_superuser: false
+    username: johndoe@moodle.example.com4444
+    first_name: John
+    last_name: Doe
+    email: john.doe@example.com
+    is_staff: true
+    is_active: true
+    date_joined: 2023-05-14 07:45:40+00:00
+    registered_via: null
+    course: 1
+    lms_username: johndoe
+    groups: []
+    user_permissions: []

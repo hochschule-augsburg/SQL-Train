@@ -1,0 +1,183 @@
+{
+    "general": {
+        "language": {
+            "english": "English",
+            "german": "German",
+            "select": "Select Language"
+        },
+        "theme": {
+            "auto": "Auto",
+            "light": "Light",
+            "dark": "Dark"
+        },
+        "fallback": {
+            "unknown": "Unknown"
+        },
+        "error": {
+            "exercise": "The exercise could not be loaded.",
+            "userdata": "User data could not be loaded.",
+            "user_exercises": "User data to exercise could not be loaded.",
+            "topic": "The topic could not be loaded.",
+            "favourite": "The marked list could not be loaded",
+            "user_db": "Error: Failed to execute query on student database.",
+            "unknown": "Unknown error. Content could not be loaded.",
+            "message": "Error: {{message}}",
+            "noQuery": "Missing query in editor!"
+        },
+        "feedback": {
+            "positive": {
+                "neutral": "Answer is correct.",
+                "0": "Data-doughnuts await! You crushed it, SQL superstar!",
+                "1": "SQL ninja, you're unstoppable! Time to celebrate.",
+                "2": "Pumped up those SQL skills! You rock!",
+                "3": "Victory dance, SQL-style. You leveled up!",
+                "4": "SQL conqueror, you're on fire! Next stop: world domination!",
+                "5": "SQL-Train salutes you, mighty warrior! Take a break and bask in your glory.",
+                "6": "Aced it! Your SQL skills are sharp as can be.",
+                "7": "Holy moly! SQL victory tastes sweet. Enjoy!",
+                "8": "Woohoo! Your SQL skills are blazing!",
+                "9": "You're a data-taming force, SQL sensation!",
+                "10": "Fantastic job, SQL magician! You dazzled us all.",
+                "11": "Bravo, maestro! Your SQL performance was extraordinary.",
+                "12": "SQL unicorn alert! Flawless queries achieved.",
+                "13": "Data dominator in action! Boss status achieved.",
+                "14": "Applause-worthy, SQL virtuoso! You've reached new heights.",
+                "15": "Ice cream time! SQL success unlocked.",
+                "16": "Congrats, SQL rockstar! Keep up the amazing work.",
+                "17": "Hot knife through butter, SQL master!",
+                "18": "Short and sweet: SQL superstar status achieved!",
+                "19": "SQL-Train triumph! You're unstoppable."
+            },
+            "negative": {
+                "neutral": "Answer is wrong!",
+                "0": "SQL fail! Your statement went AWOL.",
+                "1": "Syntax error: Your SQL took a wrong turn.",
+                "2": "Query gone wild! Bring it back, please.",
+                "3": "Oops! Your SQL got tangled in a web of confusion.",
+                "4": "Data disaster! Your SQL went rogue and vanished.",
+                "5": "Alert! Your SQL statement went AWOL, leaving us in data chaos.",
+                "6": "Syntax catastrophe! Your SQL took a detour to the land of errors.",
+                "7": "Query meltdown! Your SQL lost its way and created a tangled mess.",
+                "8": "Oops! Your SQL stumbled into a pit of confusion and forgot the way back.",
+                "9": "Data dilemma! Your SQL got caught in a loop of incorrectness.",
+                "10": "System overload! Your SQL query went haywire, causing a digital frenzy.",
+                "11": "Error extravaganza! Your SQL statement decided to throw a party of mistakes.",
+                "12": "Query crisis! Your SQL took a wrong turn and left us scratching our heads.",
+                "13": "Code calamity! Your SQL went on an adventure and got entangled in incorrect results.",
+                "14": "Disaster strikes! Your SQL went on vacation and left behind a trail of wrong answers.",
+                "15": "Warning! Your SQL statement decided to rebel and create chaos in the database.",
+                "16": "Oopsie daisy! Your SQL query tripped over its own syntax and created a mess.",
+                "17": "Query malfunction! Your SQL got lost in a labyrinth of incorrect output.",
+                "18": "Error eruption! Your SQL statement erupted like a volcano, spewing wrong results.",
+                "19": "Troublesome SQL! Your query decided to have a mind of its own and produce confusion."
+            }
+        },
+        "cookies": {
+            "plural": "Cookies",
+            "privacy": "Privacy policy",
+            "disclaimer": "By using this website, you automatically accept that we use cookies.",
+            "rejectDisclaimer": "All cookies are functional!",
+            "accept": "Accept",
+            "reject": "Reject",
+            "betaInfo": " Please note that you are accessing the Beta Version of SQL-Training which is in the process of being tested before its official release. The sole purpose of this BETA Version is to conduct testing and obtain feedback."
+        }
+    },
+    "topic": {
+        "numberSolved": "{{number}} exercises solved"
+    },
+    "exercise": {
+        "exercise_one": "Exercise",
+        "exercise_other": "Exercises",
+        "solution_one": "Solution",
+        "solution_other": "Solutions",
+        "dataModel": "Data Model",
+        "dataModelInfo": "This is the data model",
+        "showDataModel": "Show Datamodel",
+        "checkAnswer": "Check answer (alt+c)",
+        "solution": "Solution (alt+s)",
+        "executeQuery": "Execute query (alt+x)",
+        "resetDB": "Reset DB (alt+z)",
+        "clear": "Clear editor (alt+a)",
+        "checkAnswerMac": "Check answer (ctrl+c)",
+        "solutionMac": "Solution (ctrl+s)",
+        "executeQueryMac": "Execute query (ctrl+x)",
+        "resetDBMac": "Reset DB (ctrl+z)",
+        "clearMac": "Clear editor (ctrl+a)",
+        "next": "Next exercise",
+        "prev": "Previous exercise",
+        "queryTableTitle": "Query",
+        "solutionTableTitle": "Solution"
+    },
+    "FOTypes": {
+        "0": "Exercise Title",
+        "1": "Topic Title",
+        "2": "Topic Tag",
+        "3": "Exercise Tag",
+        "4": "Difficulty",
+        "5": "Topic"
+    },
+    "difficulty": {
+        "1": "Easy",
+        "2": "Medium",
+        "3": "Hard"
+    },
+    "feedback": {
+        "general": "General",
+        "positive": "Positive",
+        "negative": "Negative",
+        "ui": "UI",
+        "ux": "UX",
+        "improvements": "Improvements",
+        "submit": "Submit",
+        "info": "No personal information is being saved.",
+        "rating": "Don't forget the stars",
+        "toomuch": "Too many feedbacks",
+        "thx": "Thank you!"
+    },
+    "marked": {
+        "title": "Marked Exercises"
+    },
+    "stats": {
+        "wrong": "Wrong",
+        "correct": "Correct",
+        "untouched": "Untouched",
+        "touched": "Touched",
+        "nocourse": "Error: No Course",
+        "student_one": "{{count}} Student",
+        "student_other": "{{count}} Students"
+    },
+    "footer": {
+        "imprint": "Imprint",
+        "privacy": "Privacy",
+        "cookies": "Cookies",
+        "credits": "Credits"
+    },
+    "help": {
+        "help": "Help",
+        "intro": "Here you can find support for the Moodle tool Sql-Train.\n\nOur tool consists of three pages:\n01. The topic overview\n02. The exercise overview\n03. The exercise page",
+        "navigationBarTitle": "Navigation bar",
+        "navigationBarText": "Each page has a navigation bar, which is packed with many features:",
+        "topicPageTitle": "Topic overview",
+        "topicPageText": "In the topic overview, all available topics are listed and you can choose the appropriate topic according to your competence. In addition, information about your learning progress is displayed on the page.",
+        "exercisesPageTitle": "Exercise overview",
+        "exercisesPageText": "All exercises of a topic are listed in the exercise overview. Problems that have already been solved are marked in green. Problems that have been solved incorrectly are marked red.",
+        "editorPageTitle": "Exercise page",
+        "editorPageText1": "The questions are solved in the exercise page. Both the solution and any sql commands can be entered and executed in the input window on the left. The results are displayed in the output window on the right. In certain cases, such as \"Check answer\", the output window splits into two windows, so that the tables can be better compared with each other.",
+        "editorPageText2": "Important: \nTo ensure correctness when checking queries, each time the user clicks on \"Check answer\" or \"Show solution\", the database is first reseted before the user's query is checked. This assures that the query is executed on the data model whose state is exactly intended for the exercise. So you could work on exercises in any order. \nWhen you do an exercise, you work on your own database located in your university. So you could use the data model you installed in SQL-Train from your regular SQL shell. Use \\dn in psql to find the created schemas."
+    },
+    "tour": {
+        "exercise": {
+            "question": "",
+            "points": "",
+            "editor": "",
+            "execute": "",
+            "check": "",
+            "solution": "",
+            "datamodel": "",
+            "clear": "",
+            "reset": "",
+            "next": "",
+            "table": ""
+        }
+    }
+}

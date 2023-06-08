@@ -1,0 +1,54 @@
+/*
+ * SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Rajbir Singh, Niklas Sirch, Jan Swiridow, Duc Minh Vu, Mike Wegele
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+body {
+  margin: 4rem;
+  text-align: justify;
+  hyphens: auto;
+  background: transparent;
+  color: #ffffff;
+}
+
+pre{
+  color: #F98113
+}
+
+html {
+  background: #333333;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(51,102,204)
+}
+
+a:link {
+  color: rgb(51,102,204)
+}
+
+h1, h2 {
+  color: #F98113
+}
+
+h3 {
+  padding-left: 1rem;
+}
+
+h3::before {
+  content: "> ";
+}
+
+h4 {
+ padding-left: 2rem 
+}
+
+p {
+ padding-left: 2.5rem 
+}
+
+ul {
+  padding-left: 3.5px;
+}

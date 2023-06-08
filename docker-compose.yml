@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Rajbir Singh, Niklas Sirch, Jan Swiridow, Duc Minh Vu, Mike Wegele
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+version: "0.1"
+services:
+  sql-training:
+    container_name: django_container
+    env_file:
+      - ./.env
+    build:
+      context: ./
+    ports:
+      - 8000:8000
+    network_mode: bridge
+    volumes:
+      - ./static:/sql-training/static
+      - /var/log/sql-training/:/var/log/sql-training/
+    depends_on:
+      - memcached
+  memcached:
+    container_name: memcached
+    image: memcached:1.6.20-alpine
+    network_mode: bridge
+    ports:
+      - 11211:11211

@@ -1,0 +1,24 @@
+<!--
+SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Rajbir Singh, Niklas Sirch, Jan Swiridow, Duc Minh Vu, Mike Wegele
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{{ block.super }} - {% trans "Available via LMS" %}{% endblock title %}
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+    <div class="container">
+      <h1>{% translate "Page Only Accessible via University LMS" %}</h1>
+      <p class="message">{% blocktrans trimmed %}
+        This page is only available through the university's Learning
+         Management System.
+      {% endblocktrans %}</p>
+      <a href="{{ lms_url }}" class="button">{% translate "Go to LMS" %}</a>
+    </div>
+{% endblock body %}

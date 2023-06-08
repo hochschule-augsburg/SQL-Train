@@ -1,0 +1,48 @@
+<!--
+SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Rajbir Singh, Niklas Sirch, Jan Swiridow, Duc Minh Vu, Mike Wegele
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+{% extends 'base.html' %} {% load static i18n %} {% block title %}{{ block.super}} {% trans "Credits" %}{% endblock title %} {% block head %}
+<link rel="stylesheet" href="{% static 'ltiapi/nice-text.css' %}" />
+{% endblock head %} {% block body %}
+
+<div style="justify-content: center; display: flex;">
+<pre>
+ ________  ________  ___                    _________  ________  ________  ___  ________      
+ |\   ____\|\   __  \|\  \                  |\___   ___\\   __  \|\   __  \|\  \|\   ___  \    
+ \ \  \___|\ \  \|\  \ \  \      ___________\|___ \  \_\ \  \|\  \ \  \|\  \ \  \ \  \\ \  \   
+  \ \_____  \ \  \\\  \ \  \    |\____________\  \ \  \ \ \   _  _\ \   __  \ \  \ \  \\ \  \  
+   \|____|\  \ \  \\\  \ \  \___\|____________|   \ \  \ \ \  \\  \\ \  \ \  \ \  \ \  \\ \  \ 
+     ____\_\  \ \_____  \ \_______\                \ \__\ \ \__\\ _\\ \__\ \__\ \__\ \__\\ \__\
+    |\_________\|___| \__\|_______|                 \|__|  \|__|\|__|\|__|\|__|\|__|\|__| \|__|
+    \|_________|     \|__|                                                                     
+                                                                                                  
+                                                                                            
+</pre>
+</div>
+
+<div style="display: flex; justify-content: space-evenly;">
+<div>
+    <h3>Nicolas Bota</h3>
+    <h3>Niklas Sirch</h3>
+</div>
+<div>
+    <h3>Marcel Geiger</h3>
+    <h3>Jan Swiridow</h3>    
+</div>
+<div><h3>Florian Paul</h3>
+    <h3>Duc Minh Vu</h3>    
+</div>
+<div>
+    <h3>Rajbir Singh</h3>
+    <h3>Mike Wegele</h3>
+</div>
+
+
+
+
+</div>
+
+{% endblock body %}

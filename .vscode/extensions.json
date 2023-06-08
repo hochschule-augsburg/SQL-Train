@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "ms-python.isort",
+        "visualstudioexptteam.vscodeintellicode",
+        "visualstudioexptteam.intellicode-api-usage-examples",
+        "esbenp.prettier-vscode",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "donjayamanne.python-environment-manager",
+        "ms-python.black-formatter",
+        "hediet.vscode-drawio"
+    ]
+}
