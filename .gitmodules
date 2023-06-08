@@ -1,0 +1,4 @@
+[submodule "exercises_data"]
+	path = exercises_data
+	url = https://gitlab.informatik.hs-augsburg.de/sql-training/exercises
+    ignore = all
