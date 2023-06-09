@@ -8,6 +8,7 @@ exercises/fixtures/*.yaml
 
 *.png*
 !assets/screenshot.png*
+!docs/admin/images/*.png
 
 # Created by https://www.toptal.com/developers/gitignore/api/pycharm,visualstudio,visualstudiocode,python,django,windows,macos,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=pycharm,visualstudio,visualstudiocode,python,django,windows,macos,linux
