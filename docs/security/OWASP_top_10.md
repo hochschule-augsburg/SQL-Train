@@ -5,86 +5,119 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
 # OWASP Top 10
+
 ## List with Mitigations
 
-### [A01:2021 – Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/)[¶](https://cheatsheetseries.owasp.org/IndexTopTen.html#a022021-cryptographic-failures)
+### [A01:2021 – Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/)
 
-- [Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
-  - At the moment only one role is present. A user can only access their own
-    data. Authentication is being.
-- [Insecure Direct Object Reference Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html)
-  - As above
-- [Transaction Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Transaction_Authorization_Cheat_Sheet.html)
-  - No Transaction Authorization present
-- [Cross-Site Request Forgery Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
-  - CSRF token for every insecure HTTP method except lti-register, -login and
-    launch because they are secured by OpenID
+- Authentication
+  - Authentication is done by PyLTI1p3. When a LTI launch was successful the
+    user is being logged in with a Django session.
+- Authorization
+  - Roles given by LTI are respected. This means an Instructor or Administrator
+    has staff privileges. This give the ability to use the statistics api and to
+    use a blank admin page. Staff user data also is not deleted automatically.
+- CSRF
+  - CSRF token for every insecure HTTP method except for lti-register,
+    OIDC-login and lti-launch because they are secured by OpenID and LMSs could
+    not use the CSRF token.
 
-### [A02:2021 – Cryptographic Failures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)[¶](https://cheatsheetseries.owasp.org/IndexTopTen.html#a022021-cryptographic-failures)
+### [A02:2021 – Cryptographic Failures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)
 
-- [Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)
-- [Transport Layer Protection Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html)
-- [HTTP Strict Transport Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html)
-  - Enabled 1 year HTTPS only
-  - In preload list
-- [TLS Cipher String Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/TLS_Cipher_String_Cheat_Sheet.html)
-  - https://ssl-config.mozilla.org/#server=nginx&version=1.17.7&config=modern&openssl=1.1.1k&guideline=5.6
-- [Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html)
+- HTTP Strict Transport Security
+  - Enabled
+  - For 1 year inactivity the browser will only use HTTPS.
+  - We also allow browsers to put sql-train on the preload list.
+- TLS
+  - We used the recommended settings for nginx from Mozilla
+    https://ssl-config.mozilla.org/#server=nginx&version=1.17.7&config=modern&openssl=1.1.1k&guideline=5.6
+- Secrets Management
   - Secrets are manually added via environment variables.
-- [Key Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Key_Management_Cheat_Sheet.html)
+  - Great care was done to check that no secrets come to Github.
+- Key Management
   - As pointed out in technical depts the private keys are unencrypted saved in
     the application database which comes from our PyLTI1p3 library but we cannot
     use them because this feature is by default disabled at the LMS.
 - [Pinning Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Pinning_Cheat_Sheet.html)
   - TODO
 
-### [A03:2021 – Injection](https://owasp.org/Top10/A03_2021-Injection/)[¶](https://cheatsheetseries.owasp.org/IndexTopTen.html#a032021-injection)
+### [A03:2021 – Injection](https://owasp.org/Top10/A03_2021-Injection/)
 
-- [Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html)
-- [LDAP Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/LDAP_Injection_Prevention_Cheat_Sheet.html)
-  - Not applicable
-- [OS Command Injection Defense Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html)
-  - No manual interaction with os
-- [Injection Prevention in Java Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_in_Java_Cheat_Sheet.html)
+- SQL Injections
+  - A principle inherited from the repDB integrated in SQL-Train is that
+    students work on their on database. So our Tool only provides a way of
+    interacting with it. This means all students can do with their database is
+    not the problem of SQL-Train.
+  - In respect for our application database (DjangoDB) we only use the Django
+    ORM to interact with our database so we should be safe on that end.
+- OS Command Injection Defense
+  - No manual interaction with the OS
+- REST Injection
   - Handled by NinjaAPI
-- [SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
-  - No raw SQL usage
-- [Query Parameterization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Query_Parameterization_Cheat_Sheet.html)
-  - Applied
-- [Cross Site Scripting Prevention Cheat_Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
-  - React and CSP
-- [DOM based XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html)
-  - React
-- [XSS Filter Evasion Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)
-- [Content Security Policy Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html)
+- Cross Site Scripting
 
-### [A04:2021 – Insecure Design](https://owasp.org/Top10/A04_2021-Insecure_Design/)[¶](https://cheatsheetseries.owasp.org/IndexTopTen.html#a042021-insecure-design)
+  - React:
 
--
+    Much of the work mitigating XSS vulnerabilities is done by the use of modern
+    web framework as React.
 
-### [A05:2021 – Security Misconfiguration](https://owasp.org/Top10/A05_2021-Security_Misconfiguration/)[¶](https://cheatsheetseries.owasp.org/IndexTopTen.html#a052021-security-misconfiguration)
+  - Reflected XSS
+
+    The only input SQL-Train get through the URL is the topic short the exercise
+    number. These parameters are validate via regular expression to only contain
+    numbers or slugs.
+
+  - Stored XSS
+
+    User created content coming from the server is all generated by the same
+    user. So other user cannot be attackted
+
+  - DOM Based XSS
+
+    [DOM based XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html)
+    is being folowed stricly.
+
+    React is forbidding or sanitizing most vulnerable operations.
+
+- Content Security Policy
+
+  - We try to keep our CSP as tight as possible. So all our our 'src's are set
+    to 'self' exempt 'style-src'. We used 'unsafe_inline' style at the beginning
+    of the development and some code is not ported to tss-react.
+
+### [A04:2021 – Insecure Design](https://owasp.org/Top10/A04_2021-Insecure_Design/)
+
+- See [Building Block View](../arc42/05_0_building_block_view) for more
+  information.
+
+### [A05:2021 – Security Misconfiguration](https://owasp.org/Top10/A05_2021-Security_Misconfiguration/)
 
 - We strictly followed the configuration documentation from Django
+- We use a minimal platform without any unnecessary features, components,
+  documentation, and samples.
 
-### [A06:2021 – Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)[¶](https://cheatsheetseries.owasp.org/IndexTopTen.html#a062021-vulnerable-and-outdated-components)
+### [A06:2021 – Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
 
 - npm audit: 0 vulnerabilities
 - pip-audit: 0 vulnerabilities
+- Github Dependabot active with mail notifications
 
-### [A07:2021 – Identification and Authentication Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/)[¶](https://cheatsheetseries.owasp.org/IndexTopTen.html#a072021-identification-and-authentication-failures)
+### [A07:2021 – Identification and Authentication Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/)
 
-- Authentication is done by LTI
+- Authentication is done by PyLTI1p3
 
-### [A08:2021 – Software and Data Integrity Failures](https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/)[¶](https://cheatsheetseries.owasp.org/IndexTopTen.html#a082021-software-and-data-integrity-failures)
+### [A08:2021 – Software and Data Integrity Failures](https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/)
 
-- Responsibility of Django Ninja
+- Responsibility of Django Ninja and React
 
-### [A09:2021 – Security Logging and Monitoring Failures](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/)[¶](https://cheatsheetseries.owasp.org/IndexTopTen.html#a092021-security-logging-and-monitoring-failures)
+### [A09:2021 – Security Logging and Monitoring Failures](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/)
 
+- **TODO** Flo
+- Logs are clear every week.
 - [Logging Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html)
 - [Application Logging Vocabulary Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Vocabulary_Cheat_Sheet.html)
 
-### [A10:2021 – Server-Side Request Forgery (SSRF)](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/)[¶](https://cheatsheetseries.owasp.org/IndexTopTen.html#a102021-server-side-request-forgery-ssrf)
+### [A10:2021 – Server-Side Request Forgery (SSRF)](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/)
 
 - SQL-Train is only accessible inside campus.
 - Not logged in users cannot manipulate external systems
