@@ -66,7 +66,14 @@ const Results: React.FC<props> = (props) => {
             api.pgStudApiCheckOrInstallDb({ topic_short: topicId, enumber: 0 }),
         )
         if (hasFailed(response)) {
-            setError(t("general.error.exercise"))
+            if (response.error.message) {
+                return setError(
+                    t("general.error.message", {
+                        message: response.error.message,
+                    }),
+                )
+            }
+            return setError(t("general.error.user_db"))
         }
     }, [setError, t, topicId])
 
