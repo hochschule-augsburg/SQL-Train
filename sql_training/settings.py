@@ -221,6 +221,8 @@ LANGUAGES = [
     ("de", _("German")),
 ]
 
+LOCALE_PATHS = [BASE_DIR / "locale"]
+
 # Logging
 # https://docs.djangoproject.com/en/4.2/topics/logging/
 

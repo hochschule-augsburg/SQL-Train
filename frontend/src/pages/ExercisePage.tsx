@@ -37,7 +37,6 @@ import { getSolutionContent } from "../utils/ExerciseUtils"
 import { fetchFavourites } from "../store/reducers/favourite"
 import ConfettiExplosion from "react-confetti-explosion"
 import { ErrorContext } from "../components/layout/ErrorContext"
-import ExerciseTour from "../components/exercise/ExerciseTour"
 
 const useStyles = makeStyles()(() => ({
     dataModel: {
@@ -523,7 +522,7 @@ const ExercisePage: React.FC = () => {
 
     return (
         <>
-            <ExerciseTour />
+            {/* <ExerciseTour /> */}
             <If condition={isExploding}>
                 <div className={classes.confettiWrapper}>
                     <ConfettiExplosion
