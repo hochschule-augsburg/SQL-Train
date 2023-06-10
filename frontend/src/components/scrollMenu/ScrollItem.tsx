@@ -9,6 +9,13 @@ import { Link } from "react-router-dom"
 import ExerciseButton from "../exercise/ExerciseButton"
 import { ExerciseItem } from "../../api"
 import { ExerciseEnum } from "../../store/reducers/userExercise"
+import { makeStyles } from "tss-react/mui"
+
+const useStyles = makeStyles()(() => ({
+    link: {
+        textDecoration: "none",
+    },
+}))
 
 interface Props {
     exercise: ExerciseItem
@@ -20,6 +27,8 @@ interface Props {
 }
 
 const Item: React.FC<Props> = (props) => {
+    const { classes } = useStyles()
+
     const { exercise, state, favourite, current, itemId, setBuffer } = props
     const visibility = React.useContext(VisibilityContext)
 
@@ -29,7 +38,7 @@ const Item: React.FC<Props> = (props) => {
         <Link
             id={itemId}
             to={"/topic/" + exercise.topic + "/exercise/" + exercise.enumber}
-            style={{ textDecoration: "none" }}
+            className={classes.link}
             onClick={setBuffer}
         >
             <ExerciseButton

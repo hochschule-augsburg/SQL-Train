@@ -35,11 +35,8 @@ const useStyles = makeStyles()(() => ({
         paddingRight: "4px",
         fontSize: "22px",
     },
-    ratingForm: {
-        display: "flex",
-        justifyContent: "space-evenly",
-        padding: "0px",
-        marginBottom: "30px",
+    form: {
+        margin: "15px",
     },
     button: {
         margin: "16px",
@@ -186,7 +183,7 @@ const Feedback: React.FC<Props> = (props) => {
                 }}
             >
                 <p className={classes.headline}>Feedback</p>
-                <Form style={{ margin: "15px" }}>
+                <Form className={classes.form}>
                     <FeedbackSection
                         rating={generalRating}
                         setRating={setGeneralRating}

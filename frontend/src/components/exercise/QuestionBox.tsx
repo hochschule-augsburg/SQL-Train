@@ -10,6 +10,7 @@ import { Exercise, Topic } from "../../api"
 const useStyles = makeStyles()(() => ({
     questionBox: {
         backgroundColor: config.THEME_COLORS.SECONDARY,
+        color: config.THEME_COLORS.NEUTRAL,
         minHeight: "100px",
         height: "auto",
         marginLeft: "5%",
@@ -24,6 +25,9 @@ const useStyles = makeStyles()(() => ({
         bottom: "4px",
         right: "9px",
         cursor: "pointer",
+    },
+    marked: {
+        color: config.THEME_COLORS.PRIMARY,
     },
 }))
 
@@ -50,33 +54,19 @@ const QuestionBox: React.FC<Props> = (props) => {
     const { exercise, topic, toggleFavourite, marked } = props
 
     return (
-        <div
-            className={classes.questionBox}
-            style={{ backgroundColor: config.THEME_COLORS.SECONDARY }}
-        >
-            <p style={{ color: config.THEME_COLORS.NEUTRAL }}>
+        <div className={classes.questionBox}>
+            <p>
                 {`${topic?.title}/${exercise?.enumber}: ${exercise?.title}`}
                 <br />
                 {exercise?.question}
             </p>
 
             <i
-                className={cx("bi bi-star-fill", classes.star)}
-                style={{
-                    color: marked
-                        ? config.THEME_COLORS.PRIMARY
-                        : config.THEME_COLORS.NEUTRAL,
-                }}
-                onClick={toggleFavourite}
-            />
-
-            <i
-                className={cx("bi bi-star-fill", classes.star)}
-                style={{
-                    color: marked
-                        ? config.THEME_COLORS.PRIMARY
-                        : config.THEME_COLORS.NEUTRAL,
-                }}
+                className={cx(
+                    "bi bi-star-fill",
+                    classes.star,
+                    marked ? classes.marked : "",
+                )}
                 onClick={toggleFavourite}
             />
         </div>

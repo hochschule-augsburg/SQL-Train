@@ -18,6 +18,7 @@ const useStyles = makeStyles()(() => ({
         marginTop: "20px",
     },
     progress: {
+        backgroundColor: config.THEME_COLORS.PRIMARY,
         marginTop: "5px",
         marginLeft: "15px",
         marginRight: "15px",
@@ -56,7 +57,6 @@ const Topic: React.FC<Props> = (props) => {
             <TopicButton text={topicTitle} tag={tag} id={"Button" + topicId} />
             <LinearProgress
                 aria-label="Correct Exercises"
-                style={{ backgroundColor: config.THEME_COLORS.PRIMARY }}
                 className={classes.progress}
                 id={"Progress" + topicId}
                 variant={"determinate"}

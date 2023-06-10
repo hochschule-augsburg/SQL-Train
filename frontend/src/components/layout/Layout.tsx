@@ -29,6 +29,9 @@ const useStyles = makeStyles<{ darkMode: boolean }>()(
                 ? config.THEME_COLORS.DARK
                 : config.THEME_COLORS.NEUTRAL,
         },
+        routerDiv: {
+            minHeight: "calc(100vh - (59px + 34px))",
+        },
     }),
 )
 
@@ -111,7 +114,7 @@ const Layout: React.FC = () => {
                 <CookieDisclaimer onAccept={onAccept} onReject={onReject} />
             </If>
             <NavBar animateHandler={() => setSqlSwitch((t) => !t)} />
-            <div style={{ minHeight: "calc(100vh - (59px + 34px))" }}>
+            <div className={classes.routerDiv}>
                 <AnimatedDiv transSwitch={transSwitch}>
                     <Router />
                 </AnimatedDiv>

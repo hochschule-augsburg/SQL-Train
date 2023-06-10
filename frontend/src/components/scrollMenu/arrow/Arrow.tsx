@@ -6,6 +6,20 @@ import React, { useContext } from "react"
 import { VisibilityContext } from "react-horizontal-scrolling-menu"
 import config from "../../../config.json"
 import { DarkModeContext } from "../../layout/DarkModeContext"
+import { makeStyles } from "tss-react/mui"
+
+const useStyles = makeStyles<{ darkMode: boolean }>()(
+    (theme, { darkMode }) => ({
+        arrow: {
+            border: "none",
+            backgroundColor: "transparent",
+            fontWeight: "bold",
+            color: darkMode
+                ? config.THEME_COLORS.NEUTRAL
+                : config.THEME_COLORS.DARK,
+        },
+    }),
+)
 
 /**
  * LeftArrow component represents the left arrow button.
@@ -49,22 +63,12 @@ export const RightArrow: React.FC = () => {
  * @returns {JSX.Element} Arrow component.
  */
 const Arrow: React.FC<ArrowProps> = (props: ArrowProps) => {
-    const { children, disabled, onClick } = props
     const { darkMode } = useContext(DarkModeContext)
+    const { classes } = useStyles({ darkMode })
+    const { children, disabled, onClick } = props
 
     return (
-        <button
-            disabled={disabled}
-            onClick={onClick}
-            style={{
-                border: "none",
-                backgroundColor: "transparent",
-                fontWeight: "bold",
-                color: darkMode
-                    ? config.THEME_COLORS.NEUTRAL
-                    : config.THEME_COLORS.DARK,
-            }}
-        >
+        <button disabled={disabled} onClick={onClick} className={classes.arrow}>
             {children}
         </button>
     )

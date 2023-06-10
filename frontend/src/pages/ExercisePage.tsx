@@ -42,26 +42,29 @@ import { fetchFavourites } from "../store/reducers/favourite"
 import ConfettiExplosion from "react-confetti-explosion"
 import { ErrorContext } from "../components/layout/ErrorContext"
 
-const useStyles = makeStyles()(() => ({
-    dataModel: {
-        display: "block",
-        width: "90%",
-        marginLeft: "auto",
-        marginRight: "auto",
-        marginBottom: "20px",
-        height: "auto",
-        border: "solid 1px black",
-        justifySelf: "center",
-    },
-    confettiWrapper: {
-        display: "flex",
-        justifyContent: "space-between",
-        width: "50%",
-        position: "fixed",
-        left: "50%",
-        transform: "translateX(-50%)",
-    },
-}))
+const useStyles = makeStyles<{ darkMode: boolean }>()(
+    (theme, { darkMode }) => ({
+        dataModel: {
+            display: "block",
+            width: "90%",
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginBottom: "20px",
+            height: "auto",
+            border: "solid 1px black",
+            justifySelf: "center",
+            filter: darkMode ? "invert(100%)" : "none",
+        },
+        confettiWrapper: {
+            display: "flex",
+            justifyContent: "space-between",
+            width: "50%",
+            position: "fixed",
+            left: "50%",
+            transform: "translateX(-50%)",
+        },
+    }),
+)
 
 export enum AllotmentState {
     NEW = "new",
@@ -79,9 +82,9 @@ export enum AllotmentState {
  */
 const ExercisePage: React.FC = () => {
     const { t } = useTranslation("common")
-    const { classes } = useStyles()
-
     const { darkMode } = useContext(DarkModeContext)
+    const { classes } = useStyles({ darkMode })
+
     const { setError } = useContext(ErrorContext)
 
     const dispatch = useAppDispatch()
@@ -578,7 +581,6 @@ const ExercisePage: React.FC = () => {
                         id="dataModel"
                         ref={ref}
                         className={classes.dataModel}
-                        style={{ filter: darkMode ? "invert(100%)" : "none" }}
                         alt="dataModel"
                         src={`/media${selectedTopic?.datamodel_representation}`}
                     />

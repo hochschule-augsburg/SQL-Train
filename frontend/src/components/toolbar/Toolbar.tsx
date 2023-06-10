@@ -28,6 +28,9 @@ const useStyles = makeStyles()(() => ({
         borderColor: config.THEME_COLORS.NEUTRAL,
         borderBottomStyle: "solid",
     },
+    link: {
+        textDecoration: "none",
+    },
 }))
 
 interface Props {
@@ -216,7 +219,7 @@ const Toolbar: React.FC<Props> = (props) => {
                         "/exercise/" +
                         getPrevENumber()
                     }
-                    style={{ textDecoration: "none" }}
+                    className={classes.link}
                 >
                     <ToolbarButton
                         id={"prevBut"}
@@ -238,7 +241,7 @@ const Toolbar: React.FC<Props> = (props) => {
                         "/exercise/" +
                         getNextENumber()
                     }
-                    style={{ textDecoration: "none" }}
+                    className={classes.link}
                 >
                     <ToolbarButton
                         id={"nextBut"}
