@@ -33,7 +33,9 @@ def filter_exercises(request: HttpRequest, filters: s.ExerciseFilter = Query(...
     if filters.topics:
         topics = topics.filter(short__in=filters.topics)
     for topic in topics:
-        user_exercise = m.UserExercise.objects.filter(exercise=models.OuterRef("id"))
+        user_exercise = m.UserExercise.objects.filter(
+            exercise=models.OuterRef("id"), user=request.user
+        )
         exercises = filters.filter(m.Exercise.objects.filter(topic=topic)).annotate(
             is_correct=Coalesce(Subquery(user_exercise.values("is_correct")), None),
             favourite=Coalesce(Subquery(user_exercise.values("favourite")), False),
