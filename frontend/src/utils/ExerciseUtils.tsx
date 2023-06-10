@@ -32,3 +32,46 @@ export const getSolutionContent = (response: Solution[]): string => {
     })
     return results
 }
+
+export type ExerciseURLParams = {
+    topicId: string
+    exerciseId: string
+}
+
+/**
+ * Validates the exercise parameters extracted from the URL.
+ * @param params - The exercise URL parameters.
+ * @returns An object containing the validated topicId and exerciseId.
+ */
+export const validateExerciseFromURL = (params: ExerciseURLParams) => {
+    return {
+        topicId: validateTopicFromURL(params.topicId),
+        exerciseId: validateENumberFromURL(params.exerciseId),
+    }
+}
+
+/**
+ * Validates the topic parameter extracted from the URL.
+ * @param topic - The topic extracted from the URL.
+ * @returns The validated topic or "none" if it is invalid.
+ */
+export const validateTopicFromURL = (topic: string) => {
+    const slugRegex = /^[a-zA-Z0-9_-]+$/
+    if (topic.length > 20 || !slugRegex.test(topic)) {
+        return "none"
+    }
+    return topic
+}
+
+/**
+ * Validates the exercise number parameter extracted from the URL.
+ * @param enumber - The exercise number extracted from the URL.
+ * @returns The validated exercise number as a parsed integer or 1 if it is invalid.
+ */
+export const validateENumberFromURL = (enumber: string) => {
+    const numberRegex = /^\d+$/
+    if (!numberRegex.test(enumber)) {
+        return 1
+    }
+    return parseInt(enumber)
+}

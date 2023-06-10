@@ -22,6 +22,7 @@ import { DefaultApi } from "../api"
 import { apiExec, hasFailed } from "../utils/ApiUtils"
 import { useTranslation } from "react-i18next"
 import { ErrorContext } from "../components/layout/ErrorContext"
+import { validateTopicFromURL } from "../utils/ExerciseUtils"
 
 const useStyles = makeStyles()(() => ({
     divWrapper: {
@@ -53,7 +54,9 @@ const ExercisesPage: React.FC = () => {
 
     const { classes } = useStyles()
 
-    const { topicId } = useParams<ExercisesPageParams>()
+    const topicId = validateTopicFromURL(
+        useParams<ExercisesPageParams>().topicId,
+    )
 
     const exercises = useSelector((state: RootState) => state.exercises)
     const userExercises = useSelector((state: RootState) => state.userExercises)
