@@ -4,22 +4,13 @@ SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Ra
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
-# SQL-Train
-
-```{include} ../README.md
-```
+# Admin
 
 ```{toctree}
-:caption: Index
+:caption: Index-Admin
 :maxdepth: 1
 
-arc42/index
-dev/index
-admin/index
-security/index
+register_tool
+add_to_course
 
-description_for_lecturers
-
-apidocs-backend/index
-apidocs-frontend/modules
 ```

@@ -10,7 +10,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <br />
 <h1 align="center">
     <a href="#">
-        <img src="./assets/logo-500x500.png" alt="Logo" height="180"> </br>
+        <img src="assets/logo-500x500.png" alt="Logo" height="180"> </br>
         <b>SQL-Train</b>
     </a>
 </h1>
@@ -29,12 +29,12 @@ execute and solve SQL tasks directly in your browser. The Tool can be integrated
 in to LMSs via LTI (Learning Tools Interoperability).
 
 <div align="center">
-    <img src="./assets/screenshot.png" alt="Screenshot" height="500"> </br>
+    <img src="assets/screenshot.png" alt="Screenshot" height="500"> </br>
 </div>
 
 ## Get Started
 
-## Version Compatibility
+### Version Compatibility
 
 | Python | Node | Libpq |
 | ------ | ---- | ----- |
@@ -82,9 +82,9 @@ python manage.py createsuperuser
 ### Start Application
 
 After launching the frontend for the first time, you need to log in to
-[localhost:8000/admin](localhost:8000/admin) using the superuser account you
+[http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) using the superuser account you
 just created in order to establish a connection to the website. Then you can use
-the app at the [localhost:8000/](localhost:8000/).
+the app at the [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
 **See Deployment View in docs to set up for production.**
 
