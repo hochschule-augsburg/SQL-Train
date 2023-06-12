@@ -81,6 +81,10 @@ python manage.py createsuperuser
 
 ### Start Application
 
+```bash
+python manage.py runserver
+```
+
 After launching the frontend for the first time, you need to log in to
 [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) using the superuser account you
 just created in order to establish a connection to the website. Then you can use
