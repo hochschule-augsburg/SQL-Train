@@ -1,0 +1,40 @@
+# SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Rajbir Singh, Niklas Sirch, Jan Swiridow, Duc Minh Vu, Mike Wegele
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+- model: exercises.ttag
+  pk: Beginner
+  fields: {}
+- model: exercises.etag
+  pk: SELECT
+  fields: {}
+- model: exercises.etag
+  pk: JOIN
+  fields: {}
+- model: exercises.etag
+  pk: Set
+  fields: {}
+- model: exercises.etag
+  pk: DATE
+  fields: {}
+- model: exercises.etag
+  pk: Subquery
+  fields: {}
+- model: exercises.etag
+  pk: ALTER
+  fields: {}
+- model: exercises.etag
+  pk: UPDATE
+  fields: {}
+- model: exercises.etag
+  pk: DELETE
+  fields: {}
+- model: exercises.etag
+  pk: calc
+  fields: {}
+- model: exercises.etag
+  pk: COALESCE
+  fields: {}
+- model: exercises.etag
+  pk: COUNT
+  fields: {}

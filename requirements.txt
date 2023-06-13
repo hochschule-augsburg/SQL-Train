@@ -10,15 +10,19 @@ django-csp==3.7
 django-modeltranslation==0.18.9
 django-ninja==0.21.0
 django_admin_rangefilter==0.10.0
-gunicorn==20.1.0
-freezegun==1.2.2
 psycopg==3.1.8
 psycopg-binary==3.1.8
-# psycopg-c==3.1.8
 psycopg-pool==3.1.7
 PyLTI1p3==2.0.0
 PyYAML==6.0
-uvicorn[standard]==0.21.1
-pymemcache==4.0.0
 python-dotenv==1.0.0
 pytz==2023.3
+
+# deploy
+gunicorn==20.1.0
+uvicorn[standard]==0.21.1
+# psycopg-c==3.1.8
+pymemcache==4.0.0
+
+# testing
+freezegun==1.2.2

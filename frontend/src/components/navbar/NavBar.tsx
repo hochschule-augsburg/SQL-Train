@@ -19,6 +19,7 @@ import HelpDrawer from "../../components/helpdrawer/HelpDrawer"
 
 const useStyles = makeStyles()(() => ({
     navBar: {
+        backgroundColor: config.THEME_COLORS.PRIMARY,
         color: config.THEME_COLORS.NEUTRAL,
         fontWeight: "bold",
         display: "flex",
@@ -106,10 +107,7 @@ const NavBar: React.FC<Props> = (props) => {
 
     return (
         <>
-            <Navbar
-                style={{ backgroundColor: config.THEME_COLORS.PRIMARY }}
-                className={classes.navBar}
-            >
+            <Navbar className={classes.navBar}>
                 <NavbarBrand className={classes.navBarBrand}>
                     <span
                         onClick={() => handleIconClick("/")}

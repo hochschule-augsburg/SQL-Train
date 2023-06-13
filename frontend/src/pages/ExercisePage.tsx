@@ -33,36 +33,38 @@ import {
 import { fetchTopic } from "../store/reducers/topic"
 import { useSelector } from "react-redux"
 import { fetchExercise } from "../store/reducers/exercise"
-import { getSolutionContent } from "../utils/ExerciseUtils"
+import {
+    getSolutionContent,
+    validateExerciseFromURL,
+    ExerciseURLParams,
+} from "../utils/ExerciseUtils"
 import { fetchFavourites } from "../store/reducers/favourite"
 import ConfettiExplosion from "react-confetti-explosion"
 import { ErrorContext } from "../components/layout/ErrorContext"
 
-const useStyles = makeStyles()(() => ({
-    dataModel: {
-        display: "block",
-        width: "90%",
-        marginLeft: "auto",
-        marginRight: "auto",
-        marginBottom: "20px",
-        height: "auto",
-        border: "solid 1px black",
-        justifySelf: "center",
-    },
-    confettiWrapper: {
-        display: "flex",
-        justifyContent: "space-between",
-        width: "50%",
-        position: "fixed",
-        left: "50%",
-        transform: "translateX(-50%)",
-    },
-}))
-
-type ExercisePageParams = {
-    topicId: string
-    exerciseId: string
-}
+const useStyles = makeStyles<{ darkMode: boolean }>()(
+    (theme, { darkMode }) => ({
+        dataModel: {
+            display: "block",
+            width: "90%",
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginBottom: "20px",
+            height: "auto",
+            border: "solid 1px black",
+            justifySelf: "center",
+            filter: darkMode ? "invert(100%)" : "none",
+        },
+        confettiWrapper: {
+            display: "flex",
+            justifyContent: "space-between",
+            width: "50%",
+            position: "fixed",
+            left: "50%",
+            transform: "translateX(-50%)",
+        },
+    }),
+)
 
 export enum AllotmentState {
     NEW = "new",
@@ -80,15 +82,17 @@ export enum AllotmentState {
  */
 const ExercisePage: React.FC = () => {
     const { t } = useTranslation("common")
-    const { classes } = useStyles()
-
     const { darkMode } = useContext(DarkModeContext)
+    const { classes } = useStyles({ darkMode })
+
     const { setError } = useContext(ErrorContext)
 
     const dispatch = useAppDispatch()
 
     const ref = useRef<HTMLImageElement | null>(null)
-    const { topicId, exerciseId } = useParams<ExercisePageParams>()
+    const { topicId, exerciseId } = validateExerciseFromURL(
+        useParams<ExerciseURLParams>(),
+    )
 
     const selectedTopic = useSelector(
         (state: RootState) => state.topic.selectedTopic,
@@ -163,10 +167,10 @@ const ExercisePage: React.FC = () => {
     )
 
     useEffect(() => {
-        dispatch(fetchExercise(topicId, parseInt(exerciseId))).catch(() =>
+        dispatch(fetchExercise(topicId, exerciseId)).catch(() =>
             setError(t("general.error.exercise")),
         )
-        dispatch(fetchUserExercise(topicId, parseInt(exerciseId))).catch(() =>
+        dispatch(fetchUserExercise(topicId, exerciseId)).catch(() =>
             setError(t("general.error.user_exercise")),
         )
         dispatch(fetchUserExercises(topicId)).catch(() =>
@@ -200,8 +204,7 @@ const ExercisePage: React.FC = () => {
 
     useEffect(() => {
         const favouriteExercises = favourites.find(
-            (e) =>
-                e.topic_short === topicId && e.enumber === parseInt(exerciseId),
+            (e) => e.topic_short === topicId && e.enumber === exerciseId,
         )
         setMarked(favouriteExercises !== undefined)
     }, [exerciseId, favourites, topicId])
@@ -237,7 +240,7 @@ const ExercisePage: React.FC = () => {
             return
         }
         const response = await apiExec(DefaultApi, (api) =>
-            api.exercisesApiPatchUserExercise(topicId, parseInt(exerciseId), {
+            api.exercisesApiPatchUserExercise(topicId, exerciseId, {
                 buffer_save: inputQuery,
             }),
         )
@@ -253,7 +256,7 @@ const ExercisePage: React.FC = () => {
      */
     const handleListSolution = useCallback(async () => {
         const response = await apiExec(DefaultApi, (api) =>
-            api.exercisesApiListSolution(topicId, parseInt(exerciseId)),
+            api.exercisesApiListSolution(topicId, exerciseId),
         )
         if (hasFailed(response)) {
             return setUserDBError(response.error)
@@ -282,14 +285,14 @@ const ExercisePage: React.FC = () => {
         const responseUserRes = await apiExec(DefaultApi, (api) =>
             api.pgStudApiExecuteQuery({
                 topic_short: topicId,
-                enumber: parseInt(exerciseId),
+                enumber: exerciseId,
                 query: inputQuery,
             }),
         )
         const responseSolRes = await apiExec(DefaultApi, (api) =>
             api.pgStudApiSolutionResult({
                 topic_short: topicId,
-                enumber: parseInt(exerciseId),
+                enumber: exerciseId,
             }),
         )
         if (hasFailed(responseUserRes)) {
@@ -395,7 +398,7 @@ const ExercisePage: React.FC = () => {
         const response = await apiExec(DefaultApi, (api) =>
             api.pgStudApiCheckAnswerCorrectApi({
                 topic_short: topicId,
-                enumber: parseInt(exerciseId),
+                enumber: exerciseId,
                 query: inputQuery,
             }),
         )
@@ -446,7 +449,7 @@ const ExercisePage: React.FC = () => {
         const response = await apiExec(DefaultApi, (api) =>
             api.pgStudApiExecuteQuery({
                 topic_short: topicId,
-                enumber: parseInt(exerciseId),
+                enumber: exerciseId,
                 query: inputQuery,
             }),
         )
@@ -475,7 +478,7 @@ const ExercisePage: React.FC = () => {
         const response = await apiExec(DefaultApi, (api) =>
             api.pgStudApiResetDb({
                 topic_short: topicId,
-                enumber: parseInt(exerciseId),
+                enumber: exerciseId,
             }),
         )
         if (hasFailed(response)) {
@@ -498,7 +501,7 @@ const ExercisePage: React.FC = () => {
      */
     const toggleFavourite = useCallback(async () => {
         const response = await apiExec(DefaultApi, (api) =>
-            api.exercisesApiPatchUserExercise(topicId, parseInt(exerciseId), {
+            api.exercisesApiPatchUserExercise(topicId, exerciseId, {
                 favourite: !marked,
             }),
         )
@@ -578,7 +581,6 @@ const ExercisePage: React.FC = () => {
                         id="dataModel"
                         ref={ref}
                         className={classes.dataModel}
-                        style={{ filter: darkMode ? "invert(100%)" : "none" }}
                         alt="dataModel"
                         src={`/media${selectedTopic?.datamodel_representation}`}
                     />

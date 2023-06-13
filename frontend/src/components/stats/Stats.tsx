@@ -9,6 +9,11 @@ import { RootState } from "../../store/reducers/Store"
 import { useSelector } from "react-redux"
 import StatDiagram from "./StatDiagram"
 import { Labels } from "../../pages/StatsPage"
+import { makeStyles } from "tss-react/mui"
+
+const useStyles = makeStyles()(() => ({
+    diagram: { padding: "30px", height: "300px", width: "300px" },
+}))
 
 interface Props {
     isSearchResult: boolean
@@ -27,6 +32,8 @@ interface Props {
  */
 
 const Stats: React.FC<Props> = (props) => {
+    const { classes } = useStyles()
+
     const search = useSelector((state: RootState) => state.profSearch)
     const { isSearchResult, index, stats } = props
 
@@ -122,7 +129,7 @@ const Stats: React.FC<Props> = (props) => {
                 text={getRel(getWrong())}
                 label={Labels.wrong}
             />
-            <div style={{ padding: "30px", height: "300px", width: "300px" }}>
+            <div className={classes.diagram}>
                 <StatDiagram data={getData()} />
             </div>
         </>

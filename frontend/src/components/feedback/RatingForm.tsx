@@ -12,6 +12,7 @@ const useStyles = makeStyles()(() => ({
         paddingTop: "5px",
         paddingRight: "4px",
         fontSize: "22px",
+        color: "#ffc62b",
     },
     ratingForm: {
         display: "flex",
@@ -51,7 +52,6 @@ const RatingForm: React.FC<Props> = (props) => {
                         rating >= star ? "bi bi-star-fill" : "bi bi-star",
                         classes.rating,
                     )}
-                    style={{ color: rating >= star ? "#ffc62b" : "" }}
                     onClick={() => setRating(star)}
                 />
             ))}

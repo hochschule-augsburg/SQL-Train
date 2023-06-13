@@ -4,8 +4,8 @@ SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Ra
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
-## Description for Lecturers
-### Structure
+# Description for Lecturers
+## Structure
 
 The frontend of SQL-Train is implemented as a web application using
 TypeScript/React. It is divided roughly into the following parts:
@@ -20,7 +20,7 @@ language selector, marked list, feedback, help) and a footer (imprint, privacy,
 credits). The statistics page is only visible for the professors and serves as
 simple dashboard.
 
-### Selecting a topic
+## Selecting a topic
 
 Before selecting an exercise the user has to choose a topic in the topics-page.
 The progress bar and the difficulty badge on the topic help the user to choose a
@@ -30,7 +30,7 @@ specifically (e.g: JOIN exercises).
 
 ![topics-page](./images/topics-page.png "topics-page")
 
-### Selecting an exercise
+## Selecting an exercise
 
 After selecting a topic, the user can see all exercises of the selected topic.
 The exercise buttons may have three color: red for wrong, green for correct and
@@ -39,7 +39,7 @@ exercise is marked by the user.
 
 ![exercises-page](./images/exercises-page.png "exercises-page")
 
-### Practicing
+## Practicing
 
 The exercise page shows the question of the selected exercise and a input &
 output box which consists of three panes. The first pane is an editor with a

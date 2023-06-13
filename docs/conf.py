@@ -26,7 +26,6 @@ extensions = [
     "sphinxcontrib.mermaid",
     "autodoc2",
     "sphinx_favicon",
-    "sphinx_tippy",
 ]
 
 

@@ -120,7 +120,7 @@ const TopicPage: React.FC = () => {
                 (topic) => topic.short == topicOverview.topic,
             )
             if (topicData) {
-                currentUserTopics.push({
+                currentUserTopics.unshift({
                     topic: topicOverview.topic,
                     count_exercises: topicOverview.count_exercises,
                     count_correct: topicOverview.count_correct,

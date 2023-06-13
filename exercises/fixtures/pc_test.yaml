@@ -1,0 +1,110 @@
+# SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Rajbir Singh, Niklas Sirch, Jan Swiridow, Duc Minh Vu, Mike Wegele
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+- model: exercises.topic
+  pk: pc
+  fields:
+    title: Photo Collection
+    title_en: Photo Collection
+    title_de: Bildersammlung
+    visible: true
+    datamodel_representation: pc/pc.drawio.svg
+    datamodel_script: pc/setup.sql
+    tag: Beginner
+- model: exercises.exercise
+  fields:
+    topic: pc
+    enumber: 1
+    title: Example Title 1
+    title_en: Example Title 1
+    title_de: Example Title 1
+    question: Example Question 3
+    question_en: Example Question 3
+    question_de: Example Question 3
+    points: 3.5
+    difficulty: 1
+    is_select: true
+    eval_statement: ""
+    tags:
+      - SELECT
+      - DATE
+      - Set
+- model: exercises.exercise
+  fields:
+    topic: pc
+    enumber: 2
+    title: Example Title 2
+    title_en: Example Title 2
+    title_de: Example Title 2
+    question: Example Question 2
+    question_en: Example Question 2
+    question_de: Example Question 2
+    points: 4.0
+    difficulty: 1
+    is_select: true
+    eval_statement: ""
+    tags:
+      - Subquery
+      - SELECT
+      - DATE
+- model: exercises.exercise
+  fields:
+    topic: pc
+    enumber: 3
+    title: Example Title 3
+    title_en: Example Title 3
+    title_de: Example Title 3
+    question: Example Question 3
+    question_en: Example Question 3
+    question_de: Example Question 3
+    points: 4.5
+    difficulty: 1
+    is_select: true
+    eval_statement: ""
+    tags:
+      - COUNT
+      - SELECT
+- model: exercises.solution
+  fields:
+    exercise:
+      - pc
+      - 1
+    snumber: 1
+    sql: "select collect
+
+      from collect
+
+      where date<date '2006-06-15' - interval '-6 months'
+
+      except
+
+      select collect
+
+      from collectphoto;"
+    description: ""
+    description_en: null
+    description_de: null
+- model: exercises.solution
+  fields:
+    exercise:
+      - pc
+      - 2
+    snumber: 1
+    sql:
+      "select collect\nfrom collect c\nwhere date<date '2006-06-15' - interval
+      '-6 months'\n  and not exists\n    (select 1\n     from collectphoto\n     where
+      collect=c.collect)"
+    description: ""
+    description_en: null
+    description_de: null
+- model: exercises.solution
+  fields:
+    exercise:
+      - pc
+      - 3
+    snumber: 1
+    sql: "SELECT TO_CHAR(date,'dd.mm.yyyy') date FROM photo where photo='nb02';"
+    description: ""
+    description_en: ""
+    description_de: ""

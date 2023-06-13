@@ -20,6 +20,7 @@ import {
 import Item from "./ScrollItem"
 import { useTranslation } from "react-i18next"
 import { ErrorContext } from "../layout/ErrorContext"
+import { validateTopicFromURL } from "../../utils/ExerciseUtils"
 
 const useStyles = makeStyles()(() => ({
     horizontalMenu: {
@@ -62,7 +63,9 @@ const HorizontalScrollingMenu: React.FC<Props> = (props) => {
     const { setError } = useContext(ErrorContext)
 
     const dispatch = useAppDispatch()
-    const { topicId } = useParams<HorizontalScrollingMenuParams>()
+    const topicId = validateTopicFromURL(
+        useParams<HorizontalScrollingMenuParams>().topicId,
+    )
 
     const { exerciseStates, setBuffer, current } = props
 
