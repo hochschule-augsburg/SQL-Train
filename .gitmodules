@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Rajbir Singh, Niklas Sirch, Jan Swiridow, Duc Minh Vu, Mike Wegele
+#
+# SPDX-License-Identifier: CC-0-1.0
+
 [submodule "exercises_data"]
 	path = exercises_data
 	url = https://gitlab.informatik.hs-augsburg.de/sql-training/exercises
