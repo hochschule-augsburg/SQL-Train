@@ -57,10 +57,19 @@ def uninstall_db(cursor: Cursor, topic: m.Topic) -> None:
 
 def execute(conn: Connection, query: str, topic: m.Topic) -> List[Dict[str, Any]]:
     """Executes a query on the connection.
-    If the query has an error the only key "error_in_query" is filled with the
-       error message.
-    If the query outputs nothing the only key "no_output" is set with the message
-       from Postgres
+
+    Returns:
+        If the query has an error [{'error_in_query': e.args}] is returned.
+        For non-SELECT-like queries which do not produce output
+          [{'no_output': e.args}] is returned.
+        When no row is returned because there was no entry found a list with a
+         dict column to "" is returned
+        >>> execute(conn, "SELECT * FROM table")
+        [{"column1": "1", "column2": "2"}, {"column1": "3", "column2": None}]
+        >>> execute(conn, "BAD SQL STATEMENT")
+        [{"error_in_query": "Syntaxfehler bei »ERROR« LINE 1: ERROR ^"}]
+        >>> execute(conn, "SELECT * FROM table where column1='not_exists'")
+        [{"column1": "", "column2": ""}]
     """
     with conn.cursor(row_factory=psycopg.rows.dict_row) as cursor:
         try:
@@ -68,11 +77,12 @@ def execute(conn: Connection, query: str, topic: m.Topic) -> List[Dict[str, Any]
             cursor.execute(query)
             conn.commit()
             result = cursor.fetchall()
-            # When no row is returned
             if result == []:
-                return [{"no_output": ""}]
+                # When no row is returned because there was no entry found
+                return [{col.name: "" for col in cursor.description}]
             return result
         except psycopg.ProgrammingError as e:
+            # For statements like 'CREATE TABLE' which do not produce a result
             return [{"no_output": e.args}]
         except Exception as e:
             # error messages should always be english.
