@@ -1,0 +1,205 @@
+- model: exercises.topic
+  pk: raframini
+  fields:
+    title: Pizzeria Raframini
+    title_en: Pizzeria Raframini
+    title_de: Pizzeria Raframini
+    visible: true
+    datamodel_representation: raframini/raframini.drawio.svg
+    datamodel_script: raframini/setup.sql
+    tag: Advanced
+- model: exercises.exercise
+  fields:
+    topic: raframini
+    enumber: 1
+    title: Name and tax class of all delivery drivers
+    title_en: Name and tax class of all delivery drivers
+    title_de: Name und Arbeitsmodell der Lieferanten
+    question:
+      Get names and tax classes of all delivery drivers ordered by name.
+    question_en:
+      Get names and tax classes of all delivery drivers.
+    question_de:
+      Erstelle eine Liste aller Lieferanten mit Name und Arbeitsmodell sortiert nach Namen.
+    points: 3.5
+    check_order: true
+    is_select: true
+    eval_statement: ""
+    tags:
+      - SELECT
+      - ORDER
+- model: exercises.exercise
+  fields:
+    topic: raframini
+    enumber: 2
+    title: Funghi 
+    title_en: Funghi 
+    title_de: Funghi
+    question:
+      All clients who ordered the 'Funghi' pizza (name, pizza size, topping, order-time (as 'time')).
+    question_en:
+      All clients who ordered the 'Funghi' pizza (name, pizza size, topping, order-time (as 'time', hh:mm DD-MM-YYYY)).
+    question_de:
+      Alle Kunden die, die Pizza 'Funghi' bestellt haben mit Bestellzeit (als 'time').
+    points: 3.0
+    check_order: true
+    is_select: true
+    eval_statement: ""
+    tags:
+      - SELECT
+      - TO_CHAR
+- model: exercises.exercise
+  fields:
+    topic: raframini
+    enumber: 3
+    title: Best before
+    title_en: Best before
+    title_de: MHD
+    question:
+      Show ingredient name, category and expiry date (as "bestbefore", dd-mm-yyyy) of all ingredients.
+    question_en:
+      Show the expiry date (as "Best Before") of all ingredients.
+    question_de:
+      Liste mit MHD (als "Best Before") aller Zutaten.
+    points: 4.0
+    check_order: true
+    is_select: true
+    eval_statement: ""
+    tags: 
+      - SELECT
+      - TO_CHAR
+      - JOIN
+- model: exercises.exercise
+  fields:
+    topic: raframini
+    enumber: 4
+    title: Topping
+    title_en: Topping
+    title_de: Belag
+    question:
+      List all toppings ordered by topping category.
+    question_en:
+      List all toppings ordered by topping category.
+    question_de:
+      Liste alle Beläge sortiert nach der Kategorie.
+    points: 2.5
+    is_select: true
+    tags:
+      - SELECT
+      - ORDER
+- model: exercises.exercise
+  fields:
+    topic: raframini
+    enumber: 5
+    title: New employee
+    title_en: New employee
+    title_de: Neuer Mitarbeiter
+    question:
+      "Add a new employee with the following data:\r\n
+      tax_nr=123, name=Raj, tel_nr=123, street=mystreet, house_nr=123, post_code=123, city=mycity, working_model=part-time, job=Delivery, pizzeria=Raframini"
+    question_en:
+      "Add a new employee with the following data:\r\n
+      tax_nr=123, name=Raj, tel_nr=123, street=mystreet, house_nr=123, post_code=123, city=mycity, working_model=part-time, job=Delivery, pizzeria=Raframini"
+    question_de:
+      "Füge einen neuen Mitarbeiter hinzu:\r\n
+      tax_nr=123, name=Raj, tel_nr=123, street=mystreet, house_nr=123, post_code=123, city=mycity, working_model=part-time, job=Delivery, pizzeria=Raframini"
+    points: 4.0
+    is_select: false
+    eval_statement: 
+      "SELECT EXISTS\r\n
+      (\r\n
+        SELECT *\r\n
+        FROM employee\r\n
+        WHERE (tax_nr = 123 AND name = 'Raj' AND tel_nr = '123' AND street = 'mystreet' AND house_nr = '123' AND post_code = 123 AND city = 'mycity' AND working_model = 'part-time' AND job = 'Delivery' AND pizzeria = 'Raframini')\r\n
+      );"
+    tags:
+      - INSERT
+- model: exercises.exercise
+  fields:
+    topic: raframini
+    enumber: 6
+    title: Hawaii
+    title_en: Hawaii
+    title_de: Hawaii
+    question:
+      Delete the pizza hawaii.
+    question_en:
+      Delete the pizza hawaii.
+    question_de:
+      Lösche die hawaii pizza.
+    points: 10.0
+    is_select: false
+    eval_statement:
+      "SELECT NOT EXISTS (SELECT * FROM pizza WHERE topping_name = 'Hawaii');"
+    tags:
+      - DELETE
+- model: exercises.exercise
+  fields:
+    topic: raframini
+    enumber: 7
+    title: Salary
+    title_en: Salary
+    title_de: Gehalt
+    question:
+      All drivers get a salary increase (10%).
+    question_en:
+      All drivers get a salary increase (10%).
+    question_de:
+      Alle Fahrer erhalten eine Gehaltserhöhung.
+    points: 3.0
+    is_select: false
+    eval_statement:
+      "SELECT EXISTS (SELECT * FROM job_title WHERE job_title = 'Delivery' AND salary = 880)"
+    tags:
+      - UPDATE
+
+- model: exercises.solution
+  fields:
+    exercise:
+      - raframini
+      - 1
+    snumber: 1
+    sql:
+      "SELECT e.name, e.tax_class\r\nFROM employee e\r\nWHERE job = 'Delivery'\r\nORDER BY e.name;"
+    description: ""
+    description_en: ""
+    description_de: ""
+- model: exercises.solution
+  fields:
+    exercise: 
+      - raframini
+      - 2
+    snumber: 1
+    sql:
+      "SELECT pop.client_name, pop.pizza_size, pop.pizza_topping, TO_CHAR(pop.pizza_order_time, 'hh:mm DD-MM-YYYY') as time\r\n
+      FROM pizza_order_pizza pop\r\n
+      WHERE pop.pizza_topping = 'Funghi';"
+    description: ""
+    description_en: ""
+    description_de: ""
+- model: exercises.solution
+  fields:
+    exercise: 
+      - raframini
+      - 3
+    snumber: 1
+    sql:
+      "SELECT i.ingredient_name, i.ingredient_category, TO_CHAR(ied.exp_date, 'dd-mm-yyyy') as BestBefore\r\n
+      FROM ingredient i\r\n
+      JOIN ingredient_exp_date ied\r\n
+      ON i.ingredient_name = ied.ingredient_name;"
+    description: ""
+    description_en: ""
+    description_de: ""
+- model: exercises.solution
+  fields:
+    exercise: 
+      - raframini
+      - 4
+    snumber: 1
+    sql:
+      "select * from topping t\r\n
+      order by t.topping_category;"
+    description: ""
+    description_en: ""
+    description_de: ""
