@@ -33,7 +33,7 @@ This project was part of the summer term projects 2023 of the
 and was supervised by Prof. Dr. Matthias Kolonko.
 
 <div align="center">
-    <img src="assets/screenshot.png" alt="Screenshot" height="500"> </br>
+    <img src="assets/screenshot.png" alt="Screenshot" width="95%"> </br>
 </div>
 
 ## Get Started
@@ -68,11 +68,11 @@ python manage.py migrate
 In order to populate the website with exercises, some example data has been
 provided that can be loaded into the database.
 
-_Unfortunately we cannot release the exercises because we don't have the
-right.You have to provide your own._
+_Unfortunately we cannot release the exercises of the Uni because we don't have the
+right. You have to provide your own._
 
 ```bash
-python manage.py loaddata exercises_data/*.yaml
+python manage.py loaddata dummy_exercises_data/*.yaml
 ```
 
 ### Create Admin Account
