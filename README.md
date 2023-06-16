@@ -65,14 +65,15 @@ python manage.py migrate
 
 ### Load Example Data
 
+_Unfortunately we cannot release the exercises from the gitlab submodule because
+we do not have the copyright_
+
 In order to populate the website with exercises, some example data has been
 provided that can be loaded into the database.
 
-_Unfortunately we cannot release the exercises of the Uni because we don't have the
-right. You have to provide your own._
-
 ```bash
-python manage.py loaddata dummy_exercises_data/*.yaml
+cp example_exercises/* exercises_data/ # copy the exercises to the MEDIA_ROOT
+python manage.py loaddata exercises_data/*.yaml # load the exercises
 ```
 
 ### Create Admin Account
@@ -144,7 +145,8 @@ up-to-date is challenging, here is a brief summary as of June 2023:
 - All original source code is licensed under GPL-3.0-or-later.
 - The Logo contains the iconic face group of the logo of the TH Augsburg[^1] and
   is licensed under CC-BY-ND-4.0
-- All documentation and images are licensed under CC-BY-SA-4.0.
+- All documentation, images and example exercises are licensed under
+  CC-BY-SA-4.0.
 - All insignificant file such as configs are licensed under CC0-1.0.
 - The code borrowed from [Hyperchalk](https://github.com/Hyperchalk/Hyperchalk/)
   is licensed under GPL-3.0 For more accurate information, check the individual
