@@ -54,7 +54,7 @@ const QuestionBox: React.FC<Props> = (props) => {
     const { exercise, topic, toggleFavourite, marked } = props
 
     return (
-        <div className={classes.questionBox}>
+        <div className={classes.questionBox} id="question">
             <p>
                 {`${topic?.title}/${exercise?.enumber}: ${exercise?.title}`}
                 <br />

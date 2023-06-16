@@ -41,8 +41,16 @@ const ExerciseTour: React.FC<Props> = (props) => {
     const baseTransName = "tour.exercise"
     const steps = [
         {
-            selector: ".customBar", //TODO: rename class
+            selector: "#question",
+            content: t(baseTransName + ".question"),
+        },
+        {
+            selector: "#editor",
             content: t(baseTransName + ".editor"),
+        },
+        {
+            selector: "#dataModelIcon",
+            content: t(baseTransName + ".datamodel"),
         },
         {
             selector: "#execute",
@@ -55,6 +63,26 @@ const ExerciseTour: React.FC<Props> = (props) => {
         {
             selector: "#solution",
             content: t(baseTransName + ".solution"),
+        },
+        {
+            selector: "#prevBut",
+            content: t(baseTransName + ".prev"),
+        },
+        {
+            selector: "#nextBut",
+            content: t(baseTransName + ".next"),
+        },
+        {
+            selector: "#reset",
+            content: t(baseTransName + ".reset"),
+        },
+        {
+            selector: "#clear",
+            content: t(baseTransName + ".clear"),
+        },
+        {
+            selector: "#table",
+            content: t(baseTransName + ".table"),
         },
     ]
 
@@ -69,7 +97,8 @@ const ExerciseTour: React.FC<Props> = (props) => {
             }}
             className={classes.exerciseTour}
             steps={steps}
-            beforeClose={close}
+            defaultOpen={true}
+            // beforeClose={close}
         >
             {props.children}
         </TourProvider>

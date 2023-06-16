@@ -542,7 +542,6 @@ const ExercisePage: React.FC = () => {
 
     return (
         <>
-            {/* <ExerciseTour /> */}
             <If condition={isExploding}>
                 <div className={classes.confettiWrapper}>
                     <ConfettiExplosion
