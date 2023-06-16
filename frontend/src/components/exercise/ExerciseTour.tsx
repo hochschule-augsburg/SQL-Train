@@ -4,7 +4,7 @@
 
 import React, { useContext, useState } from "react"
 import { makeStyles } from "tss-react/mui"
-import Tour from "reactour"
+import { TourProvider } from "@reactour/tour"
 import config from "../../config.json"
 import { DarkModeContext } from "../layout/DarkModeContext"
 import { useTranslation } from "react-i18next"
@@ -19,29 +19,23 @@ const useStyles = makeStyles<{ darkMode: boolean }>()(
     }),
 )
 
+interface Props {
+    children: any
+}
+
 /**
  * ExerciseTour component displays a tour for the exercise page.
  * The Tour is only shown once.
  *
  * @returns {JSX.Element} Title component.
  */
-const ExerciseTour: React.FC = () => {
+const ExerciseTour: React.FC<Props> = (props) => {
     const { darkMode } = useContext(DarkModeContext)
     const { classes } = useStyles({ darkMode })
     const { t } = useTranslation("common")
 
-    const [isOpen, setIsOpen] = useState(() => {
-        // show tour after site is fully loaded
-        setTimeout(
-            () => setIsOpen(!localStorage.getItem("tour.exercise.seen")),
-            800,
-        )
-        return false
-    })
-
     const close = () => {
         localStorage.setItem("tour.exercise.seen", "yes")
-        setIsOpen(false)
     }
 
     const baseTransName = "tour.exercise"
@@ -65,13 +59,14 @@ const ExerciseTour: React.FC = () => {
     ]
 
     return (
-        <Tour
-            accentColor={config.THEME_COLORS.PRIMARY}
+        <TourProvider
+            // accentColor={config.THEME_COLORS.PRIMARY}
             className={classes.exerciseTour}
             steps={steps}
-            isOpen={isOpen}
-            onRequestClose={close}
-        />
+            beforeClose={close}
+        >
+            {props.children}
+        </TourProvider>
     )
 }
 

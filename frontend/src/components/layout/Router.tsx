@@ -7,6 +7,7 @@ import { Route, Switch } from "react-router-dom"
 import TopicsPage from "../../pages/TopicsPage"
 import ExercisesPage from "../../pages/ExercisesPage"
 import ExercisePage from "../../pages/ExercisePage"
+import ExerciseTour from "../exercise/ExerciseTour"
 // import StatsPage from "../../pages/StatsPage"
 
 const StatsPage = React.lazy(() => import("../../pages/StatsPage"))
@@ -19,17 +20,19 @@ const StatsPage = React.lazy(() => import("../../pages/StatsPage"))
  */
 const Router: React.FC = () => {
     return (
-        <Switch>
-            <Route exact path="/" component={TopicsPage} />
-            <Route
-                path="/topic/:topicId/exercise/:exerciseId"
-                component={ExercisePage}
-            />
-            <Route exact path="/topic/:topicId" component={ExercisesPage} />
-            <React.Suspense>
-                <Route exact path="/prof/" component={StatsPage} />
-            </React.Suspense>
-        </Switch>
+        <ExerciseTour>
+            <Switch>
+                <Route exact path="/" component={TopicsPage} />
+                <Route
+                    path="/topic/:topicId/exercise/:exerciseId"
+                    component={ExercisePage}
+                />
+                <Route exact path="/topic/:topicId" component={ExercisesPage} />
+                <React.Suspense>
+                    <Route exact path="/prof/" component={StatsPage} />
+                </React.Suspense>
+            </Switch>{" "}
+        </ExerciseTour>
     )
 }
 
