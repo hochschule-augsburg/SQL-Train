@@ -97,8 +97,7 @@ const ExerciseTour: React.FC<Props> = (props) => {
             }}
             className={classes.exerciseTour}
             steps={steps}
-            defaultOpen={true}
-            // beforeClose={close}
+            beforeClose={close}
         >
             {props.children}
         </TourProvider>
