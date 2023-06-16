@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import React, { useContext, useState } from "react"
+import React, { useContext } from "react"
 import { makeStyles } from "tss-react/mui"
 import { TourProvider } from "@reactour/tour"
 import config from "../../config.json"
@@ -60,7 +60,13 @@ const ExerciseTour: React.FC<Props> = (props) => {
 
     return (
         <TourProvider
-            // accentColor={config.THEME_COLORS.PRIMARY}
+            styles={{
+                popover: (base) => ({
+                    ...base,
+                    "--reactour-accent": config.THEME_COLORS.PRIMARY,
+                    borderRadius: "5px",
+                }),
+            }}
             className={classes.exerciseTour}
             steps={steps}
             beforeClose={close}
