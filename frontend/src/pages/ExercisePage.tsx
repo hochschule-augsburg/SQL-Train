@@ -182,7 +182,6 @@ const ExercisePage: React.FC = () => {
         dispatch(fetchFavourites()).catch(() =>
             setError(t("general.error.favourite")),
         )
-        handleAllotmentStates(AllotmentState.NEW)
     }, [
         handleAllotmentStates,
         dispatch,
@@ -192,6 +191,11 @@ const ExercisePage: React.FC = () => {
         t,
         setError,
     ])
+
+    useEffect(
+        () => handleAllotmentStates(AllotmentState.NEW),
+        [handleAllotmentStates, dispatch, topicId, exerciseId, t, setError],
+    )
 
     useEffect(() => {
         setDisableToolbarButtons(false)
