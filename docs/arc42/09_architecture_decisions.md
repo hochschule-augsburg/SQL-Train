@@ -31,6 +31,13 @@ Among these options, both Django and Flask offered official LTI support.
 However, considering the strength of Django's community and its reputation as a
 well-established framework, we ultimately chose Django for our project.
 
+#### ASGI
+
+While we do not use many asynchronous views/apis now, we did want to support the
+use of them so we decided to use ASGI as the default web protocol. Because
+Django (ORM) does get better and better with async the time will come when it is
+easy enough to use.
+
 #### YAML
 
 As serialization format we use yaml because of it is line-base/git-friendly and
