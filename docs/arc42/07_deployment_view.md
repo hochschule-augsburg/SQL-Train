@@ -21,12 +21,13 @@ This file is based on arc42 template, originally created by Gernot Starke and Pe
 | Docker        | Contains the django instance and the memcached service.      |
 | Moodle        | LMS instance that offers students access to sql-train.       |
 | pg-stud       | This Postgres server hosts the instance on which student exercises will be performed. |
+| rdbs          | Central postgres instance that contains the application data of sql-train.s |
 
 ## Network Topology
 
 The nodes shown above communicate via the intranet of the TH-A. 
 
-Moodle is accessible from outside of the TH-A, for sql-train, rdbms and pg-stud it was explicitly decided not to make them available from outside the internal network.
+Moodle is accessible from outside of the TH-A, for sql-train, rdbs and pg-stud it was explicitly decided not to make them available from outside the internal network.
 
 ## Get Started
 
