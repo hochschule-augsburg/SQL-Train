@@ -70,7 +70,11 @@ C4Context
 
 **\<optionally: Explanation of technical interfaces>**
 
+LTI, psycopg2, rest?
+
 **\<Mapping Input/Output to Channels>**
+
+
 
 ## Scope
 
