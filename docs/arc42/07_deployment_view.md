@@ -22,24 +22,11 @@ This file is based on arc42 template, originally created by Gernot Starke and Pe
 | Moodle        | LMS instance that offers students access to sql-train.       |
 | pg-stud       | This Postgres server hosts the instance on which student exercises will be performed. |
 
-The nodes shown above communicate via the intranet of the 
-
-Motivation  
-*\<explanation in text form>*
-
-Quality and/or Performance Features  
-*\<explanation in text form>*
-
-Mapping of Building Blocks to Infrastructure  
-*\<description of the mapping>*
-
 ## Network Topology
 
-### *\<Infrastructure Element 1>*
+The nodes shown above communicate via the intranet of the TH-A. 
 
-*\<diagram + explanation>*
-
-## Django Docker Container
+Moodle is accessible from outside of the TH-A, for sql-train, rdbms and pg-stud it was explicitly decided not to make them available from outside the internal network.
 
 ## Get Started
 
