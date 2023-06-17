@@ -31,10 +31,6 @@ Among these options, both Django and Flask offered official LTI support.
 However, considering the strength of Django's community and its reputation as a
 well-established framework, we ultimately chose Django for our project.
 
-<!-- - pg-stud api in python with connection pooling to connect to pg-stud --> <!-- ConnPooling described in building block-->
-
-<!-- - should we implement grading and return the grades to moodle? --> <!-- Scope-->
-
 ### Frontend
 
 **React** <br>

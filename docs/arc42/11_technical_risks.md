@@ -62,11 +62,7 @@ within the PyLTI1p3 library.
 
 However, considering the scope of this project work and the relatively low level
 of risk involved, it is neither feasible nor essential or wanted by the
-stakeholder. <!-- Ask him -->
-
-<!-- - LTI Interface not working as expected --> <!-- has to be expanded in scope-->
-<!-- - Checking for correct SQL-Statements --> <!-- moved -->
-<!-- - pg-stud conenction failing --> <!-- error handling is coming -->
+stakeholder.
 
 ## Accessability
 
