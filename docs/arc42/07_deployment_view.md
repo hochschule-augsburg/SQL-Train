@@ -8,11 +8,11 @@ This file is based on arc42 template, originally created by Gernot Starke and Pe
 
 # Deployment View
 
-## OS Infrastructure	
+## Infrastructure Level 1
 
-***VM with Docker***
+**_VM with Docker_**
 
-![Alt text](./drawio/deployment.drawio.svg)
+![Level 1 Deployment Diagram](./drawio/deployment.drawio.svg)
 
 | Node/Artifact | Description                                                  |
 | ------------- | ------------------------------------------------------------ |
@@ -28,48 +28,3 @@ This file is based on arc42 template, originally created by Gernot Starke and Pe
 The nodes shown above communicate via the intranet of the TH-A. 
 
 Moodle is accessible from outside of the TH-A, for sql-train, rdbs and pg-stud it was explicitly decided not to make them available from outside the internal network.
-
-## Get Started
-
-### Setup nginx
-
-#### Install
-```bash
-sudo apt-get install nginx
-systemctl start nginx.service
-```
-
-#### Config
-
-config file:
-```bash
-cp sql-training /etc/nginx/sites-available/sql-training.example.com
-cp proxy_params /etc/nginx/ 
-```
-
-activate config:
-```bash
-ln -s /etc/nginx/sites-available/sql-training.examle.com /etc/nginx/sites-enabled/
-systemctl restart nginx.service
-```
-
-### PostgreSQL
-
-To setup the database for django choose a supported RDBMS (we recommmend PostgreSQL) and set conninfo in `.env`.
-See https://help.ubuntu.com/community/PostgreSQL for a tutorial.
-
-### Docker
-
-```bash
-# Set the environment variables from .env-example in .env
-docker compose up --detach
-```
-
-### Initial configuration
-
-```bash
-docker exec -it django_container /bin/bash # open shell in container
-python3 manage.py createsuperuser # Creates an admin user for the django admin page
-python3 manage.py loaddata exercises_data/*.yaml # Due to copyright the exercises are not provided
-```
-

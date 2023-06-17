@@ -10,6 +10,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 :caption: Index-Admin
 :maxdepth: 1
 
+deploy
 register_tool
 add_to_course
 
