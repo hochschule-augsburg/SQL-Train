@@ -15,5 +15,9 @@
     "FEEDBACK": {
         "SHOW": true
     },
-    "LMS_URL": "https://moodle.example.com"
+    "LMS_URL": "https://moodle.example.com",
+    "LTI": {
+        "title": "SQL-Train",
+        "description": "SQL-Train offers interactive SQL exercises for LMS-Platforms"
+    }
 }

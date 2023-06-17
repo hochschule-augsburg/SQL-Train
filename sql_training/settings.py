@@ -44,14 +44,17 @@ SECRET_KEY = os.environ.get(
 # Application definition
 
 INSTALLED_APPS = [
-    "rangefilter",
-    "ltiapi",
+    # Own
     "exercises",
     "feedback",
+    "ltiapi",
+    # Libraries
     "django_ace",
-    "ninja",
     "modeltranslation",
+    "ninja",
     "pylti1p3.contrib.django.lti1p3_tool_config",
+    "rangefilter",
+    # Django
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -69,7 +72,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "csp.middleware.CSPMiddleware",
-    # CSP is used instead
+    # CSP is used instead of XFrameOptions
     # "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
@@ -167,8 +170,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_URL = "lti/login-lms"
-
 # https://docs.djangoproject.com/en/3.2/ref/settings/#csrf-trusted-origins
 
 # CSRF_TRUSTED_ORIGINS can be default because the openid secured ltiapi methods
@@ -184,7 +185,8 @@ CSP_OBJECT_SRC = ("'none'",)
 CSP_BASE_URI = ("'none'",)
 CSP_CONNECT_SRC = "'self'"
 CSP_IMG_SRC = ("'self'",)
-CSP_STYLE_SRC = ("'self'", "'unsafe-inline'")  # libraries don't allow
+# libraries (e.g. Codemirror) use inline_styles
+CSP_STYLE_SRC = ("'self'", "'unsafe-inline'")
 CSP_FRAME_ANCESTORS = ("'self'",)
 CSP_FORM_ACTION = ("'self'",)
 CSP_FRAME_SRC = ("'self'",)
@@ -256,11 +258,6 @@ AUTH_USER_MODEL = "ltiapi.LTIUser"
 LINK_BASE = os.environ.get("LINK_BASE", "127.0.0.1:8000")
 
 
-LTI_CONFIG = {
-    "title": "SQL-Train",
-    "description": "SQL-Train offers interactive SQL exercises for LMS-Platforms",
-}
-
 # SQL-TRAINING
 
 PG_STUD_CONNINFO = {
@@ -277,9 +274,11 @@ PG_TEST_CONNINFO = {
     "port": os.environ.get("PG_TEST_PORT"),
 }
 
+FIXTURE_DIRS = [BASE_DIR / "exercises_data"]
+
+LOGIN_URL = "lti/login-lms"
+
 config_path = "config.json" if os.path.exists("config.json") else "config.example.json"
 
 with open(config_path) as config_file:
     config = json.load(config_file)
-
-FIXTURE_DIRS = [BASE_DIR / "exercises_data"]
