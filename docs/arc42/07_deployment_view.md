@@ -23,6 +23,30 @@ This file is based on arc42 template, originally created by Gernot Starke and Pe
 | pg-stud       | This Postgres server hosts the instance on which student exercises will be performed. |
 | rdbs          | Central postgres instance that contains the application data of sql-train.s |
 
+### Important decisions
+
+**Docker**
+
+To keep our project independent from the underlying operating system we dicided to use a debian based docker image to run sql-train.
+
+**nginx**
+
+For easy maintainability and configuration we decided to use nginx on the VM directly to manage the incomming requests and enforce TLS encryption as well as rate limiting for requests to prevent attacks on the system.
+
+**rdbs**
+
+The TH-A provides a centralized PostgreSQL to be used for server applications. To keep in line with the given standards we use this database for our application data.
+
+### Performance and optimization decisions
+
+**PostgreSQL Connection Pooling**
+
+For each user a pool with multiple connections is created. The goal is to ensure that multiple SQL statements can be performed in the least possible time, e.g. checking the solution as well as the users statement.
+
+**django ASGI**
+
+To ensure that sql-train can handle future extension with asynchronous requests we used Gunicorn and Uvicorn. Instead of directly starting a django instance we use Gunicorn, a server and process manager. In combination with Uvicorn workers this allows us to run ASGI applications. 
+
 ## Network Topology
 
 The nodes shown above communicate via the intranet of the TH-A. 
