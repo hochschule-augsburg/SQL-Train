@@ -277,7 +277,9 @@ PG_TEST_CONNINFO = {
     "port": os.environ.get("PG_TEST_PORT"),
 }
 
-with open("config.json") as config_file:
+config_path = "config.json" if os.path.exists("config.json") else "config.example.json"
+
+with open(config_path) as config_file:
     config = json.load(config_file)
 
 FIXTURE_DIRS = [BASE_DIR / "exercises_data"]
