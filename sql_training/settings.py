@@ -14,14 +14,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import json
 import os
 from pathlib import Path
 from typing import List
 
 from django.utils.translation import gettext_lazy as _
 from dotenv import load_dotenv
-
-from sql_training.utils import load_theme_colors
 
 load_dotenv(".env")
 
@@ -278,10 +277,7 @@ PG_TEST_CONNINFO = {
     "port": os.environ.get("PG_TEST_PORT"),
 }
 
-theme_colors = load_theme_colors()
-
-DEFAULT_TEMPLATE_CONTEXT = theme_colors | {
-    "lms_url": os.environ.get("LMS_URL", "https://moodle.example.com/")
-}
+with open("config.json") as config_file:
+    config = json.load(config_file)
 
 FIXTURE_DIRS = [BASE_DIR / "exercises_data"]

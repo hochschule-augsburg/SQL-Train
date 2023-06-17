@@ -70,14 +70,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
         border: none;
         border-radius: 0.25rem;
         color: #fff;
-        background-color: {{ theme_primary }};
+        background-color: {{ THEME_COLORS.PRIMARY }};
         text-align: center;
         font-size: 1rem;
         cursor: pointer;
       }
 
       .button:hover {
-        background-color: {{ theme_primary_hover }};
+        background-color: {{ THEME_COLORS.PRIMARY_HOVER }};
       }
       @media (prefers-color-scheme: dark) {
         body {

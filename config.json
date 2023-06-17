@@ -1,6 +1,7 @@
 {
     "THEME_COLORS": {
         "PRIMARY": "#F98113",
+        "PRIMARY_HOVER": "#FCBA03",
         "SECONDARY": "#333333",
         "NEUTRAL": "#FFFFFF",
         "DARK": "#181818",
@@ -13,5 +14,6 @@
     },
     "FEEDBACK": {
         "SHOW": true
-    }
+    },
+    "LMS_URL": "https://moodle.example.com"
 }
