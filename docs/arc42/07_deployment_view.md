@@ -49,8 +49,44 @@ Connection pooling is also used by the Django ORM.
 
 To ensure that sql-train can handle future extension with asynchronous requests we used Gunicorn and Uvicorn. Instead of directly starting a django instance we use Gunicorn, a server and process manager. In combination with Uvicorn workers this allows us to run ASGI applications. 
 
+
+**Memcache**
+
+The LTI launch significantly more stable with a cache so we use memcache for
+it. At the moment no other app uses caching. If someone wants to use a cache it
+would be accessible.
+
 ## Network Topology
 
 The nodes shown above communicate via the intranet of the TH-A. 
 
 For our use case the LMS Moodle is accessible from outside of the TH-A, for sql-train, rdbs and pg-stud it was explicitly decided not to make them available from outside the internal network.
+
+## Development Setup
+
+To reduce the development setup overhead we tried to keep the requirements as
+low as possible.
+
+**Authentication**
+
+For normal non-LTI work just use the `./manage.py createsuperuser` command and
+log in a this superuser.
+
+We recommend using a test-LMS when improving the LTI-API.
+
+**Database**
+
+Though sqlite throws some errors with Django it is recommended as database for
+development.
+
+**Cache**
+
+Caching is only used by `ltiapi` login process so only use it if you need to
+work on it.
+
+## Test Setup
+
+For most test no extra configurtation is needed because they run with the sqlite.
+For the pg_stud api a database for students is needed. To simplify this use
+the environment variables defining the PG_TEST conninfo.
+
