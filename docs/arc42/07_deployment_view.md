@@ -12,7 +12,17 @@ This file is based on arc42 template, originally created by Gernot Starke and Pe
 
 ***VM with Docker***
 
------------------- Komponentendiagramm - OS+Docker+... -
+![Alt text](./drawio/deployment.drawio.svg)
+
+| Node/Artifact | Description                                                  |
+| ------------- | ------------------------------------------------------------ |
+| sql-training  | VM / Server running our project.                             |
+| nginx         | Webserver that enforces TLS, serves static files and implements rate limiting. |
+| Docker        | Contains the django instance and the memcached service.      |
+| Moodle        | LMS instance that offers students access to sql-train.       |
+| pg-stud       | This Postgres server hosts the instance on which student exercises will be performed. |
+
+The nodes shown above communicate via the intranet of the 
 
 Motivation  
 *\<explanation in text form>*
