@@ -4,7 +4,7 @@
 
 import React from "react"
 import { UncontrolledTooltip } from "reactstrap"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import { makeStyles } from "tss-react/mui"
 import TopicButton from "./TopicButton"
 import { useTranslation } from "react-i18next"

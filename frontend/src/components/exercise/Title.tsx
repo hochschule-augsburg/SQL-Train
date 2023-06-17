@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import React from "react"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import { makeStyles } from "tss-react/mui"
 
 const useStyles = makeStyles()(() => ({

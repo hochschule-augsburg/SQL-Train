@@ -5,7 +5,7 @@
 import React, { useContext, useState } from "react"
 import { makeStyles } from "tss-react/mui"
 import Tour from "reactour"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import { DarkModeContext } from "../layout/DarkModeContext"
 import { useTranslation } from "react-i18next"
 

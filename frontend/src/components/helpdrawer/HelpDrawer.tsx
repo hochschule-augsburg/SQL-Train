@@ -5,7 +5,7 @@
 import React, { useContext } from "react"
 import { Drawer } from "@mui/material"
 import { useTranslation } from "react-i18next"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import { makeStyles } from "tss-react/mui"
 import { DarkModeContext } from "../layout/DarkModeContext"
 import HelpSection from "./HelpSection"

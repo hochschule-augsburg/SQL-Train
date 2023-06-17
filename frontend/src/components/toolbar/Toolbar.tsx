@@ -5,7 +5,7 @@
 import React, { useCallback, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import "bootstrap-icons/font/bootstrap-icons.css"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import { makeStyles } from "tss-react/mui"
 import ToolbarButton from "./ToolbarButton"
 import { Link } from "react-router-dom"

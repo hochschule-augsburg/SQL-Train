@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import React, { useCallback } from "react"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import { useTranslation } from "react-i18next"
 import { useHistory } from "react-router"
 import { Favourite } from "../../api"

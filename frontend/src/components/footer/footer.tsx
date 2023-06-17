@@ -4,7 +4,7 @@
 
 import React, { useContext } from "react"
 import { DarkModeContext } from "../layout/DarkModeContext"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import { makeStyles } from "tss-react/mui"
 import { useTranslation } from "react-i18next"
 

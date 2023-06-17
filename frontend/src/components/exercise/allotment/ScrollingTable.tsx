@@ -8,7 +8,7 @@ import CustomTable from "../../table/CustomTable"
 import { ScrollSyncPane } from "react-scroll-sync"
 import { Allotment } from "allotment"
 import { makeStyles } from "tss-react/mui"
-import config from "../../../config.json"
+import config from "../../../../../config.json"
 
 const useStyles = makeStyles()(() => ({
     customBarDiv: {
