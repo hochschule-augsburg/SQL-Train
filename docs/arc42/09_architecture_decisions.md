@@ -31,16 +31,16 @@ Among these options, both Django and Flask offered official LTI support.
 However, considering the strength of Django's community and its reputation as a
 well-established framework, we ultimately chose Django for our project.
 
-### Frontend
+## Frontend
 
-**React** <br>
+### React
 
 We chose React as our frontend framework on top of TypeScript due to the reusable components, and its community support. Additionally, TypeScript enhances development productivity by providing static typing and better code maintainability. To communicate with the backend we used OpenAPI, which is a specification language for HTTP APIs. OpenAPI integration allows for communication between the frontend and backend, ensuring consistent and documented API interactions.
 
-**1. Redux** <br>
+#### **Redux**
 
 Redux is a predictable state management library that complements React well. By centralizing the application's state in a single store, Redux simplifies data flow and enables predictable updates to the UI. With Redux, we were able to manage complex application states, handle asynchronous actions, and ensure data consistency throughout our application.
 
-**2. Components** <br>
+#### **Components**
 
 As for the component architecture, we embraced the principles of reusability and modularity. We structured our application into small, self-contained components that encapsulate their own logic and UI. This approach allowed us to break down our application into manageable pieces, promoting code reusability and maintainability. With component-based architecture, we could easily scale and maintain our application by composing and reusing components across different parts of the system.
