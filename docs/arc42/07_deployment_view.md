@@ -31,17 +31,19 @@ To keep our project independent from the underlying operating system we dicided 
 
 **nginx**
 
-For easy maintainability and configuration we decided to use nginx on the VM directly to manage the incomming requests and enforce TLS encryption as well as rate limiting for requests to prevent attacks on the system.
+For easy maintainability and configuration we decided to use nginx on the host directly to manage the incoming requests and enforce TLS encryption as well as rate limiting for requests to prevent attacks on the system.
 
 **rdbs**
 
-The TH-A provides a centralized PostgreSQL to be used for server applications. To keep in line with the given standards we use this database for our application data.
+As the TH-A provides a centralized PostgreSQL to be used for server applications we kept the location of the rdbs configurable and recommend such a server as we use.
 
 ### Performance and optimization decisions
 
 **PostgreSQL Connection Pooling**
 
 For each user a pool with multiple connections is created. The goal is to ensure that multiple SQL statements can be performed in the least possible time, e.g. checking the solution as well as the users statement.
+
+Connection pooling is also used by the Django ORM.
 
 **django ASGI**
 
@@ -51,4 +53,4 @@ To ensure that sql-train can handle future extension with asynchronous requests 
 
 The nodes shown above communicate via the intranet of the TH-A. 
 
-Moodle is accessible from outside of the TH-A, for sql-train, rdbs and pg-stud it was explicitly decided not to make them available from outside the internal network.
+For our use case the LMS Moodle is accessible from outside of the TH-A, for sql-train, rdbs and pg-stud it was explicitly decided not to make them available from outside the internal network.
