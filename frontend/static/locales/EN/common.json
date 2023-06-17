@@ -170,12 +170,12 @@
             "question": "This is the question box. Click on the star icon to mark this exercise.",
             "editor": "This is the editor. Here you can write your SQL queries.",
             "datamodel": "Click here to show the datamodel.",
-            "execute": "To executethe query click here.",
-            "check": "To check your answer click here.",
+            "execute": "To execute the query click here.",
+            "check": "To check your answer click here. To prevent cheating this resets your tables.",
             "solution": "Click here to see the solution query+table.",
             "prev": "Click here for the previous exercise.",
             "next": "Click here for the next exercise.",
-            "reset": "Click here to reset the database.",
+            "reset": "Click here to reset the database. This is handy when you want to cherry pick your exercises as it loads the specific tables for the exercise.",
             "clear": "To clear the editor click here.",
             "table": "Here you will see the query table."
         }
