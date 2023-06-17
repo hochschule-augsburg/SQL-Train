@@ -4,13 +4,14 @@
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
-    "plugins": ["@typescript-eslint", "react-hooks"],
+    "plugins": ["@typescript-eslint", "react-hooks", "tss-unused-classes"],
     "extends": ["plugin:react/recommended", "plugin:@typescript-eslint/recommended"],
     "rules": {
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "react/prop-types": "off",
-        "@typescript-eslint/no-explicit-any": "off"
+        "@typescript-eslint/no-explicit-any": "off",
+        "tss-unused-classes/unused-classes": "warn"
     },
     "settings": {
         "react": {
