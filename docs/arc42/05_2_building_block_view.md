@@ -55,23 +55,6 @@ better code organization, reusability, and maintainability.
 | pg_stud               | API for pg-stud                                  |
 | exercises_data        | Fixtures for initial data                        |
 
-###
-
-_\<Interface(s)>_
-
-_\<(Optional) Quality/Performance Characteristics>_
-
-_\<(Optional) Directory/File Location>_
-
-_\<(Optional) Fulfilled Requirements>_
-
-_\<(optional) Open Issues/Problems/Risks>_
-
-## \<Name interface 1>
-
-…
-
-## \<Name interface m>
 
 ## **Level 2**
 
@@ -207,10 +190,15 @@ Module for PgConnPool Singleton.
 
 ```mermaid
 classDiagram
+    class PoolItem{
+        <<dataclass>>
+        + pool: ConnectionPool
+        + last_access: float
+    }
     class PgConnPool {
         <<Singleton>>
         - _instance: PgConnPool
-        - _pools: Dict[str, List[ConnectionPool | 'timestamp']]
+        - _pools: Dict[str, PoolItem]
         - conninfo(lms_username: str): Dict[str, str]
         + __new__(cls)
         + get_pool(user: LTIUser): ConnectionPool
