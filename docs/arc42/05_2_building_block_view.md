@@ -3,7 +3,7 @@ SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Ra
 
 SPDX-License-Identifier: CC-BY-SA-4.0
 
-This file is based on arc42 template, originally created by Gernot Starke and Peter Hruschka, which can be found [here](https://arc42.org/download) and has been altered to fit our needs. arc42 is licensed under CC-BY-SA-4.0. 
+This file is based on arc42 template, originally created by Gernot Starke and Peter Hruschka, which can be found [here](https://arc42.org/download) and has been altered to fit our needs. arc42 is licensed under CC-BY-SA-4.0.
 -->
 
 # Building Block View Backend
@@ -281,8 +281,18 @@ Renders a login template for the LMS (Learning Management System) integration.
 
 ## White Box exercises.models
 
-![ER-like Diagram](./drawio/exercises_erd.drawio.svg "exercises-ERD")
+![ER-like Diagram](./drawio/exercises_erd.drawio.svg) :::
+
+:::{note}
+:class: dropdown
+![Agila Mod](./drawio/exercises_agila_mod.drawio.svg) :::
+:::
 
 ## White Box ltiapi.models
 
 ![ER-like Diagram](./drawio/ltiapi_erd.drawio.svg "ltiapi-ERD")
+
+:::{note}
+:class: dropdown
+![Agila Mod](./drawio/ltiapi_agila_mod.drawio.svg) :::
+:::

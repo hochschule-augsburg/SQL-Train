@@ -26,6 +26,7 @@ extensions = [
     "sphinxcontrib.mermaid",
     "autodoc2",
     "sphinx_favicon",
+    "sphinx_togglebutton",
 ]
 
 
@@ -51,7 +52,10 @@ favicons = [
 
 myst_fence_as_directive = ["mermaid"]
 # optional to use https://sphinxcontrib-mermaid-demo.readthedocs.io/en/latest/#directive-options
-myst_enable_extensions = ["attrs_block"]
+myst_enable_extensions = [
+    "attrs_block",
+    "colon_fence",
+]
 
 # Autodoc
 
