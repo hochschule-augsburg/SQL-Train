@@ -8,14 +8,35 @@ This file is based on arc42 template, originally created by Gernot Starke and Pe
 
 # Cross-cutting Concepts
 
-## Structure of URLs
+## Internationalization (i18n)
 
-|Page|URL|
-|---|---|
-|TopicsPage| __/__ |
-|ExercisesPage|__/topic/:topicId__|
-|ExercisePage|__/topic/:topicId/exercise/:exerciseId__|
-|StatsPage|__/prof__|
+### Reason
+
+Since this project is open source, it is essential to ensure its usability for a
+global audience. To achieve this, we aim to make the project easily adaptable
+for localization. Additionally, the TH-A also has courses lectured in English,
+which further emphasizing the need for internationalization.
+
+### Implementation
+
+All strings that are exclusively displayed to the user must be appropriately
+marked for i18n. This requirement also extends to the data stored in the Django 
+DB, ensuring that it can be easily translated for different languages.
+
+## Configurability
+
+### Reason
+
+Given that this project is open source, it should be flexible enough to be used 
+by other universities. To facilitate its adoption, the project aims to provide 
+necessary configuration options.
+
+### Implementation
+
+First and foremost, our application should be capable of running on any platform
+(refer to the Deployment View). Additionally, we strive to make the styling and
+general configuration of the project easily customizable through the use of the
+`config.json` file in the root of the project.
 
 
 ## KISS - Keep It Simple and Stupid
