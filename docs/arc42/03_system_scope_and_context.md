@@ -73,21 +73,3 @@ C4Context
 LTI, psycopg2, rest?
 
 **\<Mapping Input/Output to Channels>**
-
-
-
-## Scope
-
-### Evaluation
-
-As one of our principle is to keep our project as simple as possible. We did not
-implement any measures to hinder the student at cheating we just make it not
-that straightforward.
-
-### Grading
-
-Since the tool is designed with the specific goal of helping students to learn
-we did not implement a grading system. As mentioned above, we did not make it
-hard for students to cheat on the exercises in any way, so any and all grading
-would be irrelevant without a dedicated exam-mode that prohibits this. This
-however was never an intended part of the project.
