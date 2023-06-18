@@ -3,7 +3,7 @@ SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Ra
 
 SPDX-License-Identifier: CC-BY-SA-4.0
 
-This file is based on arc42 template, originally created by Gernot Starke and Peter Hruschka, which can be found [here](https://arc42.org/download) and has been altered to fit our needs. arc42 is licensed under CC-BY-SA-4.0. 
+This file is based on arc42 template, originally created by Gernot Starke and Peter Hruschka, which can be found [here](https://arc42.org/download) and has been altered to fit our needs. arc42 is licensed under CC-BY-SA-4.0.
 -->
 
 # System and Context
@@ -25,7 +25,7 @@ C4Context
     Rel(lms, sql-train-server, "login data")
     Rel(student, sql-train-client, "Uses App")
     BiRel(sql-train-client, sql-train-server, "")
-    Rel(lecturer, sql-train-client, "Analytics of course")
+    Rel(sql-train-client, lecturer, "Analytics of course")
     Rel(lecturer, sql-train-server, "Creates exercises")
 ```
 
@@ -49,27 +49,8 @@ server pg-stud, made specifically for the students.
 
 ## Technical Context
 
-```mermaid
-C4Context
-    title SQL-Train Business Context
-    Person(student, "Student")
-    System_Ext(lms, "LMS of University", "Moodle")
-    System(sql-train-server, "SQL-Train-Server")
-    SystemDb_Ext(pg-stud, "PG-Stud of University", "Database for all students")
-    System(sql-train-client, "SQL-Train-Client")
-    Person(lecturer, "Lecturer")
+We have already provided a detailed description of the technical context in the
+deployment view and have further elaborated on it in the runtime view.
+Therefore, we will not reiterate that information here.
 
-    Rel(sql-train-server, pg-stud, "Uses", "host trust")
-    Rel(student, lms, "Login")
-    Rel(lms, sql-train-server, "login data", "HTTPS/LTI")
-    Rel(student, sql-train-client, "HTTPS")
-    BiRel(sql-train-client, sql-train-server, "HTTPS/REST")
-    Rel(lecturer, sql-train-client, "Analytics of course", "HTTPS")
-    Rel(lecturer, sql-train-server, "Creates exercises", "HTTPS")
-```
-
-**\<optionally: Explanation of technical interfaces>**
-
-LTI, psycopg2, rest?
-
-**\<Mapping Input/Output to Channels>**
+For security information see the separate section.
