@@ -4,11 +4,12 @@
 
 import ctypes
 import json
+import os
+import sys
 import threading
 import unittest
 from unittest.mock import MagicMock, patch
 
-from django.conf import settings
 from django.test import RequestFactory, TestCase
 
 import exercises.models as m
@@ -28,6 +29,7 @@ from pg_stud.api import (
     solution_result,
 )
 from pg_stud.pg_conn_pool import PgConnPool
+from sql_training import settings
 
 
 @unittest.skipIf(False, "Skip pg_stud test")
@@ -222,3 +224,36 @@ class PgStudTestCase(TestCase):
     # TODO:
     # def test_create_feedback():
     # def test_patch_user_exercise():
+
+
+class AllExercises(TestCase):
+    fixtures = map(
+        lambda f: f[:-5],
+        filter(lambda f: f.endswith(".yaml"), os.listdir(settings.FIXTURE_DIRS[0])),
+    )
+
+    # create user and request factory
+    def setUp(self):
+        self.factory = RequestFactory()
+        self.maxDiff = None
+        self.user = LTIUser.objects.create_user(username="mitro", password="testpw")
+
+    def check_answer(self, e: m.Exercise):
+        data = QueryIn(
+            topic_short=e.topic.short,
+            enumber=e.enumber,
+            query=m.Solution.objects.get(exercise=e, snumber=1).sql,
+        )
+        request = self.factory.post("/api/pg-stud/check_answer_correct/", data.dict())
+        request.user = self.user
+
+        response = check_answer_correct_api(request, data)
+        self.assertTrue(response.correct, f"{e} failed")
+
+    def test_all_exercises(self):
+        for e in m.Exercise.objects.all():
+            try:
+                m.Solution.objects.get(exercise=e, snumber=1).sql,
+            except Exception:
+                print(e)
+            self.check_answer(e)
