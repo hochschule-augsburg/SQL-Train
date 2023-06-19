@@ -36,7 +36,7 @@ class Topic(models.Model):
         return f"{self.short}"
 
     class Meta:
-        ordering = ["tag", "title"]
+        ordering = ["title", "tag"]
 
 
 class Etag(models.Model):
