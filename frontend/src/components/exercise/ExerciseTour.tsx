@@ -81,7 +81,7 @@ const ExerciseTour: React.FC<Props> = (props) => {
             content: t(baseTransName + ".clear"),
         },
         {
-            selector: "#table",
+            selector: ".table",
             content: t(baseTransName + ".table"),
         },
     ]

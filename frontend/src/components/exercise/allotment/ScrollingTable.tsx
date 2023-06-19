@@ -54,8 +54,11 @@ const ScrollingTable: React.FC<Props> = (props) => {
     return (
         <ScrollSyncPane>
             <div
-                className={cx(classNameCustomBar, classes.customBarDiv)}
-                id="table"
+                className={cx(
+                    classNameCustomBar,
+                    classes.customBarDiv,
+                    "table",
+                )}
             >
                 <Allotment.Pane minSize={30} maxSize={30}>
                     <div className={classNameTableTitle}>{tableTitle}</div>
