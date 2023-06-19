@@ -52,9 +52,10 @@ npm run build --prefix frontend/
 python -m pip install -r requirements.txt
 ```
 
-### Environment Variables
+### Configuration
 
 Create an `.env` file and set all the variable from `.env-testing`.
+Copy `config.json.example` to `config.json` and set values if needed.
 
 ### Create Database Schema
 
