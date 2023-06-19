@@ -2,9 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import React, { useContext, useState } from "react"
+import React, { useContext } from "react"
 import { makeStyles } from "tss-react/mui"
-import Tour from "reactour"
+import { TourProvider } from "@reactour/tour"
 import config from "../../../../config.json"
 import { DarkModeContext } from "../layout/DarkModeContext"
 import { useTranslation } from "react-i18next"
@@ -19,36 +19,38 @@ const useStyles = makeStyles<{ darkMode: boolean }>()(
     }),
 )
 
+interface Props {
+    children: any
+}
+
 /**
  * ExerciseTour component displays a tour for the exercise page.
  * The Tour is only shown once.
  *
  * @returns {JSX.Element} Title component.
  */
-const ExerciseTour: React.FC = () => {
+const ExerciseTour: React.FC<Props> = (props) => {
     const { darkMode } = useContext(DarkModeContext)
     const { classes } = useStyles({ darkMode })
     const { t } = useTranslation("common")
 
-    const [isOpen, setIsOpen] = useState(() => {
-        // show tour after site is fully loaded
-        setTimeout(
-            () => setIsOpen(!localStorage.getItem("tour.exercise.seen")),
-            800,
-        )
-        return false
-    })
-
     const close = () => {
         localStorage.setItem("tour.exercise.seen", "yes")
-        setIsOpen(false)
     }
 
     const baseTransName = "tour.exercise"
     const steps = [
         {
-            selector: ".customBar", //TODO: rename class
+            selector: "#question",
+            content: t(baseTransName + ".question"),
+        },
+        {
+            selector: "#editor",
             content: t(baseTransName + ".editor"),
+        },
+        {
+            selector: "#dataModelIcon",
+            content: t(baseTransName + ".datamodel"),
         },
         {
             selector: "#execute",
@@ -62,16 +64,43 @@ const ExerciseTour: React.FC = () => {
             selector: "#solution",
             content: t(baseTransName + ".solution"),
         },
+        {
+            selector: "#prevBut",
+            content: t(baseTransName + ".prev"),
+        },
+        {
+            selector: "#nextBut",
+            content: t(baseTransName + ".next"),
+        },
+        {
+            selector: "#reset",
+            content: t(baseTransName + ".reset"),
+        },
+        {
+            selector: "#clear",
+            content: t(baseTransName + ".clear"),
+        },
+        {
+            selector: ".table",
+            content: t(baseTransName + ".table"),
+        },
     ]
 
     return (
-        <Tour
-            accentColor={config.THEME_COLORS.PRIMARY}
+        <TourProvider
+            styles={{
+                popover: (base) => ({
+                    ...base,
+                    "--reactour-accent": config.THEME_COLORS.PRIMARY,
+                    borderRadius: "5px",
+                }),
+            }}
             className={classes.exerciseTour}
             steps={steps}
-            isOpen={isOpen}
-            onRequestClose={close}
-        />
+            beforeClose={close}
+        >
+            {props.children}
+        </TourProvider>
     )
 }
 

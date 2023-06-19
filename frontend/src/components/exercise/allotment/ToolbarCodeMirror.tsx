@@ -78,6 +78,7 @@ const ToolbarCodeMirror: React.FC<Props> = (props) => {
             <Allotment.Pane minSize={400} maxSize={400}>
                 <div className={className}>
                     <CodeMirror
+                        id="editor"
                         className={className}
                         basicSetup={basicSetup}
                         onChange={onChange}

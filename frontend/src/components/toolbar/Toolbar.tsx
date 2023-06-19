@@ -166,17 +166,17 @@ const Toolbar: React.FC<Props> = (props) => {
     }, [handleKeyDown])
 
     return (
-        <div className={classes.wrapper}>
+        <div className={classes.wrapper} id="toolbar">
             <div>
                 <ToolbarButton
-                    id={"dataModelIcon"}
+                    id="dataModelIcon"
                     iconClassName={"bi bi-file-earmark-text-fill"}
                     onClick={dataModelHandler}
                     disableButton={false}
                     tooltipText={t("exercise.showDataModel")}
                 />
                 <ToolbarButton
-                    id={"execute"}
+                    id="execute"
                     iconClassName={""}
                     onClick={executeHandler}
                     disableButton={disableToolbarButtons}
@@ -188,7 +188,7 @@ const Toolbar: React.FC<Props> = (props) => {
                     ReactIcons={FaPlay}
                 />
                 <ToolbarButton
-                    id={"check"}
+                    id="check"
                     iconClassName={""}
                     onClick={checkHandler}
                     disableButton={disableToolbarButtons}
@@ -200,7 +200,7 @@ const Toolbar: React.FC<Props> = (props) => {
                     ReactIcons={FaCheck}
                 />
                 <ToolbarButton
-                    id={"solution"}
+                    id="solution"
                     iconClassName={"bi bi-lightbulb-fill"}
                     onClick={solutionHandler}
                     disableButton={disableToolbarButtons}
@@ -222,7 +222,7 @@ const Toolbar: React.FC<Props> = (props) => {
                     className={classes.link}
                 >
                     <ToolbarButton
-                        id={"prevBut"}
+                        id="prevBut"
                         iconClassName={"bi bi-skip-backward-fill"}
                         disableButton={
                             !exercises.some((e) =>
@@ -244,7 +244,7 @@ const Toolbar: React.FC<Props> = (props) => {
                     className={classes.link}
                 >
                     <ToolbarButton
-                        id={"nextBut"}
+                        id="nextBut"
                         iconClassName={"bi bi-skip-forward-fill"}
                         disableButton={
                             !exercises.some((e) =>
@@ -257,7 +257,7 @@ const Toolbar: React.FC<Props> = (props) => {
                     />
                 </Link>
                 <ToolbarButton
-                    id={"reset"}
+                    id="reset"
                     iconClassName={"bi bi-arrow-clockwise"}
                     onClick={resetHandler}
                     disableButton={disableToolbarButtons}
@@ -268,7 +268,7 @@ const Toolbar: React.FC<Props> = (props) => {
                     }
                 />
                 <ToolbarButton
-                    id={"clear"}
+                    id="clear"
                     iconClassName={"bi bi-trash-fill"}
                     onClick={clearHandler}
                     disableButton={disableToolbarButtons}
