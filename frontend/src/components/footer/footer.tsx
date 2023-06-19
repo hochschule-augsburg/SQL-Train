@@ -52,16 +52,18 @@ const Footer: React.FC = () => {
         <div className={classes.footerWrapper}>
             <div className={classes.footerBar} />
             <a
-                href="/privacy#imprint"
+                href={config.IMPRINT_URL}
                 target="_blank"
                 className={classes.footerLinks}
+                rel="noreferrer"
             >
                 {t("footer.imprint")}
             </a>
             <a
-                href="/privacy#privacy"
+                href={config.PRIVACY_URL}
                 target="_blank"
                 className={classes.footerLinks}
+                rel="noreferrer"
             >
                 {t("footer.privacy")}
             </a>

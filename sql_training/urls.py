@@ -52,7 +52,6 @@ api.add_router("feedback", feedback_router)
 
 urlpatterns = [
     path("", views.index),
-    path("privacy", TemplateView.as_view(template_name="privacy.html")),
     path("credits", TemplateView.as_view(template_name="credits.html")),
     path("admin/", admin.site.urls),
     path("api/", api.urls),
