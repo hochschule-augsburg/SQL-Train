@@ -10,6 +10,7 @@ const watch = process.argv.includes("--watch")
 async function main() {
     const options = {
         entryPoints: ["src/index.tsx"],
+        target: ["es6"],
         bundle: true,
         sourcemap: !prod,
         splitting: true,
