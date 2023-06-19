@@ -26,14 +26,6 @@ const useStyles = makeStyles()(() => ({
         backgroundColor: config.THEME_COLORS.PRIMARY,
         color: config.THEME_COLORS.NEUTRAL,
     },
-    canvas: {
-        paddingInline: "20px",
-    },
-    button: {
-        "& button:focus": {
-            boxShadow: "none !important",
-        },
-    },
 }))
 
 interface Props {

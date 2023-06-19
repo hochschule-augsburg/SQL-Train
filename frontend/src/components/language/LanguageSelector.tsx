@@ -13,13 +13,6 @@ import { NavItem } from "reactstrap"
 
 const useStyles = makeStyles<{ darkMode: boolean }>()(
     (theme, { darkMode }) => ({
-        dropdownToggle: {
-            borderWidth: "0px",
-            "&:hover": {
-                backgroundColor: "transparent",
-                color: config.THEME_COLORS.NEUTRAL,
-            },
-        },
         dropdownItem: {
             backgroundColor: darkMode
                 ? config.THEME_COLORS.DARK

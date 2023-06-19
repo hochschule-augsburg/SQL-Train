@@ -20,10 +20,6 @@ const useStyles = makeStyles()(() => ({
         marginBottom: "1%",
         backgroundColor: config.THEME_COLORS.SECONDARY,
     },
-    customBarDiv: {
-        height: "430px",
-        overflow: "scroll",
-    },
     tableTitle: {
         position: "static",
         backgroundColor: config.THEME_COLORS.SECONDARY,
