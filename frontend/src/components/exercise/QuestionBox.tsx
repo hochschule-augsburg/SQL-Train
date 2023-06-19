@@ -64,6 +64,8 @@ const QuestionBox: React.FC<Props> = (props) => {
                 {`${topic?.title}/${exercise?.enumber}: ${exercise?.title}`}
             </span>
             <span className={classes.points}>
+                {t("FOTypes.4")}: {t("difficulty." + exercise?.difficulty)}
+                &nbsp;
                 {t("exercise.points", { count: exercise?.points })}
             </span>
             <span>
