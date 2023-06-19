@@ -175,7 +175,7 @@ def lti_registration_data(request: HttpRequest):
     return {
         "response_types": ["id_token"],
         "application_type": "web",
-        "client_name": settings.LTI_CONFIG["title"],
+        "client_name": settings.config["LTI"]["title"],
         "initiate_login_uri": absolute_reverse(request, "lti:login"),
         "grant_types": ["implicit", "client_credentials"],
         "jwks_uri": absolute_reverse(request, "lti:jwks"),
@@ -199,7 +199,7 @@ def lti_registration_data(request: HttpRequest):
                     "label": str(_("SQL-Train DeepLink")),
                 }
             ],
-            "description": settings.LTI_CONFIG["description"],
+            "description": settings.config["LTI"]["description"],
         },
         "logo_uri": request.build_absolute_uri(static("ltiapi/favicon-96.png")),
     }

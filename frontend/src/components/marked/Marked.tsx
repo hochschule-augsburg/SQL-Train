@@ -4,7 +4,7 @@
 
 import React, { useEffect, useState, useCallback, useContext } from "react"
 import { DarkModeContext } from "../layout/DarkModeContext"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import MarkedCard from "./MarkedCard"
 import { makeStyles } from "tss-react/mui"
 import { Drawer } from "@mui/material"

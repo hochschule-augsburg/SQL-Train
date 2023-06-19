@@ -4,7 +4,7 @@
 
 import React, { useCallback, useState } from "react"
 import { Nav, Navbar, NavbarBrand, NavItem } from "reactstrap"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import LanguageSelector from "../language/LanguageSelector"
 import { useHistory } from "react-router"
 import ThemeSelector from "../theme/ThemeSelector"

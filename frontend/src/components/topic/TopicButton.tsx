@@ -4,7 +4,7 @@
 
 import React from "react"
 import { Button } from "reactstrap"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import { makeStyles } from "tss-react/mui"
 import If from "../conditional/If"
 

@@ -5,7 +5,7 @@
 import React from "react"
 import { Button } from "reactstrap"
 import { makeStyles } from "tss-react/mui"
-import config from "../../config.json"
+import config from "../../../../config.json"
 
 const useStyles = makeStyles<{ selected: boolean | undefined }>()(
     (theme, { selected }) => ({

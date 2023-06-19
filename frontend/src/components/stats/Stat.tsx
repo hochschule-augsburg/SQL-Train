@@ -5,7 +5,7 @@
 import React, { useState } from "react"
 import { Button } from "reactstrap"
 import { makeStyles } from "tss-react/mui"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import { useTranslation } from "react-i18next"
 
 const useStyles = makeStyles<{ label: { color: string; text: string } }>()(

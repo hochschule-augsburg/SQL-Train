@@ -11,6 +11,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 :maxdepth: 1
 
 deploy
+config
 register_tool
 add_to_course
 

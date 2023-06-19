@@ -5,7 +5,7 @@
 import React, { useCallback, useEffect, useMemo } from "react"
 import { useDispatch } from "react-redux"
 import { makeStyles } from "tss-react/mui"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import {
     Autocomplete,
     TextField,

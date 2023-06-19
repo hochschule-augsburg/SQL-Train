@@ -4,7 +4,7 @@
 
 import React, { useContext } from "react"
 import { VisibilityContext } from "react-horizontal-scrolling-menu"
-import config from "../../../config.json"
+import config from "../../../../../config.json"
 import { DarkModeContext } from "../../layout/DarkModeContext"
 import { makeStyles } from "tss-react/mui"
 

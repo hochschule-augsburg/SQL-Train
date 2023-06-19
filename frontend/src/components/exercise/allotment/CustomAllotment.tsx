@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import React, { useEffect, useState } from "react"
-import config from "../../../config.json"
+import config from "../../../../../config.json"
 import { Result } from "../../../api"
 import { AllotmentState } from "../../../pages/ExercisePage"
 import { makeStyles } from "tss-react/mui"
