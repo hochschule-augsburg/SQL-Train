@@ -200,15 +200,8 @@ const ExercisePage: React.FC = () => {
             () => setIsOpen(!localStorage.getItem("tour.exercise.seen")),
             800,
         )
-    }, [
-        handleAllotmentStates,
-        dispatch,
-        topicId,
-        exerciseId,
-        t,
-        setError,
-        setIsOpen,
-    ])
+        window.onpopstate = () => setIsOpen(false)
+    }, [handleAllotmentStates, setIsOpen])
 
     useEffect(() => {
         setDisableToolbarButtons(false)
