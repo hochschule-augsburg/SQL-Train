@@ -90,6 +90,8 @@
         "exercise_other": "Exercises",
         "solution_one": "Solution",
         "solution_other": "Solutions",
+        "points_one": "{{count}} Point",
+        "points_other": "{{count}} Points",
         "dataModel": "Data Model",
         "dataModelInfo": "This is the data model",
         "showDataModel": "Show Datamodel",

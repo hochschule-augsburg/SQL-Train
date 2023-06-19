@@ -89,6 +89,8 @@
         "exercise_other": "Aufgaben",
         "solution_one": "Lösung",
         "solution_other": "Lösungen",
+        "points_one": "{{count}} Punkt",
+        "points_other": "{{count}} Punkte",
         "dataModel": "Datenmodell",
         "dataModelInfo": "Das ist das Datenmodell",
         "showDataModel": "Datenmodell anzeigen",
