@@ -169,6 +169,7 @@ const ExercisePage: React.FC = () => {
     )
 
     useEffect(() => {
+        handleAllotmentStates(AllotmentState.NEW)
         dispatch(fetchExercise(topicId, exerciseId)).catch(() =>
             setError(t("general.error.exercise")),
         )
@@ -195,13 +196,12 @@ const ExercisePage: React.FC = () => {
     ])
 
     useEffect(() => {
-        handleAllotmentStates(AllotmentState.NEW)
         setTimeout(
             () => setIsOpen(!localStorage.getItem("tour.exercise.seen")),
             800,
         )
         window.onpopstate = () => setIsOpen(false)
-    }, [handleAllotmentStates, setIsOpen])
+    }, [setIsOpen])
 
     useEffect(() => {
         setDisableToolbarButtons(false)
