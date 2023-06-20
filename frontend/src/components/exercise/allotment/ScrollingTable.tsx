@@ -8,7 +8,7 @@ import CustomTable from "../../table/CustomTable"
 import { ScrollSyncPane } from "react-scroll-sync"
 import { Allotment } from "allotment"
 import { makeStyles } from "tss-react/mui"
-import config from "../../../config.json"
+import config from "../../../../../config.json"
 
 const useStyles = makeStyles()(() => ({
     customBarDiv: {
@@ -53,7 +53,13 @@ const ScrollingTable: React.FC<Props> = (props) => {
 
     return (
         <ScrollSyncPane>
-            <div className={cx(classNameCustomBar, classes.customBarDiv)}>
+            <div
+                className={cx(
+                    classNameCustomBar,
+                    classes.customBarDiv,
+                    "table",
+                )}
+            >
                 <Allotment.Pane minSize={30} maxSize={30}>
                     <div className={classNameTableTitle}>{tableTitle}</div>
                 </Allotment.Pane>

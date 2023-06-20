@@ -90,6 +90,8 @@
         "exercise_other": "Exercises",
         "solution_one": "Solution",
         "solution_other": "Solutions",
+        "points_one": "{{count}} Point",
+        "points_other": "{{count}} Points",
         "dataModel": "Data Model",
         "dataModelInfo": "This is the data model",
         "showDataModel": "Show Datamodel",
@@ -167,17 +169,17 @@
     },
     "tour": {
         "exercise": {
-            "question": "",
-            "points": "",
-            "editor": "",
-            "execute": "",
-            "check": "",
-            "solution": "",
-            "datamodel": "",
-            "clear": "",
-            "reset": "",
-            "next": "",
-            "table": ""
+            "question": "This is the question box. Click on the star icon to mark this exercise.",
+            "editor": "This is the editor. Here you can write your SQL queries.",
+            "datamodel": "Click here to show the datamodel.",
+            "execute": "To execute the query click here.",
+            "check": "To check your answer click here. To prevent cheating this resets your tables.",
+            "solution": "Click here to see the solution query+table.",
+            "prev": "Click here for the previous exercise.",
+            "next": "Click here for the next exercise.",
+            "reset": "Click here to reset the database. This is handy when you want to cherry pick your exercises as it loads the specific tables for the exercise.",
+            "clear": "To clear the editor click here.",
+            "table": "Here you will see the query table."
         }
     }
 }

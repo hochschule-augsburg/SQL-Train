@@ -3,12 +3,12 @@ SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Ra
 
 SPDX-License-Identifier: CC-BY-SA-4.0
 
-This file is based on arc42 template, originally created by Gernot Starke and Peter Hruschka, which can be found [here](https://arc42.org/download) and has been altered to fit our needs. arc42 is licensed under CC-BY-SA-4.0. 
+This file is based on arc42 template, originally created by Gernot Starke and Peter Hruschka, which can be found [here](https://arc42.org/download) and has been altered to fit our needs. arc42 is licensed under CC-BY-SA-4.0.
 -->
 
-## Building Block View Backend
+# Building Block View Backend
 
-### **Level 1**
+## **Level 1**
 
 ```mermaid
 C4Component
@@ -37,14 +37,14 @@ C4Component
 	Rel(student, django_project, "dynamic views")
 ```
 
-### Motivation
+## Motivation
 
 The backend (except for frontend and sql_training) is structured as
 semi-self-contained Django apps is to achieve a modular and scalable
 architecture for the backend components of the system. This approach allows for
 better code organization, reusability, and maintainability.
 
-### Important Interfaces
+## Important Interfaces
 
 | Subsystem             | Description                                      |
 | --------------------- | ------------------------------------------------ |
@@ -55,29 +55,12 @@ better code organization, reusability, and maintainability.
 | pg_stud               | API for pg-stud                                  |
 | exercises_data        | Fixtures for initial data                        |
 
-###
 
-_\<Interface(s)>_
+## **Level 2**
 
-_\<(Optional) Quality/Performance Characteristics>_
+## **White Box _sql_training_**
 
-_\<(Optional) Directory/File Location>_
-
-_\<(Optional) Fulfilled Requirements>_
-
-_\<(optional) Open Issues/Problems/Risks>_
-
-### \<Name interface 1>
-
-…
-
-### \<Name interface m>
-
-### **Level 2**
-
-### **White Box _sql_training_**
-
-#### Modules
+### Modules
 
 | File        | Responsibility                                         |
 | ----------- | ------------------------------------------------------ |
@@ -90,7 +73,7 @@ _\<(optional) Open Issues/Problems/Risks>_
 
 sql_training is our django project folder.
 
-### **White Box _Common Structure of Apps_**
+## **White Box _Common Structure of Apps_**
 
 | File            | Responsibility                                                                            |
 | --------------- | ----------------------------------------------------------------------------------------- |
@@ -107,9 +90,9 @@ sql_training is our django project folder.
 | fixtures/       | Defines fixtures for tests.                                                               |
 | migrations/     | Auto generated database migrations that can be edited if somethings breaks.               |
 
-#### **More Details**
+### **More Details**
 
-#### `api.py`
+### `api.py`
 
 The api.py file is responsible for handling API views within the Django app. It
 defines the endpoints and handles HTTP requests. The file follows a structured
@@ -126,39 +109,39 @@ the URL pattern and the corresponding view function for handling requests. The
 router takes care of mapping URLs to the appropriate functions, making it easier
 to define and manage the API endpoints.
 
-#### `apps.py`
+### `apps.py`
 
 The apps.py file just defines the name of the app and the default AutoFields for
 the models.
 
-#### `models.py`
+### `models.py`
 
 In this file, the data models for the Django app are defined using Django's
 Object-Relational Mapping (ORM). The models represent the entities and their
 relationships in the application's data structure. They define fields,
 constraints, and behaviors for interacting with the underlying database.
 
-#### `views.py`
+### `views.py`
 
 The views.py file defines the views responsible for handling user requests. It
 contains functions or classes that process requests, retrieve data from the
 models, apply business logic and render the appropriate templates.
 
-#### `urls.py`
+### `urls.py`
 
 This file maps the URLs of the Django app to the corresponding views. It defines
 the routing configuration by associating URLs with specific views or viewsets.
 It enables the app to respond to different URLs and directs the requests to the
 appropriate view functions or class methods.
 
-#### `admin.py`
+### `admin.py`
 
 The admin.py file is used for registering models to be managed in Django's
 built-in administration interface. It allows authorized users to perform CRUD
 operations on the registered models through the admin interface, providing an
 easy-to-use backend management system.
 
-#### `tests.py`
+### `tests.py`
 
 This file contains unit tests that ensure the functionality and correctness of
 the Django app. It includes test cases to verify the behavior of mostly API
@@ -166,7 +149,7 @@ endpoints, models, views and other components of the app. Testing is essential
 to identify and fix bugs, validate expected behaviors, and maintain the overall
 quality of the application.
 
-#### `schemas.py`
+### `schemas.py`
 
 In the context of API development, the schemas.py file holds the schemas used
 for data validation and serialization in API requests and responses. It defines
@@ -175,13 +158,13 @@ outgoing responses. Schemas help ensure that the data exchanged through the API
 conforms to the specified format and constraints. Every Schema is a Subclass of
 `ninja.Schema`/`ninja.ModelSchema`.
 
-#### `translations.py`
+### `translations.py`
 
 This file manages internationalization (i18n) for models using the
 django-modeltranslations package. This is done by specifying all fields that
 need to be localized in a subclass of TranslationOptions per Model.
 
-### **White Box _exercises_**
+## **White Box _exercises_**
 
 | File            | Responsibility                                         |
 | --------------- | ------------------------------------------------------ |
@@ -192,7 +175,7 @@ need to be localized in a subclass of TranslationOptions per Model.
 | filter\_\*.py   | API for filtering exercises.                           |
 | stats\_\*.py    | API for statistics of UserExercises per Course.        |
 
-### **White Box _pg_stud_**
+## **White Box _pg_stud_**
 
 | File            | Responsibility                               |
 | --------------- | -------------------------------------------- |
@@ -201,16 +184,21 @@ need to be localized in a subclass of TranslationOptions per Model.
 | utils.py        | Database operation functions                 |
 | pg_conn_pool.py | Module for connection per user               |
 
-#### `pg_conn_pool.py`
+### `pg_conn_pool.py`
 
 Module for PgConnPool Singleton.
 
 ```mermaid
 classDiagram
+    class PoolItem{
+        <<dataclass>>
+        + pool: ConnectionPool
+        + last_access: float
+    }
     class PgConnPool {
         <<Singleton>>
         - _instance: PgConnPool
-        - _pools: Dict[str, List[ConnectionPool | 'timestamp']]
+        - _pools: Dict[str, PoolItem]
         - conninfo(lms_username: str): Dict[str, str]
         + __new__(cls)
         + get_pool(user: LTIUser): ConnectionPool
@@ -232,7 +220,7 @@ be closed based on their last activity time. By implementing this mechanism, we
 can efficiently manage the lifecycle of connections and optimize resource
 utilization.
 
-### **White Box _ltiapi_**
+## **White Box _ltiapi_**
 
 | File                           | Responsibility                                             |
 | ------------------------------ | ---------------------------------------------------------- |
@@ -240,11 +228,11 @@ utilization.
 | utils.py                       | Utility function for lti and extract data from launch_data |
 | management/makeconsumerlink.py | Command for manage.py to make consumer link                |
 
-### Level 3
+## Level 3
 
-### White Box ltiapi.views
+## White Box ltiapi.views
 
-#### `RegisterConsumerView` (Class-based view):
+### `RegisterConsumerView` (Class-based view):
 
 This view handles the registration of the application as an LTI provider via the
 LTI registration flow. GET request: Renders a registration form template where
@@ -258,20 +246,20 @@ endpoint. Uses the registration information to register the consumer to the
 application. Renders a result template indicating the success or failure of the
 registration process.
 
-#### `oidc_jwks` (Function-based view):
+### `oidc_jwks` (Function-based view):
 
 This view serves as the JWT signature delivery endpoint for OpenID Connect.
 Retrieves the JSON Web Key Set (JWKS) from the tool configuration based on the
 issuer and client ID. Returns the JWKS as a JSON response.
 
-#### `oidc_login` (Function-based view):
+### `oidc_login` (Function-based view):
 
 Verifies if the requesting consumer is allowed to log in and provides the
 consumer with the next redirection URL. Uses OpenID Connect for authentication
 and authorization. Enables cookie check and redirects the consumer to the target
 link URI.
 
-#### `lti_launch` (Function-based view):
+### `lti_launch` (Function-based view):
 
 Implements the LTI launch process. Parses and verifies the data passed by the
 LTI consumer. Logs in the user and redirects them based on the requested launch
@@ -279,10 +267,20 @@ type (resource launch or data privacy launch). login_lms (Function-based view):
 
 Renders a login template for the LMS (Learning Management System) integration.
 
-### White Box exercises.models
+## White Box exercises.models
 
-![ER-like Diagram](./drawio/exercises_erd.drawio.svg "exercises-ERD")
+![ER-like Diagram](./drawio/exercises_erd.drawio.svg) :::
 
-### White Box ltiapi.models
+:::{note}
+:class: dropdown
+![Agila Mod](./drawio/exercises_agila_mod.drawio.svg) :::
+:::
+
+## White Box ltiapi.models
 
 ![ER-like Diagram](./drawio/ltiapi_erd.drawio.svg "ltiapi-ERD")
+
+:::{note}
+:class: dropdown
+![Agila Mod](./drawio/ltiapi_agila_mod.drawio.svg) :::
+:::

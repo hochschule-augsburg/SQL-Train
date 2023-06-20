@@ -49,7 +49,7 @@ const CustomTable: React.FC<Props> = (props) => {
                                     classes.head,
                                 )}
                             >
-                                {key}
+                                {String(key)}
                             </th>
                         ))}
                 </tr>
@@ -72,7 +72,9 @@ const CustomTable: React.FC<Props> = (props) => {
                         >
                             {tableCont &&
                                 Object.keys(tableCont.result[0]).map((cell) => {
-                                    return <td key={cell}>{row[cell]}</td>
+                                    return (
+                                        <td key={cell}>{String(row[cell])}</td>
+                                    )
                                 })}
                         </tr>
                     )

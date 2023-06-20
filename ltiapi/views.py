@@ -35,7 +35,7 @@ from pylti1p3.contrib.django import (
 from pylti1p3.contrib.django.lti1p3_tool_config import DjangoDbToolConf
 from pylti1p3.deep_link_resource import DeepLinkResource
 
-from sql_training.settings import DEFAULT_TEMPLATE_CONTEXT
+from sql_training.settings import config
 from sql_training.utils import absolute_reverse
 
 from . import models as m
@@ -212,4 +212,4 @@ def lti_launch(request: HttpRequest):
 
 
 def login_lms(request):
-    return render(request, "ltiapi/login.html", context=DEFAULT_TEMPLATE_CONTEXT)
+    return render(request, "ltiapi/login.html", context=config)

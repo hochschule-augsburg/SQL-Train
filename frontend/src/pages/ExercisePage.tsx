@@ -10,6 +10,7 @@ import React, {
     useState,
 } from "react"
 import { useParams } from "react-router"
+import { useTour } from "@reactour/tour"
 import HorizontalScrollingMenu from "../components/scrollMenu/HorizontalScrollingMenu"
 import QuestionBox from "../components/exercise/QuestionBox"
 import { useTranslation } from "react-i18next"
@@ -84,6 +85,7 @@ const ExercisePage: React.FC = () => {
     const { t } = useTranslation("common")
     const { darkMode } = useContext(DarkModeContext)
     const { classes } = useStyles({ darkMode })
+    const { setIsOpen } = useTour()
 
     const { setError } = useContext(ErrorContext)
 
@@ -182,7 +184,6 @@ const ExercisePage: React.FC = () => {
         dispatch(fetchFavourites()).catch(() =>
             setError(t("general.error.favourite")),
         )
-        handleAllotmentStates(AllotmentState.NEW)
     }, [
         handleAllotmentStates,
         dispatch,
@@ -192,6 +193,15 @@ const ExercisePage: React.FC = () => {
         t,
         setError,
     ])
+
+    useEffect(() => {
+        handleAllotmentStates(AllotmentState.NEW)
+        setTimeout(
+            () => setIsOpen(!localStorage.getItem("tour.exercise.seen")),
+            800,
+        )
+        window.onpopstate = () => setIsOpen(false)
+    }, [handleAllotmentStates, setIsOpen])
 
     useEffect(() => {
         setDisableToolbarButtons(false)
@@ -525,7 +535,6 @@ const ExercisePage: React.FC = () => {
 
     return (
         <>
-            {/* <ExerciseTour /> */}
             <If condition={isExploding}>
                 <div className={classes.confettiWrapper}>
                     <ConfettiExplosion

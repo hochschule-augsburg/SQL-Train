@@ -35,12 +35,13 @@ B -->|Renders| F[StatsPage]
 
 - All pages require the necessary Redux store setup and reducer configurations to work correctly.
 - All pages assume the existence of other components and dependencies mentioned in the imports section.
-- Some pages utilize React Router for navigation between pages.
+- The SPA is developed with a React Router for the ability to reload.
 - All pages use Redux to manage the application state.
 - The application supports localization using the _react-i18next_ library.
 - The styling of the component relies on the _makeStyles_ function from _tss-react/mui_.
 - All pages and components use the DarkModeContext for the dark mode.
 - The navigation bar is rendered on all pages with options to choose language, theme, ...
+- Error management is done via a ErrorContext in the root which displays error for a time.
 
 ## **Level 2**
 
@@ -82,7 +83,6 @@ The TopicPage component represents the topic page of the application. It allows 
 - Effect Hooks
 
   - Fetching Data: When the component mounts, it dispatches the _fetchTopics_, _fetchTopicOverviews_, and _fetchFilterOpts_ actions to fetch the necessary data from the server. If _showResult_ is _false_, the component fetches search results by dispatching the _fetchResults_ action with the selected filter options.
-  - Error Handling: The component sets a timeout to clear the _error_ state after 1300ms.
 
 - Callback Hooks
 
@@ -143,7 +143,6 @@ The _ExercisesPage_ component represents the exercises page of the application. 
 
   - Setup Database: Checks or installs the exercise database by calling the _apiExec_ function with the appropriate parameters. Sets the _error_ state if the database check or installation fails.
   - Fetching Data: When the component mounts, it dispatches the _fetchExercises_, _fetchUserExercises_, _fetchTopic_, and _fetchFavourites_ actions to fetch the necessary data from the server.
-  - Error Handling: The component sets a timeout to clear the _error_ state after 1300ms.
 
 - Callback Hooks
 
@@ -192,7 +191,6 @@ The _ExercisesPage_ component represents the exercise page of the application.
   - _allotmentState: AllotmentState | undefined_: State of an allotment, which can have values from the AllotmentState enum.
   - _solutionTablecont: Result_: Result data of a solution table.
   - _disableToolbarButtons: boolean_: State of disabling/enabling toolbar buttons.
-  - _error: string | null_: Error message.
   - _feedback: string | null_: Feedback message.
   - _isFeedbackPos: boolean | undefinend_: The positive/negative status of feedback.
   - _showDataModel: boolean_: Visibility of a data model.
@@ -216,7 +214,6 @@ The _ExercisesPage_ component represents the exercise page of the application.
   - Disabling toolbar: This effect is triggered when the _userExercise.selectedUserExercise_ changes. It updates the _disableToolbarButtons_ state to _false_ and sets the _inputQuery_ state based on the _buffer_save_ value of _selectedUserExercise_. If _buffer_save_ is undefined, it sets _inputQuery_ to an empty string.
   - Fetching favourites: This effect is triggered when the _exerciseId_, _favourites_, or _topicId_ changes. It finds a favorite exercise in the _favourites_ array that matches the current _topicId_ and _exerciseId_. If a matching exercise is found, it sets the _marked_ state to _true_, indicating that the exercise is marked as a favorite; otherwise, it sets _marked_ to _false_.
   - Showing datamodel: This effect is triggered when the _showDataModel_ state changes. If _showDataModel_ is _true_, it sets a timeout to scroll the page smoothly to the _ref_ element's current position. The scroll behavior is set to "smooth."
-  - Error Handling: The component sets a timeout to clear the _error_ state after 1300ms.
 
 - Callback Hooks
 

@@ -1,6 +1,7 @@
 {
     "THEME_COLORS": {
         "PRIMARY": "#F98113",
+        "PRIMARY_HOVER": "#FCBA03",
         "SECONDARY": "#333333",
         "NEUTRAL": "#FFFFFF",
         "DARK": "#181818",
@@ -13,5 +14,12 @@
     },
     "FEEDBACK": {
         "SHOW": true
+    },
+    "PRIVACY_URL": "https://example.com/privacy",
+    "IMPRINT_URL": "https://example.com/imprint",
+    "LMS_URL": "https://moodle.example.com",
+    "LTI": {
+        "title": "SQL-Train",
+        "description": "SQL-Train offers interactive SQL exercises for LMS-Platforms"
     }
 }

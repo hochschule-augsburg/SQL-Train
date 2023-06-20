@@ -4,7 +4,7 @@
 
 import React, { useEffect, useState, useCallback, useContext } from "react"
 import { DarkModeContext } from "../layout/DarkModeContext"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import MarkedCard from "./MarkedCard"
 import { makeStyles } from "tss-react/mui"
 import { Drawer } from "@mui/material"
@@ -25,14 +25,6 @@ const useStyles = makeStyles()(() => ({
         fontSize: "20px",
         backgroundColor: config.THEME_COLORS.PRIMARY,
         color: config.THEME_COLORS.NEUTRAL,
-    },
-    canvas: {
-        paddingInline: "20px",
-    },
-    button: {
-        "& button:focus": {
-            boxShadow: "none !important",
-        },
     },
 }))
 

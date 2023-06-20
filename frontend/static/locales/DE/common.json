@@ -89,6 +89,8 @@
         "exercise_other": "Aufgaben",
         "solution_one": "Lösung",
         "solution_other": "Lösungen",
+        "points_one": "{{count}} Punkt",
+        "points_other": "{{count}} Punkte",
         "dataModel": "Datenmodell",
         "dataModelInfo": "Das ist das Datenmodell",
         "showDataModel": "Datenmodell anzeigen",
@@ -166,17 +168,17 @@
     },
     "tour": {
         "exercise": {
-            "question": "",
-            "points": "",
-            "editor": "",
-            "execute": "",
-            "check": "",
-            "solution": "",
-            "datamodel": "",
-            "clear": "",
-            "reset": "",
-            "next": "",
-            "table": ""
+            "question": "Dies ist das Fragefeld. Klicken Sie auf das Sternsymbol, um diese Übung zu markieren.",
+            "editor": "Dies ist der Editor. Hier können Sie Ihre SQL-Abfragen schreiben.",
+            "datamodel": "Klicken Sie hier, um das Datenmodell anzuzeigen.",
+            "execute": "Klicken Sie hier, um die Abfrage auszuführen.",
+            "check": "Klicken Sie hier, um Ihre Antwort zu überprüfen. Um Schummeln zu verhindern werden Ihre Tabellen zurückgesetzt.",
+            "solution": "Klicken Sie hier, um die Abfrage+Tabelle zu sehen.",
+            "prev": "Klicken Sie hier für die vorherige Übung.",
+            "next": "Klicken Sie hier für die nächste Übung.",
+            "reset": "Klicken Sie hier, um die Datenbank zurückzusetzen. Dies ist praktisch, wenn Sie Ihre Übungen gezielt auswählen möchten, da hier die spezifischen Tabellen für die Übung geladen werden.",
+            "clear": "Klicken Sie hier, um den Editor zu löschen.",
+            "table": "Hier sehen Sie die Abfragetabelle"
         }
     }
 }

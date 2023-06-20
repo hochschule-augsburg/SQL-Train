@@ -3,36 +3,14 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import React from "react"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import { FormGroup, Input, Label } from "reactstrap"
 import RatingForm from "./RatingForm"
 import { makeStyles } from "tss-react/mui"
 
 const useStyles = makeStyles()(() => ({
-    canvas: {
-        paddingInline: "20px",
-    },
     label: {
         fontWeight: "bold",
-    },
-    rating: {
-        cursor: "pointer",
-        paddingTop: "5px",
-        paddingRight: "4px",
-        fontSize: "22px",
-    },
-    ratingForm: {
-        display: "flex",
-        justifyContent: "space-evenly",
-        padding: "0px",
-        marginBottom: "30px",
-    },
-    button: {
-        margin: "16px",
-    },
-    divWrapper: {
-        display: "flex",
-        justifyContent: "space-between",
     },
     input: {
         backgroundColor: `${config.THEME_COLORS.NEUTRAL}b3`,

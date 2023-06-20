@@ -19,15 +19,6 @@ import Stats from "../components/stats/Stats"
 import { ErrorContext } from "../components/layout/ErrorContext"
 
 const useStyles = makeStyles()(() => ({
-    divWrapper: {
-        display: "flex",
-        justifyContent: "center",
-        flexWrap: "wrap",
-        marginInline: "10%",
-    },
-    buttonDiv: {
-        textDecoration: "none",
-    },
     searchBarWrapper: {
         display: "flex",
         justifyContent: "center",

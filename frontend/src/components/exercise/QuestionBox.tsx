@@ -3,9 +3,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import React from "react"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import { makeStyles } from "tss-react/mui"
 import { Exercise, Topic } from "../../api"
+import { useTranslation } from "react-i18next"
 
 const useStyles = makeStyles()(() => ({
     questionBox: {
@@ -19,6 +20,9 @@ const useStyles = makeStyles()(() => ({
         borderRadius: "5px",
         padding: "5px",
         position: "relative",
+    },
+    points: {
+        float: "right",
     },
     star: {
         position: "absolute",
@@ -50,16 +54,24 @@ interface Props {
  */
 const QuestionBox: React.FC<Props> = (props) => {
     const { classes, cx } = useStyles()
+    const { t } = useTranslation("common")
 
     const { exercise, topic, toggleFavourite, marked } = props
 
     return (
-        <div className={classes.questionBox}>
-            <p>
+        <div className={classes.questionBox} id="question">
+            <span>
                 {`${topic?.title}/${exercise?.enumber}: ${exercise?.title}`}
-                <br />
+            </span>
+            <span className={classes.points}>
+                {t("FOTypes.4")}: {t("difficulty." + exercise?.difficulty)}
+                &nbsp;
+                {t("exercise.points", { count: exercise?.points })}
+            </span>
+            <span>
+                <br></br>
                 {exercise?.question}
-            </p>
+            </span>
 
             <i
                 className={cx(

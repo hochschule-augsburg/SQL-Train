@@ -4,12 +4,27 @@
 import esbuild from "esbuild"
 import copyStaticFiles from "esbuild-copy-static-files"
 import eslint from "esbuild-plugin-eslint"
+import fs from "fs"
+import path from "path"
 const prod = process.argv.includes("--prod")
 const watch = process.argv.includes("--watch")
 
 async function main() {
+    const config = path.join(process.cwd(), "../config.json")
+    if (!fs.existsSync(config)) {
+        fs.copyFile(
+            path.join(process.cwd(), "../config.example.json"),
+            config,
+            (err) => {
+                if (err) {
+                    console.log(err)
+                }
+            },
+        )
+    }
     const options = {
         entryPoints: ["src/index.tsx"],
+        target: ["es6"],
         bundle: true,
         sourcemap: !prod,
         splitting: true,

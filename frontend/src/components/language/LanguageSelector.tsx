@@ -7,19 +7,12 @@ import i18next from "i18next"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "tss-react/mui"
 import { DarkModeContext } from "../layout/DarkModeContext"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import { Menu, MenuItem } from "@mui/material"
 import { NavItem } from "reactstrap"
 
 const useStyles = makeStyles<{ darkMode: boolean }>()(
     (theme, { darkMode }) => ({
-        dropdownToggle: {
-            borderWidth: "0px",
-            "&:hover": {
-                backgroundColor: "transparent",
-                color: config.THEME_COLORS.NEUTRAL,
-            },
-        },
         dropdownItem: {
             backgroundColor: darkMode
                 ? config.THEME_COLORS.DARK

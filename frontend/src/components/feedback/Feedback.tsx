@@ -6,7 +6,7 @@ import React, { useCallback, useState, useContext } from "react"
 import { Form, Input, Label } from "reactstrap"
 import { apiExec, hasFailed } from "../../utils/ApiUtils"
 import { useTranslation } from "react-i18next"
-import config from "../../config.json"
+import config from "../../../../config.json"
 import { DefaultApi } from "../../api"
 import { makeStyles } from "tss-react/mui"
 import CustomButton from "../button/CustomButton"
@@ -17,23 +17,11 @@ import { Toast } from "../info/Toast"
 import { ErrorContext } from "../layout/ErrorContext"
 
 const useStyles = makeStyles()(() => ({
-    canvas: {
-        paddingInline: "20px",
-    },
     label: {
         fontWeight: "bold",
     },
     info: {
         paddingTop: "20px",
-    },
-    feedback: {
-        paddingInline: "25px",
-    },
-    rating: {
-        cursor: "pointer",
-        paddingTop: "5px",
-        paddingRight: "4px",
-        fontSize: "22px",
     },
     form: {
         margin: "15px",
@@ -45,11 +33,6 @@ const useStyles = makeStyles()(() => ({
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-    },
-    exitButton: {
-        "& button:focus": {
-            boxShadow: "none !important",
-        },
     },
     headline: {
         width: "398px",
