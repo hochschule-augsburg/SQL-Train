@@ -2,16 +2,16 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from typing import Any, Dict, List, Optional
-
-import psycopg
+from collections import Counter
+from itertools import chain
+from typing import Any, Dict, Iterable, List, Optional
 
 # disabled because C compiler is needed for install for better performance uncomment
 # import psycopg_c
 from django.utils.translation import gettext_lazy as _
-from psycopg import sql
+from psycopg import ProgrammingError, rows, sql
 from psycopg.connection import Connection
-from psycopg.cursor import Cursor
+from psycopg.cursor import BaseCursor, Cursor
 
 from exercises import models as m
 from ltiapi.models import LTIUser
@@ -71,7 +71,7 @@ def execute(conn: Connection, query: str, topic: m.Topic) -> List[Dict[str, Any]
         >>> execute(conn, "SELECT * FROM table where column1='not_exists'")
         [{"column1": "", "column2": ""}]
     """
-    with conn.cursor(row_factory=psycopg.rows.dict_row) as cursor:
+    with conn.cursor(row_factory=dict_row) as cursor:
         try:
             set_search_path(cursor, topic)
             cursor.execute(query)
@@ -81,12 +81,12 @@ def execute(conn: Connection, query: str, topic: m.Topic) -> List[Dict[str, Any]
                 # When no row is returned because there was no entry found
                 return [{col.name: "" for col in cursor.description}]
             return result
-        except psycopg.ProgrammingError as e:
+        except ProgrammingError as e:
             # For statements like 'CREATE TABLE' which do not produce a result
             return [{"no_output": e.args}]
-        except Exception as e:
-            # error messages should always be english.
-            return [{"error_in_query": e.args}]
+        # except Exception as e:
+        #     # error messages should always be english.
+        #     return [{"error_in_query": e.args}]
 
 
 def execute_check(conn: Connection, query: str, topic: m.Topic) -> bool:
@@ -147,3 +147,41 @@ def do_reset_db(conn: Connection, topic: m.Topic, exercise: m.Exercise):
         for solution in past_solutions:
             execute(conn, solution.sql, topic)
             conn.commit()
+
+
+def dict_row(cursor: BaseCursor[Any, Any]) -> rows.RowMaker[rows.DictRow]:
+    """Row factory to represent rows as dictionaries. Copied from psycopg3
+    With support for columns with the same name.
+
+    The dictionary keys are taken from the column names of the returned columns.
+    """
+    names = rows._get_names(cursor)
+
+    if names is None:
+        return rows.no_result
+
+    columns = numerate_duplicates(names)
+
+    def dict_row_(values: rows.Sequence[Any]) -> Dict[str, Any]:
+        return dict(zip(columns, values))  # type: ignore[arg-type]
+
+    return dict_row_
+
+
+def numerate_duplicates(input_list: Iterable[str]):
+    return flatten_list(
+        k if v == 1 else [f"{k}{i}" for i in range(v)]
+        for k, v in Counter(col for col in input_list).items()
+    )
+
+
+def flatten_list(input_list: Iterable[List[Any] | Any]):
+    """Flattens a list."""
+    new_list = []
+    for list_element in input_list:
+        if type(list_element) is list:
+            new_list += flatten_list(list_element)
+        else:
+            new_list += [list_element]
+
+    return new_list

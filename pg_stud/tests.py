@@ -233,7 +233,35 @@ class PgStudTestCase(TestCase):
         self.assertDictEqual(response_dict, expected_data)
 
     def test_execute_duplicate_columns(self):
-        pass
+        # Create request and input data
+        data = QueryIn(
+            topic_short="pc",
+            enumber=1,
+            query="select photo, photo from photo where photo='nb02';",
+        )
+        request = self.factory.post("/api/pg-stud/execute_query/", data.dict())
+        request.user = self.user
+
+        # Call function
+        response = execute_query(request, data)
+        response_dict = json.loads(response.json())
+
+        # Check that the response is a QueryOut object
+        self.assertIsInstance(response, QueryOut)
+
+        expected_response = {
+            "result": {
+                "result": [
+                    {
+                        "photo0": "nb02",
+                        "photo1": "nb02",
+                    }
+                ],
+                "miss_cols": [],
+                "miss_rows": [],
+            }
+        }
+        self.assertDictEqual(response_dict, expected_response)
 
 
 class AllExercises(TestCase):
