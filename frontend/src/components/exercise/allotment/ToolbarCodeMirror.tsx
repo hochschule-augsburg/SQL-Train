@@ -3,28 +3,22 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import React from "react"
-import { Allotment } from "allotment"
-import Toolbar from "../../toolbar/Toolbar"
+import Toolbar, { EditorHandlers } from "../../toolbar/Toolbar"
 import CodeMirror from "@uiw/react-codemirror"
 import { vscodeDark } from "@uiw/codemirror-theme-vscode"
 import { sql } from "@codemirror/lang-sql"
+import { Allotment } from "allotment"
 
 interface Props {
+    editorHandlers: EditorHandlers
     // toolbar
-    dataModelHandler: () => void
-    executeHandler: () => void
-    solutionHandler: () => void
-    checkHandler: () => void
-    resetHandler: () => void
-    clearHandler: () => void
     disableToolbarButtons: boolean
 
     // codemirror
     className: string
-    height: string
-    basicSetup: { autocompletion: boolean }
-    onChange: (e: any) => void
+    height: number
     value: string
+    setValue: (_: string) => void
 }
 
 /**
@@ -48,40 +42,29 @@ interface Props {
  */
 const ToolbarCodeMirror: React.FC<Props> = (props) => {
     const {
-        dataModelHandler,
-        executeHandler,
-        solutionHandler,
-        checkHandler,
-        resetHandler,
-        clearHandler,
+        editorHandlers,
         disableToolbarButtons,
         className,
         height,
-        basicSetup,
-        onChange,
         value,
+        setValue,
     } = props
 
     return (
         <>
             <Toolbar
-                dataModelHandler={dataModelHandler}
-                executeHandler={executeHandler}
-                solutionHandler={solutionHandler}
-                checkHandler={checkHandler}
-                resetHandler={resetHandler}
-                clearHandler={clearHandler}
+                editorHandlers={editorHandlers}
                 disableToolbarButtons={disableToolbarButtons}
             />
             <CodeMirror
                 id="editor"
                 className={className}
-                basicSetup={basicSetup}
-                onChange={onChange}
                 value={value}
                 theme={vscodeDark}
                 extensions={[sql()]}
-                height={height}
+                height={height - 30 + "px"}
+                basicSetup={{ autocompletion: false }}
+                onChange={(e: any) => setValue(e.valueOf())}
             />
         </>
     )
