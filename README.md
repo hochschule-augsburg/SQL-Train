@@ -156,7 +156,7 @@ up-to-date is challenging, here is a brief summary as of June 2023:
   files.
 - The documentation is based on arc42 template, originally created by Gernot
   Starke and Peter Hruschka, which can be found
-  [here](https://arc42.org/download) and has been altered to fit our needs.
+  [here](https://arc42.org/download). It has been altered to fit our needs.
   arc42 is licensed under CC-BY-SA-4.0.
 
 [^1]:
