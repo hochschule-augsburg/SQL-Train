@@ -54,8 +54,8 @@ python -m pip install -r requirements.txt
 
 ### Configuration
 
-Create an `.env` file and set all the variable from `.env-testing`.
-Copy `config.json.example` to `config.json` and set values if needed.
+Create an `.env` file and set all the variable from `.env-testing`. Copy
+`config.json.example` to `config.json` and set values if needed.
 
 ### Create Database Schema
 
@@ -97,7 +97,9 @@ After launching the frontend for the first time, you need to log in to
 account you just created in order to establish a connection to the website. Then
 you can use the app at the [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
-**See Deployment View in docs to set up for production.**
+See
+[here](https://hochschule-augsburg.github.io/SQL-Train/admin/index.html)
+for deployment in production.
 
 ## Features
 
