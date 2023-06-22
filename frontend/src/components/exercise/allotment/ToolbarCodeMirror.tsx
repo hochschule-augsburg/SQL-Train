@@ -19,7 +19,7 @@ interface Props {
     clearHandler: () => void
     disableToolbarButtons: boolean
 
-    // coldmirror
+    // codemirror
     className: string
     height: string
     basicSetup: { autocompletion: boolean }
@@ -63,33 +63,26 @@ const ToolbarCodeMirror: React.FC<Props> = (props) => {
     } = props
 
     return (
-        <Allotment vertical separator={false}>
-            <Allotment.Pane minSize={30} maxSize={30}>
-                <Toolbar
-                    dataModelHandler={dataModelHandler}
-                    executeHandler={executeHandler}
-                    solutionHandler={solutionHandler}
-                    checkHandler={checkHandler}
-                    resetHandler={resetHandler}
-                    clearHandler={clearHandler}
-                    disableToolbarButtons={disableToolbarButtons}
-                />
-            </Allotment.Pane>
-            <Allotment.Pane minSize={400} maxSize={400}>
-                <div className={className}>
-                    <CodeMirror
-                        id="editor"
-                        className={className}
-                        basicSetup={basicSetup}
-                        onChange={onChange}
-                        value={value}
-                        theme={vscodeDark}
-                        extensions={[sql()]}
-                        height={height}
-                    />
-                </div>
-            </Allotment.Pane>
-        </Allotment>
+        <>
+            <Toolbar
+                dataModelHandler={dataModelHandler}
+                executeHandler={executeHandler}
+                solutionHandler={solutionHandler}
+                checkHandler={checkHandler}
+                resetHandler={resetHandler}
+                clearHandler={clearHandler}
+                disableToolbarButtons={disableToolbarButtons}
+            />
+            <CodeMirror
+                id="editor"
+                className={className}
+                basicSetup={basicSetup}
+                onChange={onChange}
+                value={value}
+                theme={vscodeDark}
+                extensions={[sql()]}
+            />
+        </>
     )
 }
 

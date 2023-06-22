@@ -13,7 +13,6 @@ import config from "../../../../../config.json"
 const useStyles = makeStyles()(() => ({
     customBarDiv: {
         backgroundColor: config.THEME_COLORS.SECONDARY,
-        height: "430px",
         overflowY: "scroll",
     },
 }))
@@ -60,9 +59,7 @@ const ScrollingTable: React.FC<Props> = (props) => {
                     "table",
                 )}
             >
-                <Allotment.Pane minSize={30} maxSize={30}>
-                    <div className={classNameTableTitle}>{tableTitle}</div>
-                </Allotment.Pane>
+                <div className={classNameTableTitle}>{tableTitle}</div>
                 <CustomTable
                     tableCont={tableCont}
                     hoveredRow={hoveredRow}
