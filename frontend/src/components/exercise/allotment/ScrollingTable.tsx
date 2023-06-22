@@ -13,6 +13,7 @@ import config from "../../../../../config.json"
 const useStyles = makeStyles()(() => ({
     customBarDiv: {
         backgroundColor: config.THEME_COLORS.SECONDARY,
+        height: "450px",
         overflowY: "scroll",
     },
 }))

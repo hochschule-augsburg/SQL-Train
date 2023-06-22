@@ -19,7 +19,7 @@ import { FaCheck, FaPlay } from "react-icons/fa"
 
 const useStyles = makeStyles()(() => ({
     wrapper: {
-        position: "static",
+        position: "sticky",
         display: "flex",
         justifyContent: "space-between",
         backgroundColor: config.THEME_COLORS.SECONDARY,

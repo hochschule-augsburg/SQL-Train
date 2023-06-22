@@ -81,6 +81,7 @@ const ToolbarCodeMirror: React.FC<Props> = (props) => {
                 value={value}
                 theme={vscodeDark}
                 extensions={[sql()]}
+                height={height}
             />
         </>
     )

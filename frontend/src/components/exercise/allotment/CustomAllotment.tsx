@@ -23,7 +23,7 @@ const useStyles = makeStyles()(() => ({
         backgroundColor: config.THEME_COLORS.SECONDARY,
     },
     tableTitle: {
-        position: "static",
+        position: "sticky",
         backgroundColor: config.THEME_COLORS.SECONDARY,
         color: config.THEME_COLORS.NEUTRAL,
         borderBottom: "1px",
@@ -132,7 +132,7 @@ const CustomAllotment: React.FC<Props> = (props) => {
                             clearHandler={() => setInputQuery("")}
                             disableToolbarButtons={disableToolbarButtons}
                             className={"customBar"}
-                            height={"430px"}
+                            height={"450px"}
                             basicSetup={{ autocompletion: false }}
                             onChange={(e: any) => setInputQuery(e.valueOf())}
                             value={inputQuery}
