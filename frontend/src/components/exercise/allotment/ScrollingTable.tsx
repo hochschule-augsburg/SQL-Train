@@ -6,15 +6,24 @@ import React from "react"
 import { Result } from "../../../api"
 import CustomTable from "../../table/CustomTable"
 import { ScrollSyncPane } from "react-scroll-sync"
-import { Allotment } from "allotment"
 import { makeStyles } from "tss-react/mui"
 import config from "../../../../../config.json"
 
-const useStyles = makeStyles()(() => ({
+const useStyles = makeStyles<{ height: number }>()((theme, { height }) => ({
     customBarDiv: {
         backgroundColor: config.THEME_COLORS.SECONDARY,
-        height: "450px",
+        height: height,
         overflowY: "scroll",
+    },
+    tableTitle: {
+        position: "sticky",
+        backgroundColor: config.THEME_COLORS.SECONDARY,
+        color: config.THEME_COLORS.NEUTRAL,
+        borderBottom: "1px",
+        borderColor: config.THEME_COLORS.NEUTRAL,
+        borderBottomStyle: "solid",
+        height: "29.5px",
+        padding: "3px",
     },
 }))
 
@@ -23,8 +32,8 @@ interface Props {
     hoveredRow: number
     setHoveredRow: (row: number) => void
     classNameCustomBar: string
-    classNameTableTitle: string
     tableTitle: string
+    height: number
 }
 
 /**
@@ -40,16 +49,16 @@ interface Props {
  * @returns {JSX.Element} ScrollingTable component.
  */
 const ScrollingTable: React.FC<Props> = (props) => {
-    const { cx, classes } = useStyles()
-
     const {
         tableCont,
         hoveredRow,
         setHoveredRow,
         classNameCustomBar,
-        classNameTableTitle,
         tableTitle,
+        height,
     } = props
+
+    const { classes, cx } = useStyles({ height: height })
 
     return (
         <ScrollSyncPane>
@@ -60,7 +69,7 @@ const ScrollingTable: React.FC<Props> = (props) => {
                     "table",
                 )}
             >
-                <div className={classNameTableTitle}>{tableTitle}</div>
+                <div className={classes.tableTitle}>{tableTitle}</div>
                 <CustomTable
                     tableCont={tableCont}
                     hoveredRow={hoveredRow}

@@ -13,24 +13,14 @@ import ToolbarCodeMirror from "./ToolbarCodeMirror"
 import ScrollingTable from "./ScrollingTable"
 import { useTranslation } from "react-i18next"
 
-const useStyles = makeStyles()(() => ({
+const useStyles = makeStyles<{ height: number }>()((theme, { height }) => ({
     divWrapper: {
         marginRight: "5%",
         marginLeft: "5%",
         display: "flex",
         marginBottom: "1%",
-        height: "450px",
+        height: height,
         backgroundColor: config.THEME_COLORS.SECONDARY,
-    },
-    tableTitle: {
-        position: "sticky",
-        backgroundColor: config.THEME_COLORS.SECONDARY,
-        color: config.THEME_COLORS.NEUTRAL,
-        borderBottom: "1px",
-        borderColor: config.THEME_COLORS.NEUTRAL,
-        borderBottomStyle: "solid",
-        height: "29.5px",
-        padding: "3px",
     },
     easeTrans: {
         transition: "all 0.15s ease-in-out",
@@ -70,13 +60,13 @@ interface Props {
  * @returns {JSX.Element} CustomAllotment component.
  */
 const CustomAllotment: React.FC<Props> = (props) => {
-    const { classes } = useStyles()
-    const { t } = useTranslation("common")
-
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
         height: window.innerHeight,
     })
+    const [height, setHeight] = useState(windowSize.width <= 450 ? 1000 : 450)
+    const { classes } = useStyles({ height: height })
+    const { t } = useTranslation("common")
 
     useEffect(() => {
         window.onresize = () => {
@@ -118,24 +108,29 @@ const CustomAllotment: React.FC<Props> = (props) => {
         setTimeout(() => setTrans(false), 150)
     }, [allotmentState])
 
+    useEffect(() => {
+        setHeight(windowSize.width <= 450 ? 1000 : 450)
+    }, [windowSize.width])
+
     return (
         <div className={classes.divWrapper}>
             <ScrollSync>
-                <Allotment snap={true} vertical={windowSize.width <= 450}>
+                <Allotment snap vertical={windowSize.width <= 450}>
                     <Allotment.Pane preferredSize={"33%"}>
                         <ToolbarCodeMirror
-                            dataModelHandler={executeDataModelHandler}
-                            executeHandler={executeQueryClickHandler}
-                            solutionHandler={solutionClickHandler}
-                            checkHandler={checkAnswerClickHandler}
-                            resetHandler={handleResetDataBase}
-                            clearHandler={() => setInputQuery("")}
+                            editorHandlers={{
+                                showDataModel: executeDataModelHandler,
+                                executeQuery: executeQueryClickHandler,
+                                showSolution: solutionClickHandler,
+                                checkAnswer: checkAnswerClickHandler,
+                                resetDb: handleResetDataBase,
+                                clearEditor: () => setInputQuery(""),
+                            }}
                             disableToolbarButtons={disableToolbarButtons}
                             className={"customBar"}
-                            height={"450px"}
-                            basicSetup={{ autocompletion: false }}
-                            onChange={(e: any) => setInputQuery(e.valueOf())}
+                            height={height}
                             value={inputQuery}
+                            setValue={setInputQuery}
                         />
                     </Allotment.Pane>
 
@@ -149,7 +144,7 @@ const CustomAllotment: React.FC<Props> = (props) => {
                             hoveredRow={hoveredRow}
                             setHoveredRow={setHoveredRow}
                             classNameCustomBar={"customBar"}
-                            classNameTableTitle={classes.tableTitle}
+                            height={height}
                         />
                     </Allotment.Pane>
 
@@ -157,6 +152,7 @@ const CustomAllotment: React.FC<Props> = (props) => {
                         className={trans ? classes.easeTrans : ""}
                         visible={visible}
                         preferredSize={"33%"}
+                        minSize={300}
                     >
                         <ScrollingTable
                             tableTitle={t("exercise.solutionTableTitle")}
@@ -164,7 +160,7 @@ const CustomAllotment: React.FC<Props> = (props) => {
                             hoveredRow={hoveredRow}
                             setHoveredRow={setHoveredRow}
                             classNameCustomBar={"customBar"}
-                            classNameTableTitle={classes.tableTitle}
+                            height={height}
                         />
                     </Allotment.Pane>
                 </Allotment>
