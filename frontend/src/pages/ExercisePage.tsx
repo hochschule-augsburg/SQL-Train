@@ -15,7 +15,6 @@ import HorizontalScrollingMenu from "../components/scrollMenu/HorizontalScrollin
 import QuestionBox from "../components/exercise/QuestionBox"
 import { useTranslation } from "react-i18next"
 import { DefaultApi, Result } from "../api"
-import "./../components/customBar.css"
 import "allotment/dist/style.css"
 import { ApiError, apiExec, hasFailed } from "../utils/ApiUtils"
 import { DarkModeContext } from "../components/layout/DarkModeContext"

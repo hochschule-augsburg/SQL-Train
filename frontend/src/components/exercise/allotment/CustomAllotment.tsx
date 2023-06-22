@@ -12,6 +12,7 @@ import { Allotment } from "allotment"
 import ToolbarCodeMirror from "./ToolbarCodeMirror"
 import ScrollingTable from "./ScrollingTable"
 import { useTranslation } from "react-i18next"
+import "./allotment.css"
 
 const useStyles = makeStyles<{ height: number }>()((theme, { height }) => ({
     divWrapper: {
@@ -127,7 +128,6 @@ const CustomAllotment: React.FC<Props> = (props) => {
                                 clearEditor: () => setInputQuery(""),
                             }}
                             disableToolbarButtons={disableToolbarButtons}
-                            className={"customBar"}
                             height={height}
                             value={inputQuery}
                             setValue={setInputQuery}
@@ -143,7 +143,6 @@ const CustomAllotment: React.FC<Props> = (props) => {
                             tableCont={tableCont}
                             hoveredRow={hoveredRow}
                             setHoveredRow={setHoveredRow}
-                            classNameCustomBar={"customBar"}
                             height={height}
                         />
                     </Allotment.Pane>
@@ -159,7 +158,6 @@ const CustomAllotment: React.FC<Props> = (props) => {
                             tableCont={solutionTableCont}
                             hoveredRow={hoveredRow}
                             setHoveredRow={setHoveredRow}
-                            classNameCustomBar={"customBar"}
                             height={height}
                         />
                     </Allotment.Pane>

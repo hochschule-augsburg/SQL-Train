@@ -10,10 +10,19 @@ import { makeStyles } from "tss-react/mui"
 import config from "../../../../../config.json"
 
 const useStyles = makeStyles<{ height: number }>()((theme, { height }) => ({
-    customBarDiv: {
+    tableWrapper: {
         backgroundColor: config.THEME_COLORS.SECONDARY,
         height: height,
         overflowY: "scroll",
+        "&::-webkit-scrollbar": {
+            width: "8px",
+            height: "8px",
+            backgroundColor: "#333333",
+        },
+        "&::-webkit-scrollbar-thumb": {
+            background: "#ffffff",
+            borderRadius: "5px",
+        },
     },
     tableTitle: {
         position: "sticky",
@@ -31,7 +40,6 @@ interface Props {
     tableCont: Result | undefined
     hoveredRow: number
     setHoveredRow: (row: number) => void
-    classNameCustomBar: string
     tableTitle: string
     height: number
 }
@@ -49,26 +57,13 @@ interface Props {
  * @returns {JSX.Element} ScrollingTable component.
  */
 const ScrollingTable: React.FC<Props> = (props) => {
-    const {
-        tableCont,
-        hoveredRow,
-        setHoveredRow,
-        classNameCustomBar,
-        tableTitle,
-        height,
-    } = props
+    const { tableCont, hoveredRow, setHoveredRow, tableTitle, height } = props
 
     const { classes, cx } = useStyles({ height: height })
 
     return (
         <ScrollSyncPane>
-            <div
-                className={cx(
-                    classNameCustomBar,
-                    classes.customBarDiv,
-                    "table",
-                )}
-            >
+            <div className={cx(classes.tableWrapper, "table")}>
                 <div className={classes.tableTitle}>{tableTitle}</div>
                 <CustomTable
                     tableCont={tableCont}

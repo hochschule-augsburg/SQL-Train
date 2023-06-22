@@ -7,14 +7,29 @@ import Toolbar, { EditorHandlers } from "../../toolbar/Toolbar"
 import CodeMirror from "@uiw/react-codemirror"
 import { vscodeDark } from "@uiw/codemirror-theme-vscode"
 import { sql } from "@codemirror/lang-sql"
+import { makeStyles } from "tss-react/mui"
+import "./CodeMirror.css"
+
+const useStyles = makeStyles()(() => ({
+    codeMirror: {
+        "&::-webkit-scrollbar": {
+            width: "8px",
+            height: "8px",
+            backgroundColor: "#333333",
+        },
+        "&::-webkit-scrollbar-thumb": {
+            background: "#ffffff",
+            borderRadius: "5px",
+        },
+    },
+}))
 
 interface Props {
-    editorHandlers: EditorHandlers
     // toolbar
+    editorHandlers: EditorHandlers
     disableToolbarButtons: boolean
 
-    // codemirror
-    className: string
+    // CodeMirror
     height: number
     value: string
     setValue: (_: string) => void
@@ -32,7 +47,7 @@ interface Props {
  * @param {function} props.clearHandler - Callback function for clearing the view.
  * @param {boolean} props.disableToolbarButtons - Flag indicating whether to disable toolbar buttons.
  * @param {string} props.className - CSS class name for the component.
- * @param {string} props.height - Height of codemirror component.
+ * @param {string} props.height - Height of CodeMirror component.
  * @param {Object} props.basicSetup - Basic setup configuration.
  * @param {boolean} props.basicSetup.autocompletion - Flag indicating whether autocompletion is enabled.
  * @param {function} props.onChange - Callback function for handling input change.
@@ -40,14 +55,9 @@ interface Props {
  * @returns {JSX.Element} ToolbarCodeMirror component.
  */
 const ToolbarCodeMirror: React.FC<Props> = (props) => {
-    const {
-        editorHandlers,
-        disableToolbarButtons,
-        className,
-        height,
-        value,
-        setValue,
-    } = props
+    const { classes } = useStyles()
+    const { editorHandlers, disableToolbarButtons, height, value, setValue } =
+        props
 
     return (
         <>
@@ -57,9 +67,9 @@ const ToolbarCodeMirror: React.FC<Props> = (props) => {
             />
             <CodeMirror
                 id="editor"
-                className={className}
                 value={value}
                 theme={vscodeDark}
+                className={classes.codeMirror}
                 extensions={[sql()]}
                 height={height - 30 + "px"}
                 basicSetup={{ autocompletion: false }}
