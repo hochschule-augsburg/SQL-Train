@@ -7,7 +7,6 @@ import Toolbar, { EditorHandlers } from "../../toolbar/Toolbar"
 import CodeMirror from "@uiw/react-codemirror"
 import { vscodeDark } from "@uiw/codemirror-theme-vscode"
 import { sql } from "@codemirror/lang-sql"
-import { Allotment } from "allotment"
 
 interface Props {
     editorHandlers: EditorHandlers

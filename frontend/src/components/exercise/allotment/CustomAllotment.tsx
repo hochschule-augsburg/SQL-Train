@@ -152,7 +152,7 @@ const CustomAllotment: React.FC<Props> = (props) => {
                         className={trans ? classes.easeTrans : ""}
                         visible={visible}
                         preferredSize={"33%"}
-                        minSize={300}
+                        minSize={windowSize.width <= 450 ? 300 : undefined}
                     >
                         <ScrollingTable
                             tableTitle={t("exercise.solutionTableTitle")}
