@@ -84,9 +84,9 @@ def execute(conn: Connection, query: str, topic: m.Topic) -> List[Dict[str, Any]
         except ProgrammingError as e:
             # For statements like 'CREATE TABLE' which do not produce a result
             return [{"no_output": e.args}]
-        # except Exception as e:
-        #     # error messages should always be english.
-        #     return [{"error_in_query": e.args}]
+        except Exception as e:
+            # error messages should always be english.
+            return [{"error_in_query": e.args}]
 
 
 def execute_check(conn: Connection, query: str, topic: m.Topic) -> bool:
