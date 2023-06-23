@@ -24,6 +24,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
     <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
 </div>
 
+
 SQL-Train is a learning platform created by students for students, where you can
 execute and solve SQL tasks directly in your browser. The Tool can be integrated
 in to LMSs via LTI (Learning Tools Interoperability).
@@ -32,9 +33,14 @@ This project was part of the summer term projects 2023 of the
 [Augsburg Technological University of Applied Sciences](https://th-augsburg.de)[^1]
 and was supervised by Prof. Dr. Matthias Kolonko.
 
-<div align="center">
-    <img src="assets/screenshot.png" alt="Screenshot" width="95%"> </br>
-</div>
+<details>
+    <summary>Screenshot</summary>
+    <div  align="center">
+        <img src="assets/screenshot.png" alt="Screenshot" width="95%"> </br>
+    </div>
+</details>
+
+https://github.com/hochschule-augsburg/SQL-Train/assets/80269156/c02e6831-feb4-49e6-bbcb-bdf2abe9a74a
 
 ## Get Started
 
