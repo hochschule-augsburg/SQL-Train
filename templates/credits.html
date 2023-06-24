@@ -6,6 +6,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 {% extends 'base.html' %} {% load static i18n %} {% block title %}{{ block.super}} {% trans "Credits" %}{% endblock title %} {% block head %}
 <link rel="stylesheet" href="{% static 'ltiapi/nice-text.css' %}" />
+<link rel="stylesheet" href="{% static 'ltiapi/github-ribbon.css' %}" />
 {% endblock head %} {% block body %}
 
 <div style="justify-content: center; display: flex;">
@@ -44,5 +45,5 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 
 </div>
-
+<a class="github-fork-ribbon left-bottom fixed" href="https://github.com/hochschule-augsburg/sql-train" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 {% endblock body %}
