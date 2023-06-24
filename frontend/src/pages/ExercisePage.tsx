@@ -42,7 +42,6 @@ import {
 import { fetchFavourites } from "../store/reducers/favourite"
 import ConfettiExplosion from "react-confetti-explosion"
 import { ErrorContext } from "../components/layout/ErrorContext"
-import { UncontrolledTooltip } from "reactstrap"
 import { Tooltip } from "@mui/material"
 
 const useStyles = makeStyles<{ darkMode: boolean }>()(
