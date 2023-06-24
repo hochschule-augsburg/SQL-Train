@@ -1,11 +1,13 @@
 {
     "general": {
         "language": {
+            "title": "Sprache",
             "english": "Englisch",
             "german": "Deutsch",
             "select": "Sprache Auswählen"
         },
         "theme": {
+            "title": "Darstellung",
             "auto": "Automatisch",
             "light": "Hell",
             "dark": "Dunkel"
@@ -120,6 +122,7 @@
         "3": "Schwer"
     },
     "feedback": {
+        "title": "Feedback",
         "general": "Allgemein",
         "positive": "Positiv",
         "negative": "Negativ",
@@ -136,6 +139,7 @@
         "title": "Markierte Aufgaben"
     },
     "stats": {
+        "title": "Statistiken",
         "wrong": "Falsch",
         "correct": "Richtig",
         "untouched": "Unbearbeitet",
@@ -151,7 +155,7 @@
         "credits": "Credits"
     },
     "help": {
-        "help": "Hilfe",
+        "title": "Hilfe",
         "intro": "Hier findet ihr Unterstützung für das Moodle-Tool \nSql-Train.\n\nUnser Tool besteht aus drei Seiten:\n01. Die Themenübersicht\n02. Die Aufgabenübersicht\n03. Die Aufgabenseite",
         "navigationBarTitle": "Navigationsleiste",
         "navigationBarText": "Jede Seite hat eine Navigationsleiste, die mit vielen Funktionen ausgestattet ist:",

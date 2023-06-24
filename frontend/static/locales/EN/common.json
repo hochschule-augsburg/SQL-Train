@@ -1,11 +1,13 @@
 {
     "general": {
         "language": {
+            "title": "Language",
             "english": "English",
             "german": "German",
             "select": "Select Language"
         },
         "theme": {
+            "title": "Theme",
             "auto": "Auto",
             "light": "Light",
             "dark": "Dark"
@@ -121,6 +123,7 @@
         "3": "Hard"
     },
     "feedback": {
+        "title": "Feedback",
         "general": "General",
         "positive": "Positive",
         "negative": "Negative",
@@ -137,6 +140,7 @@
         "title": "Marked Exercises"
     },
     "stats": {
+        "title": "Statistics",
         "wrong": "Wrong",
         "correct": "Correct",
         "untouched": "Untouched",
@@ -152,7 +156,7 @@
         "credits": "Credits"
     },
     "help": {
-        "help": "Help",
+        "title": "Help",
         "intro": "Here you can find support for the Moodle tool Sql-Train.\n\nOur tool consists of three pages:\n01. The topic overview\n02. The exercise overview\n03. The exercise page",
         "navigationBarTitle": "Navigation bar",
         "navigationBarText": "Each page has a navigation bar, which is packed with many features:",
