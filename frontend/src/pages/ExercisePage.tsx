@@ -42,6 +42,8 @@ import {
 import { fetchFavourites } from "../store/reducers/favourite"
 import ConfettiExplosion from "react-confetti-explosion"
 import { ErrorContext } from "../components/layout/ErrorContext"
+import { UncontrolledTooltip } from "reactstrap"
+import { Tooltip } from "@mui/material"
 
 const useStyles = makeStyles<{ darkMode: boolean }>()(
     (theme, { darkMode }) => ({
@@ -586,13 +588,25 @@ const ExercisePage: React.FC = () => {
                 />
 
                 <If condition={showDataModel}>
-                    <img
-                        id="dataModel"
-                        ref={ref}
-                        className={classes.dataModel}
-                        alt="dataModel"
-                        src={`/media${selectedTopic?.datamodel_representation}`}
-                    />
+                    <div ref={ref}>
+                        <Tooltip
+                            title={t("exercise.dataModelHoverHint")}
+                            followCursor
+                        >
+                            <a
+                                href={`/media${selectedTopic?.datamodel_representation}`}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <img
+                                    id="dataModel"
+                                    className={classes.dataModel}
+                                    alt="dataModel"
+                                    src={`/media${selectedTopic?.datamodel_representation}`}
+                                />
+                            </a>
+                        </Tooltip>
+                    </div>
                 </If>
             </AnimatedDiv>
         </>

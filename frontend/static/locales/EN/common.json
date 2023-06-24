@@ -92,7 +92,7 @@
         "points_one": "{{count}} Point",
         "points_other": "{{count}} Points",
         "dataModel": "Data Model",
-        "dataModelInfo": "This is the data model",
+        "dataModelHoverHint": "Open in new tab",
         "showDataModel": "Show Datamodel",
         "checkAnswer": "Check answer (alt+c)",
         "solution": "Solution (alt+s)",

@@ -91,7 +91,7 @@
         "points_one": "{{count}} Punkt",
         "points_other": "{{count}} Punkte",
         "dataModel": "Datenmodell",
-        "dataModelInfo": "Das ist das Datenmodell",
+        "dataModelHoverHint": "In neuem Tab öffnen",
         "showDataModel": "Datenmodell anzeigen",
         "checkAnswer": "Antwort prüfen (alt+c)",
         "solution": "Lösung (alt+s)",
