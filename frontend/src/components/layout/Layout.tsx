@@ -68,16 +68,6 @@ const Layout: React.FC = () => {
     }, [])
 
     /**
-     * onReject function sets the cookies rejection in the local storage and updates the state.
-     *
-     * @returns {void} The function does not return a value.
-     */
-    const onReject = useCallback(() => {
-        localStorage.setItem("cookies", "no")
-        setCookiesAccpeted(false)
-    }, [])
-
-    /**
      * changeLanguage function changes the language in the application and refreshes the page.
      *
      * @param {string} language - Language code.
@@ -111,7 +101,7 @@ const Layout: React.FC = () => {
     return (
         <div className={classes.root}>
             <If condition={!cookiesAccepted}>
-                <CookieDisclaimer onAccept={onAccept} onReject={onReject} />
+                <CookieDisclaimer onAccept={onAccept} />
             </If>
             <NavBar animateHandler={() => setSqlSwitch((t) => !t)} />
             <div className={classes.routerDiv}>

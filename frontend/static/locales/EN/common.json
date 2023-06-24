@@ -73,13 +73,10 @@
             }
         },
         "cookies": {
-            "plural": "Cookies",
-            "privacy": "Privacy policy",
-            "disclaimer": "By using this website, you automatically accept that we use cookies.",
-            "rejectDisclaimer": "All cookies are functional!",
+            "title": "Cookies",
+            "disclaimer": "We use essential and functional cookies on SQL-Train for session storage, security, and site settings. These cookies are necessary for the website to function properly and provide you with a seamless learning experience. By using SQL-Train, you consent to the use of these cookies.",
             "accept": "Accept",
-            "reject": "Reject",
-            "betaInfo": " Please note that you are accessing the Beta Version of SQL-Training which is in the process of being tested before its official release. The sole purpose of this BETA Version is to conduct testing and obtain feedback."
+            "privacy": "Privacy policy"
         }
     },
     "topic": {
