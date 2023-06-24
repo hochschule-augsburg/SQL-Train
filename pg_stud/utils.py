@@ -9,7 +9,7 @@ from typing import Any, Dict, Iterable, List, Optional
 # disabled because C compiler is needed for install for better performance uncomment
 # import psycopg_c
 from django.utils.translation import gettext_lazy as _
-from psycopg import ProgrammingError, rows, sql
+from psycopg import DatabaseError, ProgrammingError, rows, sql
 from psycopg.connection import Connection
 from psycopg.cursor import BaseCursor, Cursor
 
@@ -84,7 +84,7 @@ def execute(conn: Connection, query: str, topic: m.Topic) -> List[Dict[str, Any]
         except ProgrammingError as e:
             # For statements like 'CREATE TABLE' which do not produce a result
             return [{"no_output": e.args}]
-        except Exception as e:
+        except DatabaseError as e:
             # error messages should always be english.
             return [{"error_in_query": e.args}]
 
