@@ -35,18 +35,16 @@ const useStyles = makeStyles()(() => ({
     navBarBrand: {
         color: config.THEME_COLORS.NEUTRAL,
         display: "flex",
-    },
-    brandSpan: {
         cursor: "pointer",
-        display: "flex",
         alignItems: "center",
         flexDirection: "row",
         gap: "4px",
         "& i": {
-            cursor: "pointer",
             fontSize: "22px",
             color: config.THEME_COLORS.NEUTRAL,
-            "&:hover": {
+        },
+        "&:hover": {
+            "& i, & span": {
                 color: "black",
             },
         },
@@ -116,18 +114,16 @@ const NavBar: React.FC<Props> = (props) => {
     return (
         <>
             <Navbar className={classes.navBar}>
-                <NavbarBrand className={classes.navBarBrand}>
-                    <span
-                        onClick={() => handleIconClick("/")}
-                        className={classes.brandSpan}
-                    >
-                        <i
-                            role="button"
-                            aria-label="Home Page"
-                            className={cx("bi bi-house-door-fill")}
-                        />
-                        SQL-Train
-                    </span>
+                <NavbarBrand
+                    className={classes.navBarBrand}
+                    onClick={() => handleIconClick("/")}
+                >
+                    <i
+                        role="button"
+                        aria-label="Home Page"
+                        className={cx("bi bi-house-door-fill")}
+                    />
+                    <span>SQL-Train</span>
                 </NavbarBrand>
                 <Nav className={classes.nav}>
                     <NavItem>{user.userdata?.username}</NavItem>
