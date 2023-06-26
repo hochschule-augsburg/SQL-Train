@@ -58,7 +58,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.restore();
 
-      ctx.drawImage(gkhead, 0, 0);
+      const ratio = gkhead.width<gkhead.height ? canvas.width/gkhead.width
+       : canvas.height/gkhead.height;
+      const width = ratio*gkhead.width;
+      const height = ratio*gkhead.height;
+
+      ctx.drawImage(gkhead, (canvas.width-width)/2+30, (canvas.height-height)/2+30,
+        width-60, height-60);
       var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       var data = imageData.data;
       if (darkMode){
