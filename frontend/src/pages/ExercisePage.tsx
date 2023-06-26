@@ -593,7 +593,7 @@ const ExercisePage: React.FC = () => {
                             followCursor
                         >
                             <a
-                                href={`/media${selectedTopic?.datamodel_representation}`}
+                                href={`/exercises/datamodel/${selectedTopic?.short}`}
                                 target="_blank"
                                 rel="noreferrer"
                             >
