@@ -39,19 +39,11 @@ interface Props {
  * ToolbarCodeMirror component displays a toolbar and CodeMirror editor.
  *
  * @param {Props} props - Component properties.
- * @param {function} props.dataModelHandler - Callback function for handling the data model.
- * @param {function} props.executeHandler - Callback function for executing the query.
- * @param {function} props.solutionHandler - Callback function for displaying the solution.
- * @param {function} props.checkHandler - Callback function for checking the answer.
- * @param {function} props.resetHandler - Callback function for resetting the view.
- * @param {function} props.clearHandler - Callback function for clearing the view.
+ * @param {EditorHandlers} props.editorHandler - Callback functions for the editor.
  * @param {boolean} props.disableToolbarButtons - Flag indicating whether to disable toolbar buttons.
- * @param {string} props.className - CSS class name for the component.
  * @param {string} props.height - Height of CodeMirror component.
- * @param {Object} props.basicSetup - Basic setup configuration.
- * @param {boolean} props.basicSetup.autocompletion - Flag indicating whether autocompletion is enabled.
- * @param {function} props.onChange - Callback function for handling input change.
  * @param {string} props.value - Value of the input.
+ * @param {function} props.setValue - Setter for value.
  * @returns {JSX.Element} ToolbarCodeMirror component.
  */
 const ToolbarCodeMirror: React.FC<Props> = (props) => {

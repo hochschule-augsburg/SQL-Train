@@ -51,9 +51,8 @@ interface Props {
  * @param {Result | undefined} props.tableCont - Result data for the table.
  * @param {number} props.hoveredRow - Index of the hovered row.
  * @param {function} props.setHoveredRow - Callback function for setting the hovered row.
- * @param {string} props.classNameCustomBar - CSS class name for the custom bar.
- * @param {string} props.classNameTableTitle - CSS class name for the table title.
  * @param {string} props.tableTitle - Title of the table.
+ * @param {number} props.height - Height of the scrolling table.
  * @returns {JSX.Element} ScrollingTable component.
  */
 const ScrollingTable: React.FC<Props> = (props) => {

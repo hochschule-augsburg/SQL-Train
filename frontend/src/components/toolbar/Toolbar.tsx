@@ -52,13 +52,8 @@ interface Props {
  *
  * @component
  * @param {Props} props - Component properties.
- * @param {Function} props.dataModelHandler - Handler for the data model button click.
- * @param {Function} props.checkHandler - Handler for the check button click.
- * @param {Function} props.executeHandler - Handler for the execute button click.
- * @param {Function} props.resetHandler - Handler for the reset button click.
- * @param {Function} props.solutionHandler - Handler for the solution button click.
- * @param {Function} props.clearHandler - Handler for the clear button click.
  * @param {boolean} props.disableToolbarButtons - Indicates whether the toolbar buttons should be disabled.
+ * @param {EditorHandlers} props.editorHandler - Callback functions for the editor.
  * @returns {JSX.Element} Toolbar component.
  */
 const Toolbar: React.FC<Props> = (props) => {
