@@ -29,19 +29,20 @@ B -->|Renders| F[StatsPage]
 | TopicsPage    | Displays a list of topics available for SQL practicing                         |
 | ExercisesPage | Lists exercises for a selected topic                                           |
 | ExercisePage  | Displays a specific exercise and provides the SQL editor for query composition |
-| StatsPage     | Provides statistics and insights on student activity and engagement            |
+| StatsPage     | Provides anonymous statistics and insights on student activity and engagement            |
 
 ### **Notes**
 
 - All pages require the necessary Redux store setup and reducer configurations to work correctly.
-- All pages assume the existence of other components and dependencies mentioned in the imports section.
-- The SPA is developed with a React Router for the ability to reload.
 - All pages use Redux to manage the application state.
-- The application supports localization using the _react-i18next_ library.
+- All pages assume the existence of other components and dependencies mentioned in the imports section.
+- The SPA is developed with a React Router for the ability to reload and overall better navigation.
+- The application supports internationalization using the _react-i18next_ library.
+- Localization is defined in `static/locale/{LANG}/common.json`.
 - The styling of the component relies on the _makeStyles_ function from _tss-react/mui_.
 - All pages and components use the DarkModeContext for the dark mode.
-- The navigation bar is rendered on all pages with options to choose language, theme, ...
 - Error management is done via a ErrorContext in the root which displays error for a time.
+- The navigation bar is rendered on all pages with options to choose language, theme, ...
 
 ## **Level 2**
 
@@ -100,12 +101,16 @@ The TopicPage component represents the topic page of the application. It allows 
 
 #### **Rendered Components**
 
-- _Toast_: Conditionally rendered using the _If_ component when _error_ is _not null_ and displays the error message stored in the _error_ state.
 - _AnimatedDiv_: Wraps the main content with animation effects.
 - _Logo_: Displays the logo image using the _img_ HTML tag.
 - _SearchBar_: Renders the search bar component for filtering topics / exercises and passes the necessary props to the _SearchBar_ component.
 - _Results_: Conditionally rendered using the _If_ component when more than 0 selected options. Maps through the _search.results_ array and renders the _Results_ component for each result.
 - _Topic_: Maps through the _userTopics_ array and renders the _Topic_ component for each topic
+
+#### **Notes**
+
+- If the SearchBar is used the TopicsPage transforms into a 'ResultsPage' allowing the user to easily select the wanted exercises 
+- When a user clicks on an exercise from this view the data model is being installed.
 
 ### **ExercisesPage**
 
@@ -118,7 +123,7 @@ graph TB
 
 #### **Description**
 
-The _ExercisesPage_ component represents the exercises page of the application. It allows users to view and interact with exercises related to a specific topic.
+The _ExercisesPage_ component represents the exercises page of the application. It allows users to view and interact with exercises related to a specific topic. The data model is installed by clicking on an exercise.
 
 #### **Component Structure**
 
@@ -158,7 +163,6 @@ The _ExercisesPage_ component represents the exercises page of the application. 
 
 #### **Rendered Components**
 
-- _Toast_: Conditionally rendered using the _If_ component when _error_ is _not null_.
 - _AnimatedDiv_: Wraps the main content with animation effects.
 - _Title_: Renders the title component for the selected topic.
 - _ExerciseButton_: Renders the exercise button component for each exercise.
@@ -239,8 +243,8 @@ The _ExercisesPage_ component represents the exercise page of the application.
 
 #### **Rendered Components**
 
-_Toast_: Conditionally rendered using the _If_ component when _error_ is _not null_.
-
+- _Toast_: When a exercise was done correctly or incorrectly this component tell the student.
+- _Confetti Explosion_: If all exercises of a topic are correct a confetti explosion is triggered.
 - _HorizontalScrollingMenu_: It is used to display a horizontal scrolling menu with all exercises of the selected topic.
 - _AnimatedDiv_: Wraps the main content with animation effects.
 - _QuestionBox_: It represents a question box component used for displaying the question of the current exercise.
@@ -301,7 +305,6 @@ The _ExercisesPage_ component represents the statistic page of the application.
 
 #### **Rendered Components**
 
-- _Toast_: Conditionally rendered using the _If_ component when _error_ is _not null_.
 - _Title_: Renders the title component with the course information.
 - _SearchBar_: Renders the search bar component for filtering topics / exercises and passes the necessary props to the _SearchBar_ component.
 - _Stats_: Conditionally rendered using the _If_ component when more than 0 selected options.

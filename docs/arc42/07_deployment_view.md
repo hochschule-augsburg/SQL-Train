@@ -86,7 +86,7 @@ work on it.
 
 ## Test Setup
 
-For most test no extra configurtation is needed because they run with the sqlite.
+For most test no extra configuration is needed because they run with the sqlite.
 For the pg_stud api a database for students is needed. To simplify this use
 the environment variables defining the PG_TEST conninfo.
 
