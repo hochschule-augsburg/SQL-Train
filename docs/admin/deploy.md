@@ -43,3 +43,11 @@ docker exec -it django_container /bin/bash # open shell in container
 python3 manage.py createsuperuser # Creates an admin user for the django admin page
 python3 manage.py loaddata exercises_data/*.yaml # Due to copyright the exercises are not provided
 ```
+
+## Update
+
+```bash
+git pull # get changes
+git submodule update --recursive # Update the exercises_data submodule if you are part of THA
+docker-compose up -d
+```
