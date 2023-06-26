@@ -162,7 +162,7 @@ conforms to the specified format and constraints. Every Schema is a Subclass of
 
 This file manages internationalization (i18n) for models using the
 django-modeltranslations package. This is done by specifying all fields that
-need to be localized in a subclass of TranslationOptions per Model.
+need to be localized in a subclass of `TranslationOptions` per Model.
 
 ## **White Box _exercises_**
 
@@ -270,6 +270,14 @@ Renders a login template for the LMS (Learning Management System) integration.
 ## White Box exercises.models
 
 ![ER-like Diagram](./drawio/exercises_erd.drawio.svg) :::
+
+_Theses Diagrams are not meant to be accurate at all times. For the current model look into the `models.py` file_
+
+### Why JSON?
+
+To ease use of list fields in admin page JSON array notation is used.
+Furthermore this reduces the overhead of the development setup where we can use
+sqlite as a database which does not support `ArrayField`s.
 
 :::{note}
 :class: dropdown
