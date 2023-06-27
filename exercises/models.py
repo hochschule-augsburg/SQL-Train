@@ -25,12 +25,22 @@ class Ttag(models.Model):
 
 class Topic(models.Model):
     # Primary keys cannot be translated
-    short = models.SlugField(max_length=10, primary_key=True)
+    short = models.SlugField(
+        max_length=10, primary_key=True, help_text="Not translated primary key"
+    )
     title = models.CharField(max_length=50)
     visible = models.BooleanField(default=False)
     tag = models.ForeignKey(Ttag, on_delete=models.SET_NULL, null=True)
-    datamodel_representation = models.FileField(upload_to=topic_path)
-    datamodel_script = models.FileField(upload_to=topic_path)
+    datamodel_representation = models.FileField(
+        upload_to=topic_path,
+        help_text="Students get the datamodel as a graphical representation of \
+            the table structures. Upload an image preferably an svg.",
+    )
+    datamodel_script = models.FileField(
+        upload_to=topic_path,
+        help_text="This script get executed when the datamodel is being installed\
+              or reseted.\n It must contain the DDL and insert statements for each tables.",
+    )
 
     def __str__(self) -> str:
         return f"{self.short}"
