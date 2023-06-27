@@ -7,28 +7,25 @@ import config from "../../../../../config.json"
 import { Result } from "../../../api"
 import { AllotmentState } from "../../../pages/ExercisePage"
 import { makeStyles } from "tss-react/mui"
-import MobileAllotmentView from "./MobileAllotmentView"
-import DesktopAllotmentView from "./DesktopAllotmentView"
-import If from "../../conditional/If"
+import { ScrollSync } from "react-scroll-sync"
+import { Allotment } from "allotment"
+import ToolbarCodeMirror from "./ToolbarCodeMirror"
+import ScrollingTable from "./ScrollingTable"
+import { useTranslation } from "react-i18next"
+import "./allotment.css"
 
-const useStyles = makeStyles()(() => ({
+const useStyles = makeStyles<{ height: number }>()((theme, { height }) => ({
     divWrapper: {
         marginRight: "5%",
         marginLeft: "5%",
         display: "flex",
-        height: "430px",
         marginBottom: "1%",
+        height: height,
         backgroundColor: config.THEME_COLORS.SECONDARY,
     },
-    tableTitle: {
-        position: "static",
-        backgroundColor: config.THEME_COLORS.SECONDARY,
-        color: config.THEME_COLORS.NEUTRAL,
-        borderBottom: "1px",
-        borderColor: config.THEME_COLORS.NEUTRAL,
-        borderBottomStyle: "solid",
-        height: "29.5px",
-        padding: "3px",
+    easeTrans: {
+        transition: "all 0.15s ease-in-out",
+        willChange: "width",
     },
 }))
 
@@ -64,12 +61,13 @@ interface Props {
  * @returns {JSX.Element} CustomAllotment component.
  */
 const CustomAllotment: React.FC<Props> = (props) => {
-    const { classes } = useStyles()
-
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
         height: window.innerHeight,
     })
+    const [height, setHeight] = useState(windowSize.width <= 450 ? 1000 : 450)
+    const { classes } = useStyles({ height: height })
+    const { t } = useTranslation("common")
 
     useEffect(() => {
         window.onresize = () => {
@@ -95,58 +93,77 @@ const CustomAllotment: React.FC<Props> = (props) => {
     } = props
 
     const [hoveredRow, setHoveredRow] = useState<number>(-1)
+    const [trans, setTrans] = useState(false)
+    const [visible, setVisible] = useState(false)
+
+    useEffect(() => {
+        setTrans(true)
+        setTimeout(
+            () =>
+                setVisible(
+                    allotmentState == AllotmentState.SOLUTION ||
+                        allotmentState == AllotmentState.CHECK,
+                ),
+            10,
+        )
+        setTimeout(() => setTrans(false), 150)
+    }, [allotmentState])
+
+    useEffect(() => {
+        setHeight(windowSize.width <= 450 ? 1000 : 450)
+    }, [windowSize.width])
 
     return (
-        <>
-            <If condition={windowSize.width < 450}>
-                <MobileAllotmentView
-                    dataModelHandler={executeDataModelHandler}
-                    executeHandler={executeQueryClickHandler}
-                    solutionHandler={solutionClickHandler}
-                    checkHandler={checkAnswerClickHandler}
-                    resetHandler={handleResetDataBase}
-                    clearHandler={() => setInputQuery("")}
-                    disableToolbarButtons={disableToolbarButtons}
-                    className={"customBar"}
-                    basicSetup={{ autocompletion: false }}
-                    onChange={(e: any) => setInputQuery(e.valueOf())}
-                    value={inputQuery}
-                    height={"430px"}
-                    tableCont={tableCont}
-                    hoveredRow={hoveredRow}
-                    setHoveredRow={setHoveredRow}
-                    classNameCustomBar={"customBar"}
-                    classNameTableTitle={classes.tableTitle}
-                    allotmentState={allotmentState}
-                    divWrapperClass={classes.divWrapper}
-                    solutionTableCont={solutionTableCont}
-                />
-            </If>
-            <If condition={windowSize.width >= 450}>
-                <DesktopAllotmentView
-                    dataModelHandler={executeDataModelHandler}
-                    executeHandler={executeQueryClickHandler}
-                    solutionHandler={solutionClickHandler}
-                    checkHandler={checkAnswerClickHandler}
-                    resetHandler={handleResetDataBase}
-                    clearHandler={() => setInputQuery("")}
-                    disableToolbarButtons={disableToolbarButtons}
-                    className={"customBar"}
-                    basicSetup={{ autocompletion: false }}
-                    onChange={(e: any) => setInputQuery(e.valueOf())}
-                    value={inputQuery}
-                    tableCont={tableCont}
-                    hoveredRow={hoveredRow}
-                    setHoveredRow={setHoveredRow}
-                    height={"400px"}
-                    classNameCustomBar={"customBar"}
-                    classNameTableTitle={classes.tableTitle}
-                    allotmentState={allotmentState}
-                    divWrapperClass={classes.divWrapper}
-                    solutionTableCont={solutionTableCont}
-                />
-            </If>
-        </>
+        <div className={classes.divWrapper}>
+            <ScrollSync>
+                <Allotment snap vertical={windowSize.width <= 450}>
+                    <Allotment.Pane preferredSize={"33%"}>
+                        <ToolbarCodeMirror
+                            editorHandlers={{
+                                showDataModel: executeDataModelHandler,
+                                executeQuery: executeQueryClickHandler,
+                                showSolution: solutionClickHandler,
+                                checkAnswer: checkAnswerClickHandler,
+                                resetDb: handleResetDataBase,
+                                clearEditor: () => setInputQuery(""),
+                            }}
+                            disableToolbarButtons={disableToolbarButtons}
+                            height={height}
+                            value={inputQuery}
+                            setValue={setInputQuery}
+                        />
+                    </Allotment.Pane>
+
+                    <Allotment.Pane
+                        className={trans ? classes.easeTrans : ""}
+                        preferredSize={"33%"}
+                    >
+                        <ScrollingTable
+                            tableTitle={t("exercise.queryTableTitle")}
+                            tableCont={tableCont}
+                            hoveredRow={hoveredRow}
+                            setHoveredRow={setHoveredRow}
+                            height={height}
+                        />
+                    </Allotment.Pane>
+
+                    <Allotment.Pane
+                        className={trans ? classes.easeTrans : ""}
+                        visible={visible}
+                        preferredSize={"33%"}
+                        minSize={windowSize.width <= 450 ? 300 : undefined}
+                    >
+                        <ScrollingTable
+                            tableTitle={t("exercise.solutionTableTitle")}
+                            tableCont={solutionTableCont}
+                            hoveredRow={hoveredRow}
+                            setHoveredRow={setHoveredRow}
+                            height={height}
+                        />
+                    </Allotment.Pane>
+                </Allotment>
+            </ScrollSync>
+        </div>
     )
 }
 
