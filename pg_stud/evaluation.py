@@ -52,11 +52,11 @@ def check_results(user: Result, solution: Result, exercise: m.Exercise) -> bool:
     # Go through rows of user and solution and mark the other if not present
     for i, row in enumerate(solution.result):
         if row not in user.result:
-            user.miss_rows.append(i)
+            solution.miss_rows.append(i)
     for i, row in enumerate(user.result):
         if row not in solution.result:
             if i not in user.miss_rows:
-                solution.miss_rows.append(i)
+                user.miss_rows.append(i)
 
     # shortcut without equal
     if (

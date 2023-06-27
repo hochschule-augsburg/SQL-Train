@@ -26,7 +26,7 @@ async function main() {
         entryPoints: ["src/index.tsx"],
         target: ["es6"],
         bundle: true,
-        sourcemap: !prod,
+        sourcemap: true,
         splitting: true,
         minify: true,
         metafile: true, // for analysis

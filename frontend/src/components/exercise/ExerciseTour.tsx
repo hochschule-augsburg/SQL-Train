@@ -94,6 +94,14 @@ const ExerciseTour: React.FC<Props> = (props) => {
                     "--reactour-accent": config.THEME_COLORS.PRIMARY,
                     borderRadius: "5px",
                 }),
+                arrow: (base) => ({
+                    ...base,
+                    color: config.THEME_COLORS.PRIMARY,
+                }),
+                close: (base) => ({
+                    ...base,
+                    color: config.THEME_COLORS.PRIMARY,
+                }),
             }}
             className={classes.exerciseTour}
             steps={steps}

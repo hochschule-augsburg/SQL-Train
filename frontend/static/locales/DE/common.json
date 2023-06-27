@@ -1,11 +1,13 @@
 {
     "general": {
         "language": {
+            "title": "Sprache",
             "english": "Englisch",
             "german": "Deutsch",
             "select": "Sprache Auswählen"
         },
         "theme": {
+            "title": "Darstellung",
             "auto": "Automatisch",
             "light": "Hell",
             "dark": "Dunkel"
@@ -72,13 +74,10 @@
             }
         },
         "cookies": {
-            "plural": "Cookies",
-            "privacy": "Datenschutzerklärung",
-            "disclaimer": "Durch die Nutzung dieser Website akzeptieren Sie automatisch, dass wir Cookies verwenden.",
-            "rejectDisclaimer": "Alle Cookies sind funktional!",
+            "title": "Cookies",
+            "disclaimer": "Wir verwenden auf SQL-Train essentielle und funktionale Cookies für die Sitzungsspeicherung, Sicherheit und Seiteneinstellungen. Diese Cookies sind erforderlich, damit die Website ordnungsgemäß funktioniert und Ihnen ein nahtloses Lernerlebnis bietet. Durch die Nutzung von SQL-Train stimmen Sie der Verwendung dieser Cookies zu.",
             "accept": "Akzeptieren",
-            "reject": "Ablehnen",
-            "betaInfo": "Bitte beachten Sie, dass Sie auf die Beta-Version von SQL-Training zugreifen, die vor ihrer offiziellen Veröffentlichung getestet wird. Der einzige Zweck dieser BETA-Version besteht darin, Tests durchzuführen und Feedback zu erhalten."
+            "privacy": "Datenschutzerklärung"
         }
     },
     "topic": {
@@ -92,7 +91,7 @@
         "points_one": "{{count}} Punkt",
         "points_other": "{{count}} Punkte",
         "dataModel": "Datenmodell",
-        "dataModelInfo": "Das ist das Datenmodell",
+        "dataModelHoverHint": "In neuem Tab öffnen",
         "showDataModel": "Datenmodell anzeigen",
         "checkAnswer": "Antwort prüfen (alt+c)",
         "solution": "Lösung (alt+s)",
@@ -123,6 +122,7 @@
         "3": "Schwer"
     },
     "feedback": {
+        "title": "Feedback",
         "general": "Allgemein",
         "positive": "Positiv",
         "negative": "Negativ",
@@ -139,6 +139,7 @@
         "title": "Markierte Aufgaben"
     },
     "stats": {
+        "title": "Statistiken",
         "wrong": "Falsch",
         "correct": "Richtig",
         "untouched": "Unbearbeitet",
@@ -154,7 +155,7 @@
         "credits": "Credits"
     },
     "help": {
-        "help": "Hilfe",
+        "title": "Hilfe",
         "intro": "Hier findet ihr Unterstützung für das Moodle-Tool \nSql-Train.\n\nUnser Tool besteht aus drei Seiten:\n01. Die Themenübersicht\n02. Die Aufgabenübersicht\n03. Die Aufgabenseite",
         "navigationBarTitle": "Navigationsleiste",
         "navigationBarText": "Jede Seite hat eine Navigationsleiste, die mit vielen Funktionen ausgestattet ist:",

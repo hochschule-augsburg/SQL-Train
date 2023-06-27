@@ -20,6 +20,11 @@ const useStyles = makeStyles()(() => ({
         borderRadius: "5px",
         padding: "5px",
         position: "relative",
+        whiteSpace: "pre-line",
+    },
+    questionTitle: {
+        display: "flex",
+        justifyContent: "space-between",
     },
     points: {
         float: "right",
@@ -60,18 +65,18 @@ const QuestionBox: React.FC<Props> = (props) => {
 
     return (
         <div className={classes.questionBox} id="question">
-            <span>
-                {`${topic?.title}/${exercise?.enumber}: ${exercise?.title}`}
-            </span>
-            <span className={classes.points}>
-                {t("FOTypes.4")}: {t("difficulty." + exercise?.difficulty)}
-                &nbsp;
-                {t("exercise.points", { count: exercise?.points })}
-            </span>
-            <span>
-                <br></br>
-                {exercise?.question}
-            </span>
+            <div className={classes.questionTitle}>
+                <span>
+                    {`${topic?.title}/${exercise?.enumber}: ${exercise?.title}`}
+                </span>
+                <span className={classes.points}>
+                    {t("FOTypes.4")}: {t("difficulty." + exercise?.difficulty)}
+                    &nbsp;
+                    {t("exercise.points", { count: exercise?.points })}
+                </span>
+            </div>
+
+            <span>{exercise?.question}</span>
 
             <i
                 className={cx(

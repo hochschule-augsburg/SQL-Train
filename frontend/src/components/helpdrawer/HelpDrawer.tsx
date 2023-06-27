@@ -71,7 +71,7 @@ const HelpDrawer: React.FC<Props> = (props) => {
                 },
             }}
         >
-            <p className={classes.helpDrawer}>{t("help.help")}</p>
+            <p className={classes.helpDrawer}>{t("help.title")}</p>
             <HelpSection
                 sectionTitle={t("help.navigationBarTitle")}
                 sectionText={t("help.navigationBarText")}

@@ -190,6 +190,7 @@ CSP_STYLE_SRC = ("'self'", "'unsafe-inline'")
 CSP_FRAME_ANCESTORS = ("'self'",)
 CSP_FORM_ACTION = ("'self'",)
 CSP_FRAME_SRC = ("'self'",)
+CSP_INCLUDE_NONCE_IN = ["script-src"]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

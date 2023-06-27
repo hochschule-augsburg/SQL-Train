@@ -19,7 +19,7 @@ import { FaCheck, FaPlay } from "react-icons/fa"
 
 const useStyles = makeStyles()(() => ({
     wrapper: {
-        position: "static",
+        position: "sticky",
         display: "flex",
         justifyContent: "space-between",
         backgroundColor: config.THEME_COLORS.SECONDARY,
@@ -33,13 +33,17 @@ const useStyles = makeStyles()(() => ({
     },
 }))
 
+export interface EditorHandlers {
+    showDataModel: () => void
+    executeQuery: () => void
+    checkAnswer: () => void
+    showSolution: () => void
+    resetDb: () => void
+    clearEditor: () => void
+}
+
 interface Props {
-    dataModelHandler: () => void
-    checkHandler: () => void
-    executeHandler: () => void
-    resetHandler: () => void
-    solutionHandler: () => void
-    clearHandler: () => void
+    editorHandlers: EditorHandlers
     disableToolbarButtons: boolean
 }
 
@@ -48,13 +52,8 @@ interface Props {
  *
  * @component
  * @param {Props} props - Component properties.
- * @param {Function} props.dataModelHandler - Handler for the data model button click.
- * @param {Function} props.checkHandler - Handler for the check button click.
- * @param {Function} props.executeHandler - Handler for the execute button click.
- * @param {Function} props.resetHandler - Handler for the reset button click.
- * @param {Function} props.solutionHandler - Handler for the solution button click.
- * @param {Function} props.clearHandler - Handler for the clear button click.
  * @param {boolean} props.disableToolbarButtons - Indicates whether the toolbar buttons should be disabled.
+ * @param {EditorHandlers} props.editorHandler - Callback functions for the editor.
  * @returns {JSX.Element} Toolbar component.
  */
 const Toolbar: React.FC<Props> = (props) => {
@@ -67,15 +66,7 @@ const Toolbar: React.FC<Props> = (props) => {
         (state: RootState) => state.exercises.exercises,
     )
 
-    const {
-        dataModelHandler,
-        checkHandler,
-        executeHandler,
-        resetHandler,
-        solutionHandler,
-        clearHandler,
-        disableToolbarButtons,
-    } = props
+    const { editorHandlers, disableToolbarButtons } = props
 
     const operatingSystem = getOperatingSystem()
 
@@ -89,32 +80,26 @@ const Toolbar: React.FC<Props> = (props) => {
         (e: KeyboardEvent) => {
             switch (e.key) {
                 case "x":
-                    executeHandler()
+                    editorHandlers.executeQuery()
+                    break
+                case "c":
+                    editorHandlers.checkAnswer()
                     break
                 case "s":
-                    solutionHandler()
+                    editorHandlers.showSolution()
                     break
                 case "y":
                 case "z":
-                    resetHandler()
+                    editorHandlers.resetDb()
                     break
                 case "a":
-                    clearHandler()
-                    break
-                case "c":
-                    checkHandler()
+                    editorHandlers.clearEditor()
                     break
                 default:
                     break
             }
         },
-        [
-            checkHandler,
-            clearHandler,
-            executeHandler,
-            resetHandler,
-            solutionHandler,
-        ],
+        [editorHandlers],
     )
 
     /**
@@ -171,14 +156,14 @@ const Toolbar: React.FC<Props> = (props) => {
                 <ToolbarButton
                     id="dataModelIcon"
                     iconClassName={"bi bi-file-earmark-text-fill"}
-                    onClick={dataModelHandler}
+                    onClick={editorHandlers.showDataModel}
                     disableButton={false}
                     tooltipText={t("exercise.showDataModel")}
                 />
                 <ToolbarButton
                     id="execute"
                     iconClassName={""}
-                    onClick={executeHandler}
+                    onClick={editorHandlers.executeQuery}
                     disableButton={disableToolbarButtons}
                     tooltipText={
                         operatingSystem === OperatingSystem.OTHER
@@ -190,7 +175,7 @@ const Toolbar: React.FC<Props> = (props) => {
                 <ToolbarButton
                     id="check"
                     iconClassName={""}
-                    onClick={checkHandler}
+                    onClick={editorHandlers.checkAnswer}
                     disableButton={disableToolbarButtons}
                     tooltipText={
                         operatingSystem === OperatingSystem.OTHER
@@ -202,7 +187,7 @@ const Toolbar: React.FC<Props> = (props) => {
                 <ToolbarButton
                     id="solution"
                     iconClassName={"bi bi-lightbulb-fill"}
-                    onClick={solutionHandler}
+                    onClick={editorHandlers.showSolution}
                     disableButton={disableToolbarButtons}
                     tooltipText={
                         operatingSystem === OperatingSystem.OTHER
@@ -259,7 +244,7 @@ const Toolbar: React.FC<Props> = (props) => {
                 <ToolbarButton
                     id="reset"
                     iconClassName={"bi bi-arrow-clockwise"}
-                    onClick={resetHandler}
+                    onClick={editorHandlers.resetDb}
                     disableButton={disableToolbarButtons}
                     tooltipText={
                         operatingSystem === OperatingSystem.OTHER
@@ -270,7 +255,7 @@ const Toolbar: React.FC<Props> = (props) => {
                 <ToolbarButton
                     id="clear"
                     iconClassName={"bi bi-trash-fill"}
-                    onClick={clearHandler}
+                    onClick={editorHandlers.clearEditor}
                     disableButton={disableToolbarButtons}
                     tooltipText={
                         operatingSystem === OperatingSystem.OTHER

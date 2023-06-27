@@ -2,12 +2,12 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import React, { useState } from "react"
+import React from "react"
 import CustomButton from "../button/CustomButton"
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap"
 import { useTranslation } from "react-i18next"
-import If from "../conditional/If"
 import { makeStyles } from "tss-react/mui"
+import config from "../../../../config.json"
 
 const useStyles = makeStyles()(() => ({
     modal: {
@@ -17,7 +17,6 @@ const useStyles = makeStyles()(() => ({
 
 interface Props {
     onAccept: () => void
-    onReject: () => void
 }
 
 /**
@@ -25,45 +24,31 @@ interface Props {
  *
  * @param {Props} props - Component properties.
  * @param {function} props.onAccept - Callback function triggered when the user accepts the disclaimer.
- * @param {function} props.onReject - Callback function triggered when the user rejects the disclaimer.
  * @returns {JSX.Element} CookieDisclaimer component.
  */
 const CookieDisclaimer: React.FC<Props> = (props) => {
     const { t } = useTranslation("common")
     const { classes } = useStyles()
 
-    const { onAccept, onReject } = props
-
-    const [showReject, setShowReject] = useState<boolean>(false)
+    const { onAccept } = props
 
     return (
         <Modal isOpen={true} className={classes.modal}>
-            <ModalHeader>Beta</ModalHeader>
-
-            <ModalBody>{t("general.cookies.betaInfo")}</ModalBody>
-
-            <ModalHeader>{t("general.cookies.plural")}</ModalHeader>
+            <ModalHeader>{t("general.cookies.title")}</ModalHeader>
 
             <ModalBody>
                 {t("general.cookies.disclaimer")}
                 <br />
-                <a href="/privacy" target="_blank">
-                    {t("general.cookies.privacy")}
+                <a href={config.IMPRINT_URL} target="_blank" rel="noreferrer">
+                    {t("footer.imprint")}
                 </a>
-                <br />
-                <If condition={showReject}>
-                    {t("general.cookies.rejectDisclaimer")}
-                </If>
+                &nbsp;
+                <a href={config.PRIVACY_URL} target="_blank" rel="noreferrer">
+                    {t("footer.privacy")}
+                </a>
             </ModalBody>
 
             <ModalFooter>
-                <CustomButton
-                    text={t("general.cookies.reject")}
-                    onClick={() => {
-                        onReject()
-                        setShowReject(true)
-                    }}
-                />
                 <CustomButton
                     text={t("general.cookies.accept")}
                     onClick={onAccept}

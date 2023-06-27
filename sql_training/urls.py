@@ -56,6 +56,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", api.urls),
     path("lti/", include("ltiapi.urls")),
+    path("exercises/", include("exercises.urls")),
 ]
 
 if not DEPLOY:

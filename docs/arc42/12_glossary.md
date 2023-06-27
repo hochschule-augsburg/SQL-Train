@@ -11,6 +11,7 @@ This file is based on arc42 template, originally created by Gernot Starke and Pe
 | Term        | Definition       | Explanation        |
 |-------------|------------------|--------------------|
 | LTI [1]        | Learning Tools Interoperability by IMS Global Learning Consortium | Specification for  integration of external third-party tools in a LMS |
+| LMS            | Learning Management System | e.g. Moodle |
 | KISS [2]       | Keep it simple, stupid! | Design principle for simplicity in software |
 | ASGI [3]       | Asynchronous Server Gateway Interface | `[S]tandard interface between async-capable Python web servers, frameworks, and applications` |
 | WSGI [4]       | Web Server Gateway Interface | The synchronous, older counterpart of ASGI |
@@ -19,6 +20,8 @@ This file is based on arc42 template, originally created by Gernot Starke and Pe
 | Figma [7]      | | Easy to use design tool with extensive 3rd-party support |
 | Agila Mod+ [8] | | Simple correct conceptional modeling language |
 | SPA[9]         | Single Page Application | Web application [...] that interacts with the user by dynamically rewriting the current web page with new data from the web server, instead of the default method of a web browser loading entire new pages.|
+| Docker[10]     | | Open Source OS-level virtualization software to deliver software in packages called containers. |
+| repDB[11]      | | Former Project of Prof. Dr. Müllenbach for SQL exercises. |
 
 
 [1]: <https://en.wikipedia.org/wiki/Learning_Tools_Interoperability>
@@ -30,3 +33,5 @@ This file is based on arc42 template, originally created by Gernot Starke and Pe
 [7]: <https://figma.com>
 [8]: <https://hait.op.edu.ua/core/get.file.php?id=284>
 [9]: <https://en.wikipedia.org/wiki/Single-page_application>
+[10]:<https://en.wikipedia.org/wiki/Docker_(software)>
+[11]:<https://ohs.informatik.hs-augsburg.de:4443/web/cmsanw$.main?i_id=&i_anw=repDB&i_dok=repDB.start>

@@ -41,6 +41,3 @@ Contained Building Blocks
 * Backend Django project with Ninja API
 
 The remaining containers are explained in the [Deployment View](07_deployment_view.md).
-
-Important Interfaces  
-*\<Description of important interfaces>*

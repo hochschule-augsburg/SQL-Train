@@ -3,7 +3,13 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import React, { useCallback, useState } from "react"
-import { Nav, Navbar, NavbarBrand, NavItem } from "reactstrap"
+import {
+    Nav,
+    Navbar,
+    NavbarBrand,
+    NavItem,
+    UncontrolledTooltip,
+} from "reactstrap"
 import config from "../../../../config.json"
 import LanguageSelector from "../language/LanguageSelector"
 import { useHistory } from "react-router"
@@ -16,6 +22,7 @@ import If from "../conditional/If"
 import { useSelector } from "react-redux"
 import { RootState } from "../../store/reducers/Store"
 import HelpDrawer from "../../components/helpdrawer/HelpDrawer"
+import { useTranslation } from "react-i18next"
 
 const useStyles = makeStyles()(() => ({
     navBar: {
@@ -28,18 +35,16 @@ const useStyles = makeStyles()(() => ({
     navBarBrand: {
         color: config.THEME_COLORS.NEUTRAL,
         display: "flex",
-    },
-    brandSpan: {
         cursor: "pointer",
-        display: "flex",
         alignItems: "center",
         flexDirection: "row",
         gap: "4px",
         "& i": {
-            cursor: "pointer",
             fontSize: "22px",
             color: config.THEME_COLORS.NEUTRAL,
-            "&:hover": {
+        },
+        "&:hover": {
+            "& i, & span": {
                 color: "black",
             },
         },
@@ -75,6 +80,7 @@ interface Props {
  * @returns {JSX.Element} NavBar component.
  */
 const NavBar: React.FC<Props> = (props) => {
+    const { t } = useTranslation("common")
     const { classes, cx } = useStyles()
     const history = useHistory()
 
@@ -108,23 +114,21 @@ const NavBar: React.FC<Props> = (props) => {
     return (
         <>
             <Navbar className={classes.navBar}>
-                <NavbarBrand className={classes.navBarBrand}>
-                    <span
-                        onClick={() => handleIconClick("/")}
-                        className={classes.brandSpan}
-                    >
-                        <i
-                            role="button"
-                            aria-label="Home Page"
-                            className={cx("bi bi-house-door-fill")}
-                        />
-                        SQL-Train
-                    </span>
+                <NavbarBrand
+                    className={classes.navBarBrand}
+                    onClick={() => handleIconClick("/")}
+                >
+                    <i
+                        role="button"
+                        aria-label="Home Page"
+                        className={cx("bi bi-house-door-fill")}
+                    />
+                    <span>SQL-Train</span>
                 </NavbarBrand>
                 <Nav className={classes.nav}>
                     <NavItem>{user.userdata?.username}</NavItem>
                     <If condition={user.userdata?.lecturer ?? false}>
-                        <NavItem>
+                        <NavItem id="profNavItem">
                             <i
                                 role="button"
                                 aria-label="Professor Page"
@@ -132,20 +136,37 @@ const NavBar: React.FC<Props> = (props) => {
                                 onClick={() => handleIconClick("/prof")}
                             />
                         </NavItem>
+                        <UncontrolledTooltip
+                            placement="bottom"
+                            target={"profNavItem"}
+                            delay={{ show: 400, hide: 0 }}
+                        >
+                            {t("stats.title")}
+                        </UncontrolledTooltip>
                     </If>
 
-                    <ThemeSelector />
-                    <LanguageSelector />
-                    <NavItem>
-                        <i
-                            aria-label="Open MarkedList Drawer"
-                            role="button"
-                            className={cx("bi bi-star-fill")}
-                            onClick={() => setIsMarkedOpen(!isMarkedOpen)}
-                        />
+                    <NavItem id="themeNavItem">
+                        <ThemeSelector />
                     </NavItem>
+                    <UncontrolledTooltip
+                        placement="bottom"
+                        target={"themeNavItem"}
+                        delay={{ show: 400, hide: 0 }}
+                    >
+                        {t("general.theme.title")}
+                    </UncontrolledTooltip>
+                    <NavItem id="languageNavItem">
+                        <LanguageSelector />
+                    </NavItem>
+                    <UncontrolledTooltip
+                        placement="bottom"
+                        target={"languageNavItem"}
+                        delay={{ show: 400, hide: 0 }}
+                    >
+                        {t("general.language.title")}
+                    </UncontrolledTooltip>
                     <If condition={config.FEEDBACK.SHOW}>
-                        <NavItem>
+                        <NavItem id="feedbackNavItem">
                             <i
                                 aria-label="Open Feedback Drawer"
                                 role="button"
@@ -155,19 +176,50 @@ const NavBar: React.FC<Props> = (props) => {
                                 }
                             />
                         </NavItem>
+                        <UncontrolledTooltip
+                            placement="bottom"
+                            target={"feedbackNavItem"}
+                            delay={{ show: 400, hide: 0 }}
+                        >
+                            {t("feedback.title")}
+                        </UncontrolledTooltip>
                         <Feedback
                             isOpen={isFeedbackOpen}
                             setIsOpen={setIsFeedbackOpen}
                         />
                     </If>
+                    <NavItem id="markedNavItem">
+                        <i
+                            aria-label="Open MarkedList Drawer"
+                            role="button"
+                            className={cx("bi bi-star-fill")}
+                            onClick={() => setIsMarkedOpen(!isMarkedOpen)}
+                        />
+                    </NavItem>
+                    <UncontrolledTooltip
+                        placement="bottom"
+                        target={"markedNavItem"}
+                        delay={{ show: 400, hide: 0 }}
+                    >
+                        {t("marked.title")}
+                    </UncontrolledTooltip>
+                    <NavItem id="helpNavItem">
+                        <i
+                            className={cx("bi bi-question-lg")}
+                            onClick={() => setIsHelpBarOpen(!isHelpBarOpen)}
+                        />
+                    </NavItem>
+                    <UncontrolledTooltip
+                        placement="bottom"
+                        target={"helpNavItem"}
+                        delay={{ show: 400, hide: 0 }}
+                    >
+                        {t("help.title")}
+                    </UncontrolledTooltip>
                     <Marked isOpen={isMarkedOpen} setIsOpen={setIsMarkedOpen} />
                     <HelpDrawer
                         isOpen={isHelpBarOpen}
                         setIsOpen={setIsHelpBarOpen}
-                    />
-                    <i
-                        className={cx("bi bi-question-lg")}
-                        onClick={() => setIsHelpBarOpen(!isHelpBarOpen)}
                     />
                 </Nav>
             </Navbar>

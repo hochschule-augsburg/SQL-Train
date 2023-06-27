@@ -38,9 +38,9 @@ This file is based on arc42 template, originally created by Gernot Starke and Pe
 
 ## Stakeholders
 
-| Role/Name     | Contact        | Expectations       |
-|---------------|----------------|--------------------|
-| Projektleiter | Prof. Matthias Kolonko | Modern SQL learning tool to use in parallel with the lecture |
-| Developer     | - | Interesting project for intensifying web development and project working skills |
-| Students      | - | Easy to use platform for practising SQL |
-| Extern Lecturers | - | Easy integration of the Tool in their lecture and university |
+| Role/Name          | Contact        | Expectations       |
+|--------------------|----------------|--------------------|
+| project supervisor | Prof. Matthias Kolonko | Modern SQL learning tool to use in parallel with the lecture |
+| Developer          | - | Interesting project for intensifying web development and project working skills |
+| Students           | - | Easy to use platform for practising SQL |
+| Extern Lecturers   | - | Easy integration of the Tool in their lecture and university |

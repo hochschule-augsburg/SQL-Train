@@ -15,7 +15,6 @@ import HorizontalScrollingMenu from "../components/scrollMenu/HorizontalScrollin
 import QuestionBox from "../components/exercise/QuestionBox"
 import { useTranslation } from "react-i18next"
 import { DefaultApi, Result } from "../api"
-import "./../components/customBar.css"
 import "allotment/dist/style.css"
 import { ApiError, apiExec, hasFailed } from "../utils/ApiUtils"
 import { DarkModeContext } from "../components/layout/DarkModeContext"
@@ -42,6 +41,7 @@ import {
 import { fetchFavourites } from "../store/reducers/favourite"
 import ConfettiExplosion from "react-confetti-explosion"
 import { ErrorContext } from "../components/layout/ErrorContext"
+import { Tooltip } from "@mui/material"
 
 const useStyles = makeStyles<{ darkMode: boolean }>()(
     (theme, { darkMode }) => ({
@@ -586,13 +586,25 @@ const ExercisePage: React.FC = () => {
                 />
 
                 <If condition={showDataModel}>
-                    <img
-                        id="dataModel"
-                        ref={ref}
-                        className={classes.dataModel}
-                        alt="dataModel"
-                        src={`/media${selectedTopic?.datamodel_representation}`}
-                    />
+                    <div ref={ref}>
+                        <Tooltip
+                            title={t("exercise.dataModelHoverHint")}
+                            followCursor
+                        >
+                            <a
+                                href={`/exercises/datamodel/${selectedTopic?.short}`}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <img
+                                    id="dataModel"
+                                    className={classes.dataModel}
+                                    alt="dataModel"
+                                    src={`/media${selectedTopic?.datamodel_representation}`}
+                                />
+                            </a>
+                        </Tooltip>
+                    </div>
                 </If>
             </AnimatedDiv>
         </>

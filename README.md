@@ -24,6 +24,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
     <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
 </div>
 
+
 SQL-Train is a learning platform created by students for students, where you can
 execute and solve SQL tasks directly in your browser. The Tool can be integrated
 in to LMSs via LTI (Learning Tools Interoperability).
@@ -32,9 +33,14 @@ This project was part of the summer term projects 2023 of the
 [Augsburg Technological University of Applied Sciences](https://th-augsburg.de)[^1]
 and was supervised by Prof. Dr. Matthias Kolonko.
 
-<div align="center">
-    <img src="assets/screenshot.png" alt="Screenshot" width="95%"> </br>
-</div>
+<details>
+    <summary>Screenshot</summary>
+    <div  align="center">
+        <img src="assets/screenshot.png" alt="Screenshot" width="95%"> </br>
+    </div>
+</details>
+
+https://github.com/hochschule-augsburg/SQL-Train/assets/80269156/c02e6831-feb4-49e6-bbcb-bdf2abe9a74a
 
 ## Get Started
 
@@ -54,8 +60,8 @@ python -m pip install -r requirements.txt
 
 ### Configuration
 
-Create an `.env` file and set all the variable from `.env-testing`.
-Copy `config.json.example` to `config.json` and set values if needed.
+Create an `.env` file and set all the variable from `.env-testing`. Copy
+`config.json.example` to `config.json` and set values if needed.
 
 ### Create Database Schema
 
@@ -97,7 +103,9 @@ After launching the frontend for the first time, you need to log in to
 account you just created in order to establish a connection to the website. Then
 you can use the app at the [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
-**See Deployment View in docs to set up for production.**
+See
+[here](https://hochschule-augsburg.github.io/SQL-Train/admin/index.html)
+for deployment in production.
 
 ## Features
 
@@ -154,7 +162,7 @@ up-to-date is challenging, here is a brief summary as of June 2023:
   files.
 - The documentation is based on arc42 template, originally created by Gernot
   Starke and Peter Hruschka, which can be found
-  [here](https://arc42.org/download) and has been altered to fit our needs.
+  [here](https://arc42.org/download). It has been altered to fit our needs.
   arc42 is licensed under CC-BY-SA-4.0.
 
 [^1]:

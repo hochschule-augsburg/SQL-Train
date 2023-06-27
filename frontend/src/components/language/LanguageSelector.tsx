@@ -9,7 +9,6 @@ import { makeStyles } from "tss-react/mui"
 import { DarkModeContext } from "../layout/DarkModeContext"
 import config from "../../../../config.json"
 import { Menu, MenuItem } from "@mui/material"
-import { NavItem } from "reactstrap"
 
 const useStyles = makeStyles<{ darkMode: boolean }>()(
     (theme, { darkMode }) => ({
@@ -76,7 +75,7 @@ const LanguageSelector: React.FC = () => {
     ]
 
     return (
-        <NavItem>
+        <>
             <i
                 className={cx("bi bi-globe")}
                 onClick={handleClick}
@@ -110,7 +109,7 @@ const LanguageSelector: React.FC = () => {
                     </MenuItem>
                 ))}
             </Menu>
-        </NavItem>
+        </>
     )
 }
 
