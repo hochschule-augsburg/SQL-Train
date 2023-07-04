@@ -25,7 +25,6 @@ extensions = [
     "myst_parser",
     "sphinxcontrib.mermaid",
     "autodoc2",
-    "sphinx_favicon",
     "sphinx_togglebutton",
 ]
 
@@ -40,13 +39,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 html_theme = "sphinx_book_theme"
 html_static_path = ["_static"]
 html_theme_options = {"show_nav_level": 2}
-
-favicons = [
-    {
-        "sizes": "32x32",
-        "href": "favicon-32.png",
-    },
-]
+html_favicon = "_static/favicon-32.png"
 
 # MySt
 
