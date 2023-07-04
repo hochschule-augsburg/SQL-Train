@@ -65,7 +65,7 @@
         "reactstrap": "^9.1.6",
         "redux": "^4.2.1",
         "tss-react": "^4.8.3",
-        "web-vitals": "^2.1.4"
+        "web-vitals": "^3.3.2"
     },
     "devDependencies": {
         "@openapitools/openapi-generator-cli": "^2.5.2",
