@@ -8,9 +8,9 @@ django_ace==1.15.4
 django-click==2.3.0
 django-csp==3.7
 django-modeltranslation==0.18.9
-django-ninja==0.21.0
+django-ninja==0.22.2
 django_admin_rangefilter==0.10.0
-psycopg==3.1.8
+psycopg==3.1.9
 psycopg-binary==3.1.8
 psycopg-pool==3.1.7
 PyLTI1p3==2.0.0
