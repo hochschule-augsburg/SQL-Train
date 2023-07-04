@@ -4,16 +4,7 @@ SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Ra
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
-# Admin
+# Exercises
 
-```{toctree}
-:caption: Index-Admin
-:maxdepth: 1
-
-exercises
-deploy
-config
-register_tool
-add_to_course
-
-```
+Go the the admin page and add objects of the model Topic, Exercise and Solution.
+The create dialog contains help texts for each field.

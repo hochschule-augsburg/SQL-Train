@@ -50,8 +50,8 @@ async function main() {
             copyStaticFiles({
                 dest: "./dist/",
             }),
-            eslint({}),
-        ],
+
+        ].concat(prod?[]:[eslint({})]),
     }
 
     if (watch) {
