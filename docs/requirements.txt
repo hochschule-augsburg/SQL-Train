@@ -6,6 +6,5 @@ sphinx==7.0.1
 myst_parser==2.0.0
 sphinxcontrib_mermaid==0.8.1
 sphinx-autodoc2==0.4.2
-sphinx-favicon==1.0.1
 sphinx-book-theme==1.0.1
 sphinx-togglebutton==0.3.2
