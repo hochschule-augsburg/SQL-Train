@@ -57,7 +57,7 @@
         "react-icons": "^4.8.0",
         "react-redux": "^8.0.5",
         "react-router": "^5.2.0",
-        "react-router-dom": "^5.2.0",
+        "react-router-dom": "^6.14.1",
         "react-scroll-sync": "^0.11.0",
         "reactstrap": "^9.1.6",
         "redux": "^4.2.1",
