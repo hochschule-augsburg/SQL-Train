@@ -72,8 +72,8 @@ python manage.py migrate
 
 ### Load Example Data
 
-_Unfortunately we cannot release the exercises from the gitlab submodule because
-we do not have the copyright_
+_Unfortunately we cannot release the exercises from the internal gitlab 
+submodule because we do not have the copyright._
 
 In order to populate the website with exercises, some example data has been
 provided that can be loaded into the database.

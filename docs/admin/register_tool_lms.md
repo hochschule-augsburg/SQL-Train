@@ -4,7 +4,7 @@ SPDX-FileCopyrightText: 2023 2023, Nicolas Bota, Marcel Geiger, Florian Paul, Ra
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
-# Register Tool
+# Register Tool for LMS Admin
 
 ## Instructions for registering SQL-Train in Moodle:
 
