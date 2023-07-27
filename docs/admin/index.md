@@ -13,7 +13,8 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 exercises
 deploy
 config
-register_tool
+register_tool_lms
+register_tool_sql_train
 add_to_course
 
 ```
