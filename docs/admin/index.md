@@ -18,3 +18,10 @@ register_tool_sql_train
 add_to_course
 
 ```
+Link to the admin webpage to administer users, exercises, etc.:
+> https://< sql-train-fqdn >/admin
+
+The command to create an admin user for the webpage:
+> python manage.py createsuperuser
+
+The interactive shell wil guide you through the options.
