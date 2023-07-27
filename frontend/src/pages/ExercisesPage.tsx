@@ -82,7 +82,7 @@ const ExercisesPage: React.FC = () => {
         if (hasFailed(response)) {
             if (response.error.message) {
                 return setError(
-                    t("general.error.message", {
+                    t("general.error.user_db", {
                         message: response.error.message,
                     }),
                 )
