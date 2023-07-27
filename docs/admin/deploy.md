@@ -20,13 +20,13 @@ systemctl start nginx.service
 
 config file:
 ```bash
-cp sql-training /etc/nginx/sites-available/sql-training.example.com
-cp proxy_params /etc/nginx/ 
+cp deploy/nginx/sql-training.conf /etc/nginx/sites-available/sql-training.example.com
+cp deploy/nginx/proxy_params.conf /etc/nginx/proxy_params
 ```
 
 activate config:
 ```bash
-ln -s /etc/nginx/sites-available/sql-training.examle.com /etc/nginx/sites-enabled/
+ln -s /etc/nginx/sites-available/sql-training.example.com /etc/nginx/sites-enabled/
 systemctl restart nginx.service
 ```
 
@@ -55,5 +55,6 @@ python3 manage.py loaddata exercises_data/*.yaml # Due to copyright the exercise
 ```bash
 git pull # get changes
 git submodule update --recursive # Update the exercises_data submodule if you are part of THA
+docker-compose build # Watch out if you have enough space ;)
 docker-compose up -d
 ```
