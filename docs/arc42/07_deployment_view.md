@@ -89,4 +89,11 @@ work on it.
 For most test no extra configuration is needed because they run with the sqlite.
 For the pg_stud api a database for students is needed. To simplify this use
 the environment variables defining the PG_TEST conninfo.
+For LTI development a Test-LMS for example Moodle is recommended.
 
+## Cron Jobs
+
+At the default configuration 2/3 Cron jobs are running.
+
+- 1. Everyday at 4 am old sessions are being cleared
+- 2./3. At the beginning of the semester and end a job is clearing all users of the last semester. (Augsburg's semesters)
