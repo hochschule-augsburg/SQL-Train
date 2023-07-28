@@ -55,6 +55,6 @@ python3 manage.py loaddata exercises_data/*.yaml # Due to copyright the exercise
 ```bash
 git pull # get changes
 git submodule update --recursive # Update the exercises_data submodule if you are part of THA
-docker-compose build # Watch out if you have enough space ;)
-docker-compose up -d
+docker compose build # Watch out if you have enough space ;)
+docker compose up -d
 ```

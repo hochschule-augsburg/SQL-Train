@@ -5,3 +5,4 @@
 venv
 .git
 .gitignore
+ltiapi/migrations/0001_initial.py
