@@ -49,6 +49,14 @@ docker exec -it django_container /bin/bash # open shell in container
 python3 manage.py createsuperuser # Creates an admin user for the django admin page
 python3 manage.py loaddata exercises_data/*.yaml # Due to copyright the exercises are not provided
 ```
+### Firewall 
+
+Disable arno iptables, set firewall manually
+```bash
+systemctl stop arno-iptables-firewall
+systemctl disable arno-iptables-firewall
+/usr/local/bin/rc.firewall save
+```
 
 ## Update
 
