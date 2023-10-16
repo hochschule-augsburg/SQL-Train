@@ -30,6 +30,37 @@ ln -s /etc/nginx/sites-available/sql-training.example.com /etc/nginx/sites-enabl
 systemctl restart nginx.service
 ```
 
+### Firewall
+
+#### Deactivate debian firewall
+
+> ```bash
+> systemctl stop arno-iptables-firewall
+> systemctl disable arno-iptables-firewall
+> ```
+
+#### Firewall config Script 
+
+1. Place config file
+   ```bash
+   cp deploy/iptables/rc.firewall /usr/local/bin/rc.firewall
+   # make individual changes
+   vi /usr/local/bin/rc.firewall
+   chmod o+x /usr/local/bin/rc.firewall
+   ```
+
+2. Ensure persistent firewall rules
+   ```bash
+   cat << EOF >> /etc/network/if-pre-up.d/iptables
+   #!/bin/sh
+   /sbin/iptables-restore < /lib/iptables/rc.iptables
+   EOF
+   ```
+
+3. Set Firewall rules and safe to /lib/iptables/rc.iptables
+
+   > rc.firewall safe
+
 ### PostgreSQL
 
 To setup the database for django choose a supported RDBMS (we recommend PostgreSQL) and set conninfo in `.env`.
@@ -37,8 +68,17 @@ See https://help.ubuntu.com/community/PostgreSQL for a tutorial.
 
 ### Docker
 
+#### Auto Start on OS Boot via systemd file
+
 ```bash
-# Set the environment variables from .env-example in .env
+cp deploy/systemd/docker-compose-app.service /etc/systemd/system/docker-compose-app.service
+systemctl enable docker-compose-app
+```
+
+#### Manual Docker Startup:
+
+```bash
+# First set the environment variables from .env-example in .env
 docker compose up --detach
 ```
 

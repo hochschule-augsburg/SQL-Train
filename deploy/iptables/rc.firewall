@@ -1,0 +1,147 @@
+#!/bin/bash
+
+# Set some variables
+addr=`ifconfig | grep -A1 ^eth | head -n 2 | tail -n 1 | awk '{print $2}'`
+bcst=`ifconfig | grep -A1 ^eth | head -n 2 | tail -n 1 | awk '{print $6}'`
+mask=`ifconfig | grep -A1 ^eth | head -n 2 | tail -n 1 | awk '{print $4}'`
+
+# Flush all chains and delete all user-defined chains
+iptables --flush
+iptables --delete-chain
+
+# Set the policy for the built-in chains
+iptables -P INPUT DROP
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD DROP
+
+# Flush all chains and delete all user-defined chains (IPv6)
+ip6tables --flush
+ip6tables --delete-chain
+
+# Set the policy for the built-in chains (IPv6)
+ip6tables -P INPUT DROP
+ip6tables -P OUTPUT ACCEPT
+ip6tables -P FORWARD DROP
+
+# Create user-defined chain for host specific services
+iptables -N SPECIFIC-INPUT
+iptables -A SPECIFIC-INPUT -m comment --comment " Host specific input target starts here "
+# CHANGE THESE PLACEHOLDERS TO YOUR NEEDS
+#iptables -A SPECIFIC-INPUT -p tcp -s 192.168.0.0/16    --dport    22 -m state --state NEW -j ACCEPT
+#iptables -A SPECIFIC-INPUT -p tcp -s 192.168.0.0/16    --dport    80 -m state --state NEW -j ACCEPT
+#iptables -A SPECIFIC-INPUT -p tcp -s 192.168.0.0/16    --dport   443 -m state --state NEW -j ACCEPT
+# Memcached Docker Container:
+iptables -A SPECIFIC-INPUT -p tcp -s 172.17.0.1/16    --dport 11211 -m state --state NEW -j ACCEPT
+iptables -A SPECIFIC-INPUT -j RETURN
+
+# Create Docker chains DOCKER, DOCKER-ISOLTAION-STAGE-1, DOCKER-ISOLATION-STAGE-2
+iptables -N DOCKER-USER
+iptables -A DOCKER-USER			-j RETURN
+
+iptables -N DOCKER
+iptables -A DOCKER -j RETURN
+
+iptables -N DOCKER-ISOLATION-STAGE-2
+iptables -A DOCKER-ISOLATION-STAGE-2 -o docker0 -j DROP
+iptables -A DOCKER-ISOLATION-STAGE-2 -j RETURN
+iptables -A DOCKER-ISOLATION-STAGE-2	-j RETURN
+
+iptables -N DOCKER-ISOLATION-STAGE-1
+iptables -A DOCKER-ISOLATION-STAGE-1 	-i docker0 ! -o docker0 -j DOCKER-ISOLATION-STAGE-2
+iptables -A DOCKER-ISOLATION-STAGE-1 	-j RETURN
+iptables -A DOCKER-ISOLATION-STAGE-1	-j RETURN
+
+
+# Create user-defined chain to restrict outgoing traffic
+iptables -N SPECIFIC-OUTPUT
+iptables -A SPECIFIC-OUTPUT -m comment --comment " Host specific output target starts here "
+iptables -A SPECIFIC-OUTPUT -j RETURN
+
+# User-defined chain to log invalid incoming traffic
+iptables -N LOG-INVALID
+iptables -A LOG-INVALID -m limit --limit 3/min --limit-burst 10 -j LOG --log-prefix "[UFW DROP]" --log-level 4
+iptables -A LOG-INVALID -j RETURN
+
+# User-defined chain to log incoming traffic which will be dropped
+# Rate Limiting:
+
+
+iptables -N LOG-LEFTOVER
+iptables -A LOG-LEFTOVER -p udp --dport  67	-m	limit 	--limit 12/hour --limit-burst 2	-j DROP
+iptables -A LOG-LEFTOVER -p udp --sport  68	-m	limit 	--limit 12/hour --limit-burst 2	-j DROP
+iptables -A LOG-LEFTOVER -p udp --dport 135	-m	limit 	--limit 12/hour --limit-burst 2	-j DROP
+iptables -A LOG-LEFTOVER -p udp --dport 137	-m	limit 	--limit 12/hour --limit-burst 2 -j DROP
+iptables -A LOG-LEFTOVER -p udp --dport 138	-m	limit 	--limit 12/hour	--limit-burst 2 -j DROP
+iptables -A LOG-LEFTOVER -p tcp --dport 139	-m	limit 	--limit 12/hour --limit-burst 2 -j DROP
+iptables -A LOG-LEFTOVER -p tcp --dport 445	-m	limit 	--limit 12/hour --limit-burst 2 -j DROP
+iptables -A LOG-LEFTOVER -p udp -s $addr/$mask -d 224.0.0.1          -j DROP
+iptables -A LOG-LEFTOVER -p udp -s $addr/$mask -d 255.255.255.255    -j DROP
+iptables -A LOG-LEFTOVER -p udp -s $addr/$mask -d $bcst              -j DROP
+iptables -A LOG-LEFTOVER -m limit --limit 3/min --limit-burst 10 -j LOG --log-prefix "[UFW DROP]" --log-level 4
+iptables -A LOG-LEFTOVER -j RETURN
+
+# Define built-in chain for incoming traffic
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A INPUT -p icmp --icmp-type  3	-m	limit	--limit 12/hour	--limit-burst 2 -j ACCEPT
+iptables -A INPUT -p icmp --icmp-type  4	-m	limit 	--limit 12/hour --limit-burst 2 -j ACCEPT
+iptables -A INPUT -p icmp --icmp-type  8 	-m	limit 	--limit 12/hour --limit-burst 2 -j ACCEPT
+iptables -A INPUT -p icmp --icmp-type 11 	-m	limit 	--limit 12/hour --limit-burst 2 -j ACCEPT
+iptables -A INPUT -p icmp --icmp-type 12 	-m	limit 	--limit 12/hour --limit-burst 2 -j ACCEPT
+iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+iptables -A INPUT -m conntrack --ctstate INVALID -j LOG-INVALID
+iptables -A INPUT -m conntrack --ctstate INVALID -j DROP
+iptables -A INPUT -j SPECIFIC-INPUT
+iptables -A INPUT -j LOG-LEFTOVER
+iptables -A INPUT -j DROP
+
+# Define built-in chain for outgoing traffic
+iptables -A OUTPUT -o lo -j ACCEPT
+iptables -A OUTPUT -p icmp --icmp-type  0 -j ACCEPT
+iptables -A OUTPUT -p icmp --icmp-type  3 -j ACCEPT
+iptables -A OUTPUT -p icmp --icmp-type  4 -j ACCEPT
+iptables -A OUTPUT -p icmp --icmp-type 11 -j ACCEPT
+iptables -A OUTPUT -p icmp --icmp-type 12 -j ACCEPT
+iptables -A OUTPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+iptables -A OUTPUT -j SPECIFIC-OUTPUT
+iptables -A OUTPUT -j ACCEPT
+
+# Define built-in chain for packets being routed through the box
+iptables -A FORWARD -j DOCKER-USER
+iptables -A FORWARD -j DOCKER-ISOLATION-STAGE-1
+iptables -A FORWARD -o docker0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -o docker0 -j DOCKER
+iptables -A FORWARD -i docker0 ! -o docker0 -j ACCEPT
+iptables -A FORWARD -i docker0 -o docker0 -j ACCEPT
+iptables -A FORWARD -j LOG-LEFTOVER
+iptables -A FORWARD -j DROP
+
+# Define built-in chain for incoming traffic (IPv6)
+ip6tables -A INPUT -i lo -s ::/0 -d ::/0 -j ACCEPT
+ip6tables -A INPUT -j DROP
+
+# If the right argument is given, it goes deaf
+if [ "$1" = "disable" ]; then
+  iptables --flush
+  iptables --delete-chain
+  iptables -P INPUT ACCEPT
+  iptables -P OUTPUT ACCEPT
+  iptables -P FORWARD ACCEPT
+
+  ip6tables --flush
+  ip6tables --delete-chain
+  ip6tables -P INPUT ACCEPT
+  ip6tables -P OUTPUT ACCEPT
+  ip6tables -P FORWARD ACCEPT
+  exit 0
+fi
+
+# If it is installed, restart fail2ban
+if [ -x "/etc/init.d/fail2ban" ]; then
+  service fail2ban restart
+fi
+
+# If the right argument is given, save the new rules
+if [ "$1" = "save" ]; then
+  mkdir -p /lib/iptables
+  iptables-save -c > /lib/iptables/rc.iptables
+fi
