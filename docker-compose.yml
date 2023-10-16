@@ -18,9 +18,11 @@ services:
       - /var/log/sql-training/:/var/log/sql-training/
     depends_on:
       - memcached
+    restart: always
   memcached:
     container_name: memcached
     image: memcached:1.6.20-alpine
     network_mode: bridge
     ports:
       - 11211:11211
+    restart: always
