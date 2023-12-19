@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-aiohttp==3.8.5
+aiohttp==3.9.0
 Django==4.2.3
 django_ace==1.15.4
 django-click==2.3.0
